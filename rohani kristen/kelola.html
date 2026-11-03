@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1B6FB8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Alat bantu pengurus untuk menyiapkan data periode baru Persekutuan SMKN 9 Semarang.">
+<title>Kelola Periode — Persekutuan SMKN 9 Semarang</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#4DA9EB; --sky-d:#1B6FB8; --navy:#0E3F6E; --sky-l:#EAF5FD; --sky-xl:#F5FAFE;
+  --gold:#D9A92E; --gold-d:#8F6A15; --gold-l:#FBF1D4;
+  --ink:#1C2B3A; --muted:#5B6B7B; --bg:#FFFFFF; --line:#DCEAF5;
+  --radius:18px; --shadow:0 8px 28px rgba(14,63,110,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--sky-xl);line-height:1.65;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--navy);color:#fff;padding:12px 20px;border-radius:0 0 12px 0;font-weight:600}
+.skip:focus{left:0}
+
+.bar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:900px;margin:0 auto;min-height:64px;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);font-size:.95rem;line-height:1.2;min-width:0}
+.brand .logo{width:40px;height:40px;flex:none;display:grid;place-items:center}
+.brand .logo img{width:100%;height:100%;object-fit:contain}
+.brand .logo .ph{display:none}
+.brand .logo.nologo{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--sky-d));color:#fff;font-size:17px}
+.brand .logo.nologo .ph{display:block}
+.brand strong{display:block;font-weight:700}
+.back{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--sky-d);font-size:.85rem;font-weight:600;flex:none;transition:background .2s,border-color .2s}
+.back:hover{background:var(--sky-l);border-color:var(--sky)}
+
+main{max-width:900px;margin:0 auto;padding:36px 20px 72px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold);border-radius:2px}
+h1{font-size:clamp(1.5rem,4.5vw,2.1rem);line-height:1.25;color:var(--navy);margin:10px 0 10px;font-weight:700}
+.lead{color:var(--muted);max-width:640px}
+
+.kartu{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-top:24px}
+.kartu h2{font-size:1rem;color:var(--navy);margin-bottom:4px}
+.kartu p.hint{font-size:.84rem;color:var(--muted);margin-bottom:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:620px){.grid2{grid-template-columns:1fr}}
+label.f{display:block;font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:5px}
+select,input[type="text"]{width:100%;padding:11px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font:inherit;font-size:.92rem;color:var(--ink)}
+select:focus,input[type="text"]:focus{outline:2px solid var(--sky);outline-offset:1px;border-color:var(--sky)}
+.cek{display:flex;align-items:flex-start;gap:9px;font-size:.87rem;color:var(--ink);margin-top:12px;cursor:pointer}
+.cek input{width:18px;height:18px;margin-top:2px;accent-color:var(--sky-d);flex:none}
+.cek small{display:block;color:var(--muted);font-size:.76rem;line-height:1.45}
+
+.ringkas{margin-top:16px;background:var(--sky-xl);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.86rem;color:var(--ink)}
+.ringkas b{color:var(--navy)}
+.ringkas ul{list-style:none;margin-top:6px;display:grid;gap:3px}
+.ringkas li::before{content:"•";color:var(--sky-d);font-weight:700;margin-right:7px}
+
+.tombol{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;border:2px solid transparent;font:inherit;font-size:.92rem;font-weight:600;cursor:pointer;transition:background .2s,transform .2s}
+.tombol:active{transform:scale(.98)}
+.tombol-utama{background:var(--sky-d);color:#fff;margin-top:16px}
+.tombol-utama:hover{background:var(--navy)}
+.tombol-garis{background:#fff;border-color:var(--sky-d);color:var(--sky-d)}
+.tombol-garis:hover{background:var(--sky-l)}
+.pesan{margin-top:12px;font-size:.85rem;font-weight:600;color:#8a1c1c;min-height:1.2em}
+.pesan.ok{color:#0E7A3C}
+
+.hasil{margin-top:22px}
+.hasil[hidden]{display:none}
+pre.kode{background:#0E2740;color:#d9ecfb;border-radius:12px;padding:16px;overflow:auto;font-family:ui-monospace,Consolas,monospace;font-size:.78rem;line-height:1.55;max-height:420px;white-space:pre;tab-size:2}
+.aksi{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+
+.langkah{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+.langkah h2{font-size:1rem;color:var(--navy);margin-bottom:10px}
+.langkah ol{padding-left:20px;font-size:.87rem;color:var(--ink);display:grid;gap:6px}
+.langkah code{background:var(--sky-xl);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.82rem}
+.catat{margin-top:14px;font-size:.8rem;color:var(--muted)}
+
+footer{text-align:center;padding:30px 20px;font-size:.82rem;color:var(--muted)}
+footer a{color:var(--sky-d);font-weight:600}
+
+@media(max-width:520px){
+  .bar-in{min-height:58px;padding:6px 16px}
+  .brand{font-size:.86rem}
+  .brand .logo{width:34px;height:34px}
+  .back span{display:none}
+  .back{padding:9px 11px;font-size:16px}
+  main{padding:26px 16px 56px}
+  .kartu{padding:18px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#konten">Lewati ke konten utama</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M10 2h4v7h7v4h-7v9h-4v-9H3V9h7z"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+</svg>
+
+<header class="bar">
+  <div class="bar-in">
+    <a href="index.html" class="brand">
+      <span class="logo">
+        <img src="logo.png" alt="Logo Persekutuan SMKN 9 Semarang" onerror="this.parentNode.classList.add('nologo');this.remove()">
+        <svg class="ic ph" aria-hidden="true"><use href="#i-cross"/></svg>
+      </span>
+      <span><strong>Persekutuan</strong>SMKN 9 Semarang</span>
+    </a>
+    <a href="index.html" class="back"><svg class="ic"><use href="#i-left"/></svg><span>Beranda</span></a>
+  </div>
+</header>
+
+<main id="konten">
+  <span class="eyebrow">Alat Pengurus</span>
+  <h1>Kelola periode baru</h1>
+  <p class="lead">Membuat data periode berikutnya dari periode yang sudah ada: kelas dinaikkan otomatis, kelas XII diluluskan, lalu hasilnya ditempel ke <code>data.js</code>.</p>
+
+  <section class="kartu">
+    <h2>1. Pilih sumber &amp; nama periode</h2>
+    <p class="hint">Periode baru dibuat dari salinan periode ini.</p>
+    <div class="grid2">
+      <div>
+        <label class="f" for="sumber">Periode sumber</label>
+        <select id="sumber"></select>
+      </div>
+      <div>
+        <label class="f" for="baru">Nama periode baru</label>
+        <input type="text" id="baru" placeholder="2027/2028" maxlength="9" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+
+    <label class="cek"><input type="checkbox" id="naik" checked><span>Naikkan kelas anggota<small>X → XI, XI → XII, dan kelas XII otomatis lulus (tidak disalin).</small></span></label>
+    <label class="cek"><input type="checkbox" id="salinPembina" checked><span>Salin pembina<small>Biasanya pembina tetap sama.</small></span></label>
+    <label class="cek"><input type="checkbox" id="salinPengurus"><span>Salin pengurus lama<small>Biarkan kosong kalau akan ada pemilihan pengurus baru.</small></span></label>
+
+    <div class="ringkas" id="ringkas"></div>
+
+    <button class="tombol tombol-utama" id="buat" type="button">Buat data periode</button>
+    <p class="pesan" id="pesan" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="hasil" id="hasil" hidden>
+    <h2 style="font-size:1rem;color:var(--navy)">2. Tempel ke <code>data.js</code></h2>
+    <pre class="kode" id="kode"></pre>
+    <div class="aksi">
+      <button class="tombol tombol-garis" id="salin" type="button"><svg class="ic"><use href="#i-copy"/></svg> Salin kode</button>
+      <button class="tombol tombol-garis" id="unduh" type="button"><svg class="ic"><use href="#i-down"/></svg> Unduh data.js baru</button>
+    </div>
+    <p class="pesan" id="pesanSalin" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="langkah">
+    <h2>3. Setelah itu</h2>
+    <ol>
+      <li>Buka <code>data.js</code>, tempel blok di atas <strong>di dalam</strong> <code>const PERIODE = { … }</code>.</li>
+      <li>Naikkan <code>VERSI</code> di <code>sw.js</code> (mis. <code>v8</code> → <code>v9</code>).</li>
+      <li>Upload <code>data.js</code> dan <code>sw.js</code> ke hosting.</li>
+      <li>Cek halaman <a href="anggota.html">Anggota</a>: periode terbaru otomatis jadi default dan berlabel “Aktif”.</li>
+    </ol>
+    <p class="catat">Alat ini hanya menyusun teks — tidak mengubah file di server. Data lama tetap aman karena periode sebelumnya tidak dihapus.</p>
+  </section>
+</main>
+
+<footer>Alat internal pengurus · <a href="index.html">kembali ke beranda</a></footer>
+
+<script src="data.js"></script>
+<script>
+/* Cadangan: kalau data.js belum ter-upload, halaman tetap jalan (data kosong). */
+if (typeof PERIODE === 'undefined') { window.PERIODE_BAWAAN = '2026/2027'; window.PERIODE = {}; }
+</script>
+<script>
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const KELAS_ANG = ['X', 'XI', 'XII'];
+const kelasAng = a => {
+  const k = String(a.kelas || '').trim().toUpperCase().replace(/^KELAS\s+/, '');
+  return k === '10' ? 'X' : k === '11' ? 'XI' : k === '12' ? 'XII' : k;
+};
+const namaAng = a => String(a.nama || '').trim();
+
+const urutTahun = (a, b) => parseInt(a, 10) - parseInt(b, 10);
+const semuaPeriode = () => Object.keys(PERIODE).sort(urutTahun);
+/* Hanya periode yang sudah ada isinya yang bisa dipilih sebagai sumber */
+const periodeIsi = () => semuaPeriode().filter(p => {
+  const d = PERIODE[p] || {};
+  return (d.pembina && d.pembina.length) || (d.pengurus && d.pengurus.length) || (d.anggota && d.anggota.length);
+});
+const daftarSumber = () => { const isi = periodeIsi(); return isi.length ? isi : semuaPeriode(); };
+
+/* ---------- Isi pilihan periode sumber ---------- */
+const selSumber = $('#sumber');
+selSumber.innerHTML = daftarSumber().map(p => {
+  const d = PERIODE[p] || {};
+  const n = (d.anggota || []).length;
+  return `<option value="${esc(p)}">${esc(p)} — ${n} anggota</option>`;
+}).join('');
+if (daftarSumber().length) selSumber.value = daftarSumber()[daftarSumber().length - 1];
+
+/* Usulkan nama periode berikutnya: tahun awal + 1 */
+function usulNama(p) {
+  const th = parseInt(p, 10);
+  return Number.isFinite(th) ? (th + 1) + '/' + (th + 2) : '';
+}
+const inputBaru = $('#baru');
+function isiUsulan() {
+  const p = selSumber.value;
+  if (!p) return;
+  inputBaru.value = usulNama(p);
+  perbarui();
+}
+selSumber.addEventListener('change', isiUsulan);
+
+/* ---------- Ringkasan ---------- */
+function hitung() {
+  const d = PERIODE[selSumber.value] || {};
+  const ang = Array.isArray(d.anggota) ? d.anggota : [];
+  const naik = $('#naik').checked;
+  const out = { X: 0, XI: 0, XII: 0, lulus: 0, tetap: 0, lain: 0, total: 0 };
+  ang.forEach(a => {
+    const k = kelasAng(a);
+    if (!naik) { out.total++; return; }
+    if (k === 'X') { out.X++; out.total++; }
+    else if (k === 'XI') { out.XI++; out.total++; }
+    else if (k === 'XII') { out.lulus++; }
+    else { out.lain++; out.total++; }
+  });
+  return out;
+}
+
+function perbarui() {
+  const h = hitung();
+  const d = PERIODE[selSumber.value] || {};
+  const baris = [];
+  if ($('#naik').checked) {
+    baris.push(`Naik ke kelas XI: <b>${h.X}</b> orang`);
+    baris.push(`Naik ke kelas XII: <b>${h.XI}</b> orang`);
+    baris.push(`Lulus (kelas XII, tidak disalin): <b>${h.lulus}</b> orang`);
+    if (h.lain) baris.push(`Kelas tidak dikenali (disalin apa adanya): <b>${h.lain}</b> orang`);
+  } else {
+    baris.push(`Anggota disalin apa adanya: <b>${h.total}</b> orang`);
+  }
+  baris.push(`Pembina: <b>${$('#salinPembina').checked ? (d.pembina || []).length + ' orang' : 'kosong'}</b>`);
+  baris.push(`Pengurus: <b>${$('#salinPengurus').checked ? (d.pengurus || []).length + ' orang' : 'kosong'}</b>`);
+  $('#ringkas').innerHTML = `<b>Perkiraan periode ${esc(inputBaru.value || '…')}</b><ul>${baris.map(b => `<li>${b}</li>`).join('')}</ul>`;
+}
+['naik', 'salinPembina', 'salinPengurus'].forEach(id => $('#' + id).addEventListener('change', perbarui));
+inputBaru.addEventListener('input', perbarui);
+
+/* ---------- Susun data periode baru ---------- */
+function naikKelas(k) {
+  if (k === 'X') return 'XI';
+  if (k === 'XI') return 'XII';
+  return null;   /* XII = lulus */
+}
+
+function buatData(nama) {
+  const src = PERIODE[selSumber.value] || {};
+  const naik = $('#naik').checked;
+  const anggota = (src.anggota || []).map(a => {
+    const kelas = naik ? naikKelas(kelasAng(a)) : kelasAng(a);
+    if (!kelas) return null;
+    return { nama: namaAng(a), kelas, jurusan: String(a.jurusan || '').trim(), foto: String(a.foto || '') };
+  }).filter(Boolean);
+  return {
+    pembina: $('#salinPembina').checked ? (src.pembina || []).map(x => ({ nama: x.nama, jabatan: x.jabatan, foto: x.foto || '' })) : [],
+    pengurus: $('#salinPengurus').checked ? (src.pengurus || []).map(x => ({ nama: x.nama, jabatan: x.jabatan, foto: x.foto || '' })) : [],
+    anggota
+  };
+}
+
+/* ---------- Format kode ---------- */
+function fmtBaris(arr, indent) {
+  if (!arr.length) return '[]';
+  return '[\n' + arr.map(o => indent + '  ' + JSON.stringify(o)).join(',\n') + '\n' + indent + ']';
+}
+function blokPeriode(nama, data, indent) {
+  const i = indent;
+  return i + JSON.stringify(nama) + ': {\n' +
+    i + '  pembina: ' + fmtBaris(data.pembina, i + '  ') + ',\n' +
+    i + '  pengurus: ' + fmtBaris(data.pengurus, i + '  ') + ',\n' +
+    i + '  anggota: ' + fmtBaris(data.anggota, i + '  ') + '\n' +
+    i + '},';
+}
+
+let kodeTerakhir = '';
+let dataBaruTerakhir = null;
+let namaTerakhir = '';
+
+$('#buat').addEventListener('click', () => {
+  const pesan = $('#pesan');
+  pesan.classList.remove('ok');
+  const nama = inputBaru.value.trim();
+
+  if (!/^\d{4}\/\d{4}$/.test(nama)) {
+    pesan.textContent = 'Nama periode harus berformat TAHUN/TAHUN, contoh 2027/2028.';
+    return;
+  }
+  const [a, b] = nama.split('/').map(Number);
+  if (b !== a + 1) {
+    pesan.textContent = 'Tahun kedua harus tahun pertama + 1, contoh 2027/2028.';
+    return;
+  }
+  if (!PERIODE[selSumber.value]) {
+    pesan.textContent = 'Periode sumber tidak ditemukan.';
+    return;
+  }
+
+  const data = buatData(nama);
+  kodeTerakhir = blokPeriode(nama, data, '  ');
+  dataBaruTerakhir = data;
+  namaTerakhir = nama;
+
+  $('#kode').textContent = kodeTerakhir;
+  $('#hasil').hidden = false;
+
+  if (PERIODE[nama]) {
+    const lama = PERIODE[nama];
+    const berisi = (lama.pembina && lama.pembina.length) || (lama.pengurus && lama.pengurus.length) || (lama.anggota && lama.anggota.length);
+    pesan.textContent = berisi
+      ? 'Periode ' + nama + ' sudah ada dan berisi. Ganti blok lama dengan blok baru ini.'
+      : 'Periode ' + nama + ' sudah ada tapi masih kosong. Ganti blok kosong itu dengan blok ini.';
+  } else {
+    pesan.textContent = 'Berhasil dibuat: ' + data.anggota.length + ' anggota disalin.';
+    pesan.classList.add('ok');
+  }
+  $('#hasil').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+/* ---------- Salin ---------- */
+$('#salin').addEventListener('click', async () => {
+  const pesan = $('#pesanSalin');
+  pesan.classList.remove('ok');
+  try {
+    await navigator.clipboard.writeText(kodeTerakhir);
+    pesan.textContent = 'Kode disalin. Tempel di dalam data.js.';
+    pesan.classList.add('ok');
+  } catch {
+    const r = document.createRange();
+    r.selectNodeContents($('#kode'));
+    const s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+    pesan.textContent = 'Teks sudah diblok. Tekan Ctrl+C (atau tekan lama → Copy).';
+  }
+});
+
+/* ---------- Susun isi data.js lengkap ---------- */
+function susunFile() {
+  const gabung = {};
+  semuaPeriode().forEach(p => { gabung[p] = PERIODE[p]; });
+  gabung[namaTerakhir] = dataBaruTerakhir;
+
+  return `/* =====================================================================
+   DATA PER PERIODE — dipakai bersama oleh index.html dan anggota.html
+   =====================================================================
+   File ini dibuat otomatis oleh kelola.html.
+   Setelah diunduh: ganti data.js lama, lalu naikkan VERSI di sw.js.
+   ===================================================================== */
+
+const PERIODE_BAWAAN = ${JSON.stringify(PERIODE_BAWAAN || Object.keys(gabung)[0])};
+
+const PERIODE = {
+` + Object.keys(gabung).sort(urutTahun).map(p => blokPeriode(p, gabung[p], '  ')).join('\n') + `
+};
+`;
+}
+
+/* ---------- Unduh data.js baru ---------- */
+$('#unduh').addEventListener('click', () => {
+  if (!dataBaruTerakhir) return;
+  const isi = susunFile();
+
+  const blob = new Blob([isi], { type: 'text/javascript;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'data-baru.js';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  const pesan = $('#pesanSalin');
+  pesan.textContent = 'File data-baru.js diunduh. Periksa dulu, lalu ganti nama menjadi data.js.';
+  pesan.classList.add('ok');
+});
+
+/* ---------- Mulai ---------- */
+isiUsulan();
+</script>
+</body>
+</html>
