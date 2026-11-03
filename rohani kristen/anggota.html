@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1B6FB8">
+<meta name="description" content="Daftar anggota Persekutuan SMKN 9 Semarang per kelas dan jurusan, lengkap dengan pencarian nama.">
+<title>Anggota — Persekutuan SMKN 9 Semarang</title>
+<link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#4DA9EB; --sky-d:#1B6FB8; --navy:#0E3F6E; --sky-l:#EAF5FD; --sky-xl:#F5FAFE;
+  --gold:#D9A92E; --gold-d:#8F6A15; --gold-l:#FBF1D4;
+  --ink:#1C2B3A; --muted:#5B6B7B; --bg:#FFFFFF; --line:#DCEAF5;
+  --radius:18px; --shadow:0 8px 28px rgba(14,63,110,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+body{font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--navy);color:#fff;padding:12px 20px;border-radius:0 0 12px 0;font-weight:600}
+.skip:focus{left:0}
+
+/* ===== Bilah atas ===== */
+.bar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1080px;margin:0 auto;min-height:64px;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);font-size:.95rem;line-height:1.2;min-width:0}
+.brand .logo{width:40px;height:40px;flex:none;display:grid;place-items:center}
+.brand .logo img{width:100%;height:100%;object-fit:contain}
+.brand .logo .ph{display:none}
+.brand .logo.nologo{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--sky-d));color:#fff;font-size:17px}
+.brand .logo.nologo .ph{display:block}
+.brand strong{display:block;font-weight:700}
+.back{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--sky-d);font-size:.85rem;font-weight:600;flex:none;transition:background .2s,border-color .2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.back:hover{background:var(--sky-l);border-color:var(--sky)}
+
+/* ===== Isi ===== */
+main{max-width:1080px;margin:0 auto;padding:40px 20px 72px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold);border-radius:2px}
+h1{font-size:clamp(1.6rem,4.5vw,2.3rem);line-height:1.25;color:var(--navy);margin:10px 0 12px;font-weight:700}
+.lead{color:var(--muted);max-width:640px}
+.head{margin-bottom:32px}
+.center{text-align:center}
+.center .lead{margin-inline:auto}
+.center .eyebrow{justify-content:center}
+
+/* ===== Pilihan periode ===== */
+.periode{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 auto 24px}
+.periode button{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s,border-color .2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.periode button:hover{border-color:var(--sky)}
+.periode button[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:#3a2a00}
+.periode .tag{font-size:.64rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:#fff;color:#6B4E0C;border-radius:999px;padding:1px 8px;line-height:1.7}
+.periode button[aria-selected="true"] .tag{background:rgba(255,255,255,.85);color:#3a2a00}
+@media(hover:none){.periode button:active{transform:scale(.95)}}
+
+/* ===== Alat: tab kelas + pencarian ===== */
+.ag-tools{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:22px}
+.ag-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.ag-tabs button{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--sky-xl);color:var(--navy);font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s,border-color .2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.ag-tabs button span{background:#fff;color:var(--sky-d);border-radius:999px;padding:0 9px;font-size:.78rem;line-height:1.6}
+.ag-tabs button:hover{border-color:var(--sky)}
+.ag-tabs button[aria-selected="true"]{background:var(--sky-d);border-color:var(--sky-d);color:#fff}
+@media(hover:none){.ag-tabs button:active{transform:scale(.95)}}
+.cari{position:relative;display:flex;align-items:center;flex:1 1 220px;max-width:300px}
+.cari .ic{position:absolute;left:14px;font-size:17px;color:var(--muted);pointer-events:none}
+.cari input{width:100%;border-radius:999px;padding:10px 16px 10px 40px;font-family:inherit;font-size:.95rem;color:var(--ink);border:1.5px solid var(--line);background:#fff}
+.cari input:focus{outline:2px solid var(--sky);outline-offset:1px;border-color:var(--sky)}
+
+/* ===== Daftar anggota ===== */
+.ag-grup{margin-bottom:22px}
+.ag-grup h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--navy);font-size:1rem;margin-bottom:11px;padding-bottom:7px;border-bottom:2px solid var(--gold-l)}
+.ag-grup h3 span{font-size:.75rem;font-weight:600;color:#6B4E0C;background:var(--gold-l);border-radius:999px;padding:1px 10px}
+.ag-nama{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+@media(max-width:420px){.ag-nama{grid-template-columns:1fr}}
+.ag-nama li{background:var(--sky-xl);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.9rem;color:var(--ink);line-height:1.35;min-width:0}
+.ag-nama li small{display:block;font-size:.74rem;color:var(--muted)}
+.ag-nama li.ag-kartu{display:flex;align-items:center;gap:11px;padding:9px 12px}
+.ag-foto{position:relative;width:44px;height:44px;flex:none;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,var(--sky-l),#cfe8fa);color:var(--sky-d);font-weight:700;font-size:.82rem;border:2px solid #fff;box-shadow:0 0 0 2px var(--gold)}
+.ag-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ag-kartu .ag-info{min-width:0;line-height:1.35}
+.ag-kartu .ag-info b{display:block;font-weight:600;font-size:.92rem;color:var(--ink);overflow-wrap:anywhere}
+.ag-kartu .ag-info small{display:block;font-size:.74rem;color:var(--muted);overflow-wrap:anywhere}
+.empty{text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--sky);border-radius:var(--radius);padding:26px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ===== Kaki ===== */
+footer{background:var(--navy);color:#cfe3f4;text-align:center;padding:34px 20px;font-size:.88rem}
+footer .v{max-width:520px;margin:0 auto 12px;font-style:italic;color:#F4D57A}
+footer a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* ===== Riak sentuh ===== */
+.ketuk{position:relative;overflow:hidden}
+.ketuk>.ripple{position:absolute;border-radius:50%;pointer-events:none;background:currentColor;opacity:.2;transform:scale(0);animation:ripple .55s ease-out forwards}
+@keyframes ripple{to{transform:scale(1);opacity:0}}
+@media(prefers-reduced-motion:reduce){.ketuk>.ripple{display:none}}
+
+@media(max-width:520px){
+  .bar-in{min-height:58px;padding:6px 16px}
+  .brand{font-size:.86rem}
+  .brand .logo{width:34px;height:34px}
+  .back span{display:none}
+  .back{padding:9px 11px;font-size:16px}
+  main{padding:28px 16px 56px}
+  .ag-tools{gap:10px}
+  .cari{max-width:none;flex-basis:100%}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#konten">Lewati ke konten utama</a>
+
+<!-- Ikon minimal -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M10 2h4v7h7v4h-7v9h-4v-9H3V9h7z"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+</svg>
+
+<header class="bar">
+  <div class="bar-in">
+    <a href="index.html" class="brand">
+      <span class="logo">
+        <img src="logo.png" alt="Logo Persekutuan SMKN 9 Semarang" onerror="this.parentNode.classList.add('nologo');this.remove()">
+        <svg class="ic ph" aria-hidden="true"><use href="#i-cross"/></svg>
+      </span>
+      <span><strong>Persekutuan</strong>SMKN 9 Semarang</span>
+    </a>
+    <a href="index.html" class="back"><svg class="ic"><use href="#i-left"/></svg><span>Beranda</span></a>
+  </div>
+</header>
+
+<main id="konten">
+  <div class="head center">
+    <span class="eyebrow">Anggota</span>
+    <h1>Keluarga besar persekutuan</h1>
+    <p class="lead" id="agJumlah">Memuat data anggota…</p>
+  </div>
+
+  <div class="periode" role="tablist" aria-label="Pilih periode keanggotaan"></div>
+
+  <div class="ag-tools" id="agTools">
+    <div class="ag-tabs" id="agTabs" role="tablist" aria-label="Pilih kelas"></div>
+    <div class="cari">
+      <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+      <input id="agCari" type="search" placeholder="Cari nama anggota…" aria-label="Cari nama anggota" maxlength="40" autocomplete="off">
+    </div>
+  </div>
+
+  <h2 class="sr-only">Daftar anggota per kelas dan jurusan</h2>
+  <div id="agList" aria-live="polite"></div>
+</main>
+
+<footer>
+  <p class="v">"Orang jujur akan melihat dan mengenal TUHAN." — Mazmur 11:7</p>
+  <p>© <span id="yr"></span> Persekutuan SMKN 9 Semarang · SMKN 9 Semarang</p>
+  <p style="margin-top:8px"><a href="index.html">Beranda</a> · <a href="arsip.html">Arsip periode</a></p>
+</footer>
+
+<script src="api.js?v=16"></script>
+<script src="data.js?v=16"></script>
+<script>
+/* Cadangan: kalau data.js belum ter-upload, halaman tetap jalan (data kosong). */
+if (typeof PERIODE === 'undefined') { window.PERIODE_BAWAAN = '2026/2027'; window.PERIODE = {}; }
+</script>
+<script>
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const KELAS_ANG = ['X', 'XI', 'XII'];
+/* rapikan data kelas: "10" / "kelas x " tetap terbaca sebagai X */
+const kelasAng = a => {
+  const k = String(a.kelas || '').trim().toUpperCase().replace(/^KELAS\s+/, '');
+  return k === '10' ? 'X' : k === '11' ? 'XI' : k === '12' ? 'XII' : k;
+};
+const namaAng = a => String(a.nama || '').trim();
+const inisial = n => String(n).trim().split(/\s+/).slice(0, 2).map(x => x[0] || '').join('').toUpperCase();
+const kartuAnggota = (a, detail) => `
+  <li class="ag-kartu">
+    <span class="ag-foto">${esc(inisial(namaAng(a)))}${a.foto ? `<img src="${esc(a.foto)}" alt="Foto ${esc(namaAng(a))}" loading="lazy" decoding="async" onerror="this.remove()">` : ''}</span>
+    <span class="ag-info"><b>${esc(namaAng(a))}</b>${detail ? `<small>${detail}</small>` : ''}</span>
+  </li>`;
+
+let periodeAktif = PERIODE_BAWAAN;
+let ANGGOTA = [];
+let kelasAktif = null;
+
+function pakaiPeriode(p){
+  const d = PERIODE[p] || {};
+  periodeAktif = p;
+  ANGGOTA = Array.isArray(d.anggota) ? d.anggota : [];
+}
+
+/* ----- Pilihan periode ----- */
+/* Hanya periode yang sudah ada isinya yang tampil. Periode terbaru = "Aktif". */
+function daftarPeriode(){
+  return Object.keys(PERIODE)
+    .filter(p => {
+      const d = PERIODE[p] || {};
+      return (d.pembina && d.pembina.length) || (d.pengurus && d.pengurus.length) || (d.anggota && d.anggota.length);
+    })
+    .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+}
+function periodeTampil(){
+  const isi = daftarPeriode();
+  return isi.length ? isi : Object.keys(PERIODE).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+}
+function periodeAwal(){
+  const aktif = typeof periodeAktifTampil === 'function' ? periodeAktifTampil() : '';
+  if (aktif && PERIODE[aktif]) return aktif;
+  const isi = daftarPeriode();
+  if (isi.length) return isi[isi.length - 1];
+  return PERIODE[PERIODE_BAWAAN] ? PERIODE_BAWAAN : Object.keys(PERIODE)[0];
+}
+function renderPeriode(){
+  const box = $('.periode');
+  const tampil = periodeTampil();
+  const aktif = typeof periodeAktifTampil === 'function' ? periodeAktifTampil() : tampil[tampil.length - 1];
+  const adaIsi = daftarPeriode().length > 0;
+  box.innerHTML = tampil.map(p =>
+    `<button type="button" role="tab" data-p="${esc(p)}" aria-selected="${p === periodeAktif}">${esc(p)}` +
+    (adaIsi ? ` <span class="tag">${p === aktif ? 'Aktif' : 'Arsip'}</span>` : '') +
+    `</button>`
+  ).join('');
+}
+
+function gantiPeriode(p){
+  if (!PERIODE[p]) return;
+  const kotak = document.activeElement && document.activeElement.closest ? document.activeElement.closest('.periode') : null;
+  pakaiPeriode(p);
+  renderPeriode();
+  renderAnggota();
+  if (kotak) {
+    const b = kotak.querySelector(`[data-p="${p}"]`);
+    if (b) b.focus();
+  }
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('.periode [data-p]');
+  if (b) gantiPeriode(b.dataset.p);
+});
+
+/* Panah kiri/kanan untuk berpindah periode */
+document.addEventListener('keydown', e => {
+  const b = e.target.closest('.periode [data-p]');
+  if (!b || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
+  e.preventDefault();
+  const keys = periodeTampil();
+  const i = keys.indexOf(b.dataset.p);
+  if (i < 0) return;
+  gantiPeriode(keys[(i + (e.key === 'ArrowRight' ? 1 : -1) + keys.length) % keys.length]);
+});
+
+/* ----- Daftar anggota ----- */
+function renderAnggota(){
+  const tabs = $('#agTabs'), list = $('#agList'), cari = $('#agCari'), tools = $('#agTools');
+  const urut = (a, b) => namaAng(a).localeCompare(namaAng(b), 'id');
+
+  if (!ANGGOTA.length) {
+    $('#agJumlah').textContent = `Periode ${periodeAktif} · data anggota belum diisi.`;
+    tools.hidden = true;
+    list.innerHTML = `<div class="empty">Data anggota periode ${esc(periodeAktif)} belum diisi.</div>`;
+    return;
+  }
+  tools.hidden = false;
+  cari.value = '';
+  kelasAktif = KELAS_ANG.find(k => ANGGOTA.some(a => kelasAng(a) === k)) || 'X';
+
+  /* ringkasan jumlah per kelas (kelas kosong tidak ditulis) */
+  const rincian = KELAS_ANG.map(k => ({ k, n: ANGGOTA.filter(a => kelasAng(a) === k).length }))
+    .filter(x => x.n).map(x => `kelas ${x.k} (${x.n})`);
+  const daftarKelas = rincian.length > 2
+    ? rincian.slice(0, -1).join(', ') + ', dan ' + rincian[rincian.length - 1]
+    : rincian.length === 2
+      ? rincian[0] + ' dan ' + rincian[1]
+      : (rincian[0] || '');
+  $('#agJumlah').textContent = `Periode ${periodeAktif} · ${ANGGOTA.length} anggota` +
+    (daftarKelas ? ` dari ${daftarKelas}` : '') + '. Selamat bertumbuh bersama!';
+
+  function gambarTab(){
+    tabs.innerHTML = KELAS_ANG.map(k =>
+      `<button type="button" role="tab" data-k="${k}" aria-selected="${k === kelasAktif}">Kelas ${k} <span>${ANGGOTA.filter(a => kelasAng(a) === k).length}</span></button>`
+    ).join('');
+  }
+
+  function gambarList(){
+    const q = cari.value.trim().toLowerCase();
+    if (q) {                                   /* mencari: tampil lintas kelas */
+      const hasil = ANGGOTA.filter(a => namaAng(a).toLowerCase().includes(q)).sort(urut);
+      list.innerHTML = hasil.length
+        ? `<ul class="ag-nama">${hasil.map(a => kartuAnggota(a, `Kelas ${esc(kelasAng(a) || '—')}${a.jurusan ? ' · ' + esc(a.jurusan) : ''}`)).join('')}</ul>`
+        : '<div class="empty">Nama tidak ditemukan.</div>';
+      return;
+    }
+    const per = Object.create(null);
+    ANGGOTA.filter(a => kelasAng(a) === kelasAktif).forEach(a => {
+      const j = String(a.jurusan || '').trim() || 'Lainnya';
+      (per[j] = per[j] || []).push(a);
+    });
+    const kunci = Object.keys(per).sort((a, b) => a.localeCompare(b, 'id'));
+    list.innerHTML = kunci.length
+      ? kunci.map(j => `<div class="ag-grup"><h3>${esc(j)} <span>${per[j].length} orang</span></h3><ul class="ag-nama">${per[j].sort(urut).map(a => kartuAnggota(a, '')).join('')}</ul></div>`).join('')
+      : '<div class="empty">Belum ada anggota di kelas ini.</div>';
+  }
+
+  tabs.onclick = e => {
+    const b = e.target.closest('[data-k]');
+    if (!b) return;
+    kelasAktif = b.dataset.k; cari.value = '';
+    gambarTab(); gambarList();
+    const nb = tabs.querySelector(`[data-k="${kelasAktif}"]`);
+    if (nb) nb.focus();
+  };
+
+  /* Panah kiri/kanan untuk berpindah kelas */
+  tabs.onkeydown = e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault();
+    const i = KELAS_ANG.indexOf(kelasAktif);
+    const k = KELAS_ANG[(i + (e.key === 'ArrowRight' ? 1 : -1) + KELAS_ANG.length) % KELAS_ANG.length];
+    kelasAktif = k; cari.value = '';
+    gambarTab(); gambarList();
+    const nb = tabs.querySelector(`[data-k="${k}"]`);
+    if (nb) nb.focus();
+  };
+
+  cari.oninput = gambarList;
+  gambarTab(); gambarList();
+}
+
+/* ----- Mulai ----- */
+$('#yr').textContent = new Date().getFullYear();
+pakaiPeriode(periodeAwal());
+renderPeriode();
+renderAnggota();
+
+/* Ambil data terbaru dari server (bila sudah diatur). Bila gagal,
+   halaman tetap memakai data bawaan dari data.js. */
+if (typeof ambilKonten === 'function') {
+  ambilKonten().then(k => {
+    if (!k) return;
+    if (!terapkanPeriode(k)) return;
+    const aktif = periodeAktifServer();
+    pakaiPeriode(aktif && PERIODE[aktif] ? aktif : periodeAwal());
+    renderPeriode();
+    renderAnggota();
+  });
+}
+
+/* Riak sentuh pada tombol */
+if (window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const KETUK = '.back,.periode button,.ag-tabs button';
+  document.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'touch') return;
+    const el = e.target.closest(KETUK);
+    if (!el || el.disabled) return;
+    const r = el.getBoundingClientRect();
+    const d = Math.max(r.width, r.height) * 1.4;
+    const s = document.createElement('span');
+    s.className = 'ripple';
+    s.style.cssText = 'width:' + d + 'px;height:' + d + 'px;left:' + (e.clientX - r.left - d / 2) + 'px;top:' + (e.clientY - r.top - d / 2) + 'px';
+    el.classList.add('ketuk');
+    el.appendChild(s);
+    let beres = false;
+    const mulai = { x: e.clientX, y: e.clientY };
+    const bersihkan = () => {
+      if (beres) return;
+      beres = true;
+      s.remove();
+      if (!el.querySelector('.ripple')) el.classList.remove('ketuk');
+      document.removeEventListener('pointermove', gerak);
+      document.removeEventListener('pointercancel', gerak);
+    };
+    const gerak = ev => {
+      if (ev.type === 'pointercancel' || Math.hypot(ev.clientX - mulai.x, ev.clientY - mulai.y) > 12) bersihkan();
+    };
+    document.addEventListener('pointermove', gerak, { passive: true });
+    document.addEventListener('pointercancel', gerak);
+    s.addEventListener('animationend', bersihkan);
+    setTimeout(bersihkan, 700);
+  });
+}
+</script>
+</body>
+</html>

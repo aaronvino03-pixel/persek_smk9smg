@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1B6FB8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Halaman pengurus untuk mengelola isi situs Persekutuan SMKN 9 Semarang.">
+<title>Kelola Situs — Persekutuan SMKN 9 Semarang</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#4DA9EB; --sky-d:#1B6FB8; --navy:#0E3F6E; --sky-l:#EAF5FD; --sky-xl:#F5FAFE;
+  --gold:#D9A92E; --gold-d:#8F6A15; --gold-l:#FBF1D4;
+  --ink:#1C2B3A; --muted:#5B6B7B; --line:#DCEAF5;
+  --radius:18px; --shadow:0 8px 28px rgba(14,63,110,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--sky-xl);line-height:1.55;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:var(--sky-d);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:inherit}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--navy);color:#fff;padding:12px 20px;border-radius:0 0 12px 0;font-weight:600}
+.skip:focus{left:0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+[hidden]{display:none!important}
+
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.top-in{max-width:1080px;margin:0 auto;min-height:64px;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--navy);font-weight:700;line-height:1.2}
+.brand:hover{text-decoration:none}
+.brand .logo{width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--sky-d));color:#fff;font-size:19px}
+.brand strong{display:block;font-size:.98rem}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:.72rem}
+.top-aksi{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.masuk{font-size:.8rem;color:var(--muted)}
+.masuk b{color:var(--navy)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 70px}
+.kartu{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-bottom:18px}
+.kartu h1,.kartu h2{color:var(--navy);font-size:1.25rem;line-height:1.3;margin-bottom:6px}
+.kartu h3{color:var(--navy);font-size:1rem;margin-bottom:10px}
+.kartu > p.ket{color:var(--muted);font-size:.88rem;margin-bottom:16px}
+.note{font-size:.8rem;color:var(--muted);margin-top:8px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:.9rem;border:2px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s;text-decoration:none}
+.btn:hover{transform:translateY(-1px);text-decoration:none}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.btn-gold{background:linear-gradient(135deg,#E8BC4A,var(--gold));color:#3a2a00;box-shadow:0 5px 14px rgba(217,169,46,.3)}
+.btn-blue{background:var(--sky-d);color:#fff}
+.btn-line{background:#fff;border-color:var(--sky-d);color:var(--sky-d)}
+.btn-hapus{background:#FDECEA;border-color:#F3C6C0;color:#9E2B20}
+.btn-mini{padding:6px 12px;font-size:.78rem;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:600;color:var(--sky-d)}
+.btn-mini:hover{background:var(--sky-l)}
+.btn-mini.hapus{color:#9E2B20;border-color:#F3C6C0}
+.btn-mini.hapus:hover{background:#FDECEA}
+
+.f{margin-bottom:12px}
+label{display:block;font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:5px}
+input,select,textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:11px;font:inherit;font-size:.95rem;color:var(--ink);background:#fff;transition:border-color .15s,box-shadow .15s}
+textarea{resize:vertical;min-height:90px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 4px rgba(77,169,235,.18)}
+input:disabled{background:var(--sky-xl);color:var(--muted)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.row2{grid-template-columns:1fr}}
+
+.login{max-width:460px;margin:32px auto}
+.login .brand{justify-content:center;margin-bottom:16px}
+.msg{margin-top:10px;font-size:.86rem;min-height:1.2em;color:var(--muted)}
+.msg.err{color:#a02b1f}
+.msg.ok{color:#1e7a44}
+
+.tabs{display:flex;gap:5px;overflow-x:auto;padding:5px;background:#fff;border:1px solid var(--line);border-radius:999px;margin-bottom:18px;box-shadow:var(--shadow);scrollbar-width:thin}
+.tab{border:0;background:transparent;padding:9px 15px;border-radius:999px;font-weight:600;font-size:.86rem;color:var(--muted);cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.tab:hover{background:var(--sky-l);color:var(--sky-d)}
+.tab.on{background:var(--navy);color:#fff}
+.badge{background:var(--gold);color:#3a2a00;border-radius:999px;font-size:.7rem;padding:1px 7px;font-weight:700}
+
+.aksi{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.baris{display:grid;grid-template-columns:1.2fr 1fr 1.2fr auto;gap:8px;align-items:start;margin-bottom:8px}
+.baris.anggota{grid-template-columns:1.2fr 92px 1.3fr 1.2fr auto}
+.baris .f{margin:0}
+@media(max-width:760px){
+  .baris,.baris.anggota{grid-template-columns:1fr 1fr;gap:8px;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--sky-xl)}
+  .baris .ikon-hapus{justify-self:end}
+  .foto-aksi .btn-mini{min-height:44px;padding:6px 16px}
+}
+@media(min-width:481px) and (max-width:760px){.baris .ikon-hapus{grid-column:2}}
+@media(max-width:480px){.baris,.baris.anggota{grid-template-columns:1fr}.baris .ikon-hapus{grid-column:auto;justify-self:start}}
+.ikon-hapus{width:38px;height:38px;border-radius:10px;border:1px solid #F3C6C0;background:#FDECEA;color:#9E2B20;font-size:20px;line-height:1;cursor:pointer;display:grid;place-items:center;flex:none}
+.ikon-hapus:hover{background:#FBDDD8}
+.foto-aksi{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+.foto-aksi .pratinjau{width:44px;height:44px;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#fff}
+
+.status-periode{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--sky-xl);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:12px 0;font-size:.86rem;color:var(--muted)}
+.status-periode b{color:var(--navy)}
+.tag-aktif{background:var(--gold-l);color:#6B4E0C;border-radius:999px;padding:1px 10px;font-size:.75rem;font-weight:700}
+
+.daftar-item{display:grid;gap:9px}
+.item{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:11px 14px;background:var(--sky-xl)}
+.item b{display:block;color:var(--navy);font-size:.92rem;overflow-wrap:anywhere}
+.item small{display:block;color:var(--muted);font-size:.78rem;overflow-wrap:anywhere}
+.item .aksi{margin:0;flex:none}
+@media(max-width:520px){.item{flex-direction:column}.item .aksi{width:100%}}
+.kosong{color:var(--muted);text-align:center;padding:20px;border:1px dashed var(--sky);border-radius:12px;font-size:.88rem}
+
+.pesan{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:12px 14px;background:#fff}
+.pesan.menunggu{border-left-color:var(--gold)}
+.pesan.tampil{border-left-color:#2E9E5B}
+.pesan.sembunyi{border-left-color:#B9C6D2}
+.pesan p{font-size:.9rem;color:#34495e;white-space:pre-wrap;overflow-wrap:anywhere;margin:7px 0 9px}
+.pesan-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.74rem;color:var(--muted)}
+.tag{border-radius:999px;padding:1px 9px;font-weight:700;background:var(--sky-l);color:var(--sky-d)}
+.tag.menunggu{background:var(--gold-l);color:#6B4E0C}
+.tag.tampil{background:#E4F6EB;color:#1e7a44}
+.tag.sembunyi{background:#EEF2F6;color:#54677A}
+.pesan-aksi{display:flex;flex-wrap:wrap;gap:6px}
+
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(16px);opacity:0;pointer-events:none;background:var(--navy);color:#fff;padding:12px 20px;border-radius:999px;font-size:.88rem;font-weight:600;transition:opacity .25s,transform .25s;z-index:100;max-width:calc(100vw - 32px);text-align:center;box-shadow:0 10px 30px rgba(8,28,48,.3)}
+.toast.on{opacity:1;transform:translateX(-50%)}
+.toast.err{background:#9E2B20}
+
+pre{background:var(--navy);color:#EAF5FD;border-radius:12px;padding:14px 16px;overflow-x:auto;font-size:.8rem;line-height:1.5;margin:10px 0}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.86em}
+ol.langkah{margin:10px 0 0 20px;font-size:.88rem;color:#34495e}
+ol.langkah li{margin-bottom:6px}
+</style>
+</head>
+<body>
+<a class="skip" href="#utama">Lewati ke isi</a>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html">
+      <span class="logo" aria-hidden="true">✝</span>
+      <span><strong>Kelola Situs</strong><small>Persekutuan SMKN 9 Semarang</small></span>
+    </a>
+    <div class="top-aksi">
+      <span class="masuk" id="masukSebagai" hidden></span>
+      <a class="btn btn-line" href="index.html">Lihat situs</a>
+      <button class="btn btn-line" id="keluar" type="button" hidden>Keluar</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="utama">
+
+  <!-- ================= LAYAR MASUK ================= -->
+  <section class="kartu login" id="layarMasuk">
+    <h1>Masuk pengurus</h1>
+    <p class="ket">Halaman ini untuk mengubah isi situs dan memeriksa kritik &amp; saran. Gunakan akun yang diberikan admin.</p>
+    <form id="formMasuk" novalidate>
+      <div class="f">
+        <label for="username">Username</label>
+        <input id="username" name="username" autocomplete="username" autocapitalize="none" maxlength="60" required>
+      </div>
+      <div class="f">
+        <label for="sandi">Sandi</label>
+        <input id="sandi" name="sandi" type="password" autocomplete="current-password" maxlength="100" required>
+      </div>
+      <button class="btn btn-gold" type="submit" id="tombolMasuk" style="width:100%">Masuk</button>
+      <p class="msg" id="masukMsg" role="status"></p>
+      <div class="note" id="bantuanSiapkan" hidden>
+        <p><b>Server masih memakai kode lama.</b> Versi terbaru menyiapkan Spreadsheet sendiri, jadi tidak perlu menjalankan fungsi apa pun. Perbarui sekali saja:</p>
+        <ol class="langkah">
+          <li>Buka <code>apps-script/Code.gs</code> di komputer → <code>Ctrl+A</code> → <code>Ctrl+C</code>.</li>
+          <li>Di editor Apps Script: <code>Ctrl+A</code> → <code>Delete</code> → <code>Ctrl+V</code> → <code>Ctrl+S</code>.</li>
+          <li><b>Deploy → Manage deployments → Edit → Version: New version → Deploy</b>.</li>
+          <li>Muat ulang halaman ini, lalu masuk lagi. Spreadsheet dibuat otomatis saat login pertama.</li>
+        </ol>
+        <p>Jangan mengetik ulang kode atau menyalinnya dari chat — spasi bisa hilang. Salin langsung dari berkas di komputer.</p>
+      </div>
+    </form>
+    <p class="note">Lupa sandi? Hubungi admin persekutuan. Jangan bagikan sandi ke siapa pun.</p>
+  </section>
+
+  <!-- ================= PESAN PENYIAPAN ================= -->
+  <section class="kartu login" id="layarSetup" hidden>
+    <h1>Server belum diatur</h1>
+    <p class="ket">Halaman admin membutuhkan backend Google Apps Script. Ikuti langkah ini sekali saja:</p>
+    <ol class="langkah">
+      <li>Buka <b>script.google.com</b> → New project.</li>
+      <li>Tempel isi <code>apps-script/Code.gs</code> ke file <code>Code.gs</code>.</li>
+      <li>Ganti username dan sandi pada <code>ADMIN_AWAL</code>, lalu jalankan fungsi <code>siapkan</code>.</li>
+      <li>Deploy → New deployment → Web app. Pilih <b>Execute as: Me</b> dan <b>Who has access: Anyone</b>.</li>
+      <li>Salin URL yang berakhiran <code>/exec</code>, lalu tempel di <code>api.js</code>:</li>
+    </ol>
+    <pre><code>const API_URL = "https://script.google.com/macros/s/.../exec";</code></pre>
+    <p class="note">Setelah itu unggah ulang <code>api.js</code> dan muat ulang halaman ini.</p>
+  </section>
+
+  <!-- ================= APLIKASI ================= -->
+  <section id="layarApp" hidden>
+    <div class="tabs" role="tablist" aria-label="Bagian pengelolaan">
+      <button class="tab" type="button" role="tab" data-tab="periode" aria-selected="true">Periode</button>
+      <button class="tab" type="button" role="tab" data-tab="acara" aria-selected="false">Acara</button>
+      <button class="tab" type="button" role="tab" data-tab="renungan" aria-selected="false">Renungan</button>
+      <button class="tab" type="button" role="tab" data-tab="galeri" aria-selected="false">Galeri</button>
+      <button class="tab" type="button" role="tab" data-tab="pesan" aria-selected="false">Kritik &amp; Saran <span class="badge" id="badgePesan" hidden></span></button>
+      <button class="tab" type="button" role="tab" data-tab="pengaturan" aria-selected="false">Pengaturan</button>
+      <button class="tab" type="button" role="tab" data-tab="akun" aria-selected="false">Akun</button>
+    </div>
+
+    <!-- ---------- PERIODE ---------- -->
+    <div class="panel" id="panel-periode" role="tabpanel">
+      <div class="kartu">
+        <h2>Periode kepengurusan</h2>
+        <p class="ket">Isi pembina, pengurus, dan anggota. Periode yang ditandai aktif menjadi pilihan utama di halaman Pengurus dan Anggota.</p>
+        <div class="row2">
+          <div class="f">
+            <label for="pilihPeriode">Pilih periode</label>
+            <select id="pilihPeriode"></select>
+          </div>
+          <div class="f">
+            <label for="periodeBaru">Periode baru</label>
+            <input id="periodeBaru" placeholder="2027/2028" inputmode="numeric" maxlength="9">
+          </div>
+        </div>
+        <button class="btn btn-line" type="button" id="buatPeriode">Buat / muat periode</button>
+        <div class="status-periode" id="statusPeriode"></div>
+        <div class="aksi">
+          <button class="btn btn-gold" type="button" id="simpanPeriode">Simpan periode</button>
+          <button class="btn btn-line" type="button" id="aktifkanPeriode">Jadikan aktif</button>
+          <button class="btn btn-hapus" type="button" id="hapusPeriode">Hapus periode</button>
+        </div>
+        <p class="note">Periode yang belum pernah disimpan tidak akan tampil di situs. Klik <b>Simpan periode</b> setelah mengisi.</p>
+        <p class="note"><b>Penting saat pertama kali dipakai:</b> selama server masih kosong, situs menampilkan data bawaan dari <code>data.js</code>. Begitu periode pertama disimpan, situs hanya memakai data dari server. Isi dulu semua periode yang ingin tetap tampil (termasuk anggota) sebelum menyimpan.</p>
+      </div>
+
+      <div class="kartu">
+        <h3>Pembina</h3>
+        <div id="daftarPembina"></div>
+        <button class="btn btn-line" type="button" data-tambah="pembina">Tambah pembina</button>
+      </div>
+
+      <div class="kartu">
+        <h3>Pengurus</h3>
+        <div id="daftarPengurus"></div>
+        <button class="btn btn-line" type="button" data-tambah="pengurus">Tambah pengurus</button>
+      </div>
+
+      <div class="kartu">
+        <h3>Anggota</h3>
+        <p class="note" style="margin:0 0 12px">Daftar anggota hanya tampil di halaman Anggota dan Arsip, bukan di beranda. Foto bisa dipilih langsung dari galeri HP (otomatis dikecilkan), atau tulis nama file/tautan gambar.</p>
+        <div id="daftarAnggota"></div>
+        <button class="btn btn-line" type="button" data-tambah="anggota">Tambah anggota</button>
+      </div>
+
+      <div class="kartu" id="kartuImpor">
+        <h3>Impor data bawaan situs</h3>
+        <p class="ket">Menyalin seluruh periode (pembina, pengurus, anggota) dari <code>data.js</code> ke server. Paling berguna sekali saja, saat pertama memasang, supaya tidak perlu mengetik ulang.</p>
+        <div class="status-periode" id="infoImpor"></div>
+        <button class="btn btn-line" type="button" id="imporBawaan">Impor data bawaan</button>
+        <p class="note">Periode dengan nama yang sama di server akan ditimpa. Acara, renungan, dan galeri hanya diisi bila tabnya masih kosong, jadi perubahan yang sudah dibuat tidak hilang.</p>
+      </div>
+    </div>
+
+    <!-- ---------- ACARA ---------- -->
+    <div class="panel" id="panel-acara" role="tabpanel" hidden>
+      <div class="kartu">
+        <h2>Acara</h2>
+        <p class="ket">Acara khusus di luar ibadah rutin. Ibadah rutin dihitung otomatis oleh situs.</p>
+        <form id="form-acara"></form>
+        <div class="aksi">
+          <button class="btn btn-gold" type="submit" form="form-acara" id="simpan-acara">Tambah</button>
+          <button class="btn btn-line" type="button" id="batal-acara" hidden>Batal</button>
+        </div>
+      </div>
+      <div class="kartu">
+        <h3>Daftar acara</h3>
+        <div class="daftar-item" id="daftar-acara"></div>
+      </div>
+    </div>
+
+    <!-- ---------- RENUNGAN ---------- -->
+    <div class="panel" id="panel-renungan" role="tabpanel" hidden>
+      <div class="kartu">
+        <h2>Renungan</h2>
+        <p class="ket">Renungan ditampilkan bergantian setiap hari. Isi minimal satu renungan agar bagian ini terisi.</p>
+        <form id="form-renungan"></form>
+        <div class="aksi">
+          <button class="btn btn-gold" type="submit" form="form-renungan" id="simpan-renungan">Tambah</button>
+          <button class="btn btn-line" type="button" id="batal-renungan" hidden>Batal</button>
+        </div>
+      </div>
+      <div class="kartu">
+        <h3>Daftar renungan</h3>
+        <div class="daftar-item" id="daftar-renungan"></div>
+      </div>
+    </div>
+
+    <!-- ---------- GALERI ---------- -->
+    <div class="panel" id="panel-galeri" role="tabpanel" hidden>
+      <div class="kartu">
+        <h2>Galeri</h2>
+        <p class="ket">Isi nama file foto (mis. <code>img/galeri/natal1.jpg</code>) atau tautan gambar. Foto tetap diunggah manual ke folder situs.</p>
+        <form id="form-galeri"></form>
+        <div class="aksi">
+          <button class="btn btn-gold" type="submit" form="form-galeri" id="simpan-galeri">Tambah</button>
+          <button class="btn btn-line" type="button" id="batal-galeri" hidden>Batal</button>
+        </div>
+      </div>
+      <div class="kartu">
+        <h3>Daftar foto</h3>
+        <div class="daftar-item" id="daftar-galeri"></div>
+      </div>
+    </div>
+
+    <!-- ---------- PESAN ---------- -->
+    <div class="panel" id="panel-pesan" role="tabpanel" hidden>
+      <div class="kartu">
+        <h2>Kritik &amp; saran</h2>
+        <p class="ket">Pesan masuk tanpa nama. Hanya pesan berstatus <b>tampil</b> yang muncul di beranda. Periksa dulu sebelum menampilkan.</p>
+        <div class="f" style="max-width:240px">
+          <label for="filterPesan">Tampilkan</label>
+          <select id="filterPesan">
+            <option value="semua">Semua pesan</option>
+            <option value="menunggu">Menunggu</option>
+            <option value="tampil">Tampil</option>
+            <option value="sembunyi">Disembunyikan</option>
+          </select>
+        </div>
+        <div class="daftar-item" id="daftarPesan"></div>
+      </div>
+    </div>
+
+    <!-- ---------- PENGATURAN ---------- -->
+    <div class="panel" id="panel-pengaturan" role="tabpanel" hidden>
+      <div class="kartu">
+        <h2>Kontak &amp; pengaturan</h2>
+        <p class="ket">Perubahan langsung dipakai di halaman utama: kontak, tautan WhatsApp, dan jawaban asisten virtual.</p>
+        <form id="formPengaturan"></form>
+        <div class="aksi">
+          <button class="btn btn-gold" type="submit" form="formPengaturan" id="simpanPengaturan">Simpan pengaturan</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- AKUN ---------- -->
+    <div class="panel" id="panel-akun" role="tabpanel" hidden>
+      <div class="kartu" id="kartuDaftarPengguna">
+        <h2>Akun pengurus</h2>
+        <p class="ket">Setiap pengurus punya username dan sandi sendiri. Hanya admin yang dapat menambah atau menghapus akun.</p>
+        <div class="daftar-item" id="daftarPengguna"></div>
+      </div>
+
+      <div class="kartu" id="kartuTambahPengguna">
+        <h3 id="judulFormPengguna">Tambah akun</h3>
+        <form id="formPengguna">
+          <div class="row2">
+            <div class="f">
+              <label for="penggunaUsername">Username</label>
+              <input id="penggunaUsername" maxlength="30" autocapitalize="none" placeholder="contoh: maria" required>
+            </div>
+            <div class="f">
+              <label for="penggunaNama">Nama lengkap</label>
+              <input id="penggunaNama" maxlength="120" placeholder="Contoh: Maria Putri" required>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="f">
+              <label for="penggunaPeran">Peran</label>
+              <select id="penggunaPeran">
+                <option value="pengurus">Pengurus</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <div class="f">
+              <label for="penggunaSandi">Sandi</label>
+              <input id="penggunaSandi" type="password" maxlength="100" autocomplete="new-password" placeholder="Minimal 6 huruf">
+            </div>
+          </div>
+          <label class="cek" for="penggunaAktif" style="display:flex;gap:8px;align-items:center;font-weight:500;color:#34495e;font-size:.85rem">
+            <input id="penggunaAktif" type="checkbox" checked style="width:18px;height:18px;flex:none;padding:0">
+            Akun aktif (bisa masuk)
+          </label>
+          <div class="aksi">
+            <button class="btn btn-gold" type="submit" id="simpanPengguna">Simpan akun</button>
+            <button class="btn btn-line" type="button" id="batalPengguna" hidden>Batal</button>
+          </div>
+          <p class="msg" id="msgPengguna" role="status"></p>
+        </form>
+      </div>
+
+      <div class="kartu">
+        <h3>Ganti sandi saya</h3>
+        <form id="formSandi">
+          <div class="row2">
+            <div class="f">
+              <label for="sandiLama">Sandi lama</label>
+              <input id="sandiLama" type="password" autocomplete="current-password" required>
+            </div>
+            <div class="f">
+              <label for="sandiBaru">Sandi baru</label>
+              <input id="sandiBaru" type="password" autocomplete="new-password" minlength="6" required>
+            </div>
+          </div>
+          <div class="f">
+            <label for="sandiUlang">Ulangi sandi baru</label>
+            <input id="sandiUlang" type="password" autocomplete="new-password" minlength="6" required>
+          </div>
+          <div class="aksi">
+            <button class="btn btn-blue" type="submit" id="tombolSandi">Ganti sandi</button>
+          </div>
+          <p class="msg" id="msgSandi" role="status"></p>
+        </form>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js?v=16"></script>
+<script src="api.js?v=16"></script>
+<script>
+'use strict';
+
+/* Cadangan: kalau data.js belum ter-upload, halaman tetap jalan. */
+if (typeof PERIODE === 'undefined') { window.PERIODE_BAWAAN = ''; window.PERIODE = {}; }
+
+/* ===================== UTIL ===================== */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s === undefined || s === null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KELAS = ['X', 'XI', 'XII'];
+const KUNCI_TOKEN = 'ps9-token';
+
+let TOKEN = '';
+try { TOKEN = sessionStorage.getItem(KUNCI_TOKEN) || ''; } catch (e) { TOKEN = ''; }
+
+let DATA = null;
+let tabAktif = 'periode';
+let editPeriode = null;
+let periodeKotor = false;
+let editId = { acara: '', renungan: '', galeri: '' };
+let editPengguna = '';
+let toastTimer = 0;
+
+function toast(teks, jenis) {
+  const t = $('#toast');
+  t.textContent = teks;
+  t.className = 'toast on' + (jenis === 'err' ? ' err' : '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.className = 'toast'; }, 3800);
+}
+
+function pesanMasuk(teks, jenis) {
+  const m = $('#masukMsg');
+  m.textContent = teks || '';
+  m.className = 'msg' + (jenis ? ' ' + jenis : '');
+}
+
+function simpanToken(t) {
+  TOKEN = t || '';
+  try {
+    if (TOKEN) sessionStorage.setItem(KUNCI_TOKEN, TOKEN);
+    else sessionStorage.removeItem(KUNCI_TOKEN);
+  } catch (e) { /* penyimpanan tidak tersedia */ }
+}
+
+function keluarLokal() {
+  simpanToken('');
+  DATA = null;
+  editPeriode = null;
+  editPengguna = '';
+  $('#layarApp').hidden = true;
+  $('#keluar').hidden = true;
+  $('#masukSebagai').hidden = true;
+  $('#layarMasuk').hidden = false;
+  $('#layarSetup').hidden = true;
+}
+
+/* ===================== TAMPILAN AWAL ===================== */
+function tampilSetup() {
+  $('#layarMasuk').hidden = true;
+  $('#layarSetup').hidden = false;
+  $('#layarApp').hidden = true;
+  $('#keluar').hidden = true;
+  $('#masukSebagai').hidden = true;
+}
+
+function tampilMasuk(teks, jenis) {
+  $('#layarSetup').hidden = true;
+  $('#layarMasuk').hidden = false;
+  $('#layarApp').hidden = true;
+  $('#keluar').hidden = true;
+  $('#masukSebagai').hidden = true;
+  pesanMasuk(teks || '', jenis || '');
+  if (!$('#username').value) $('#username').focus();
+}
+
+function tampilApp() {
+  $('#layarMasuk').hidden = true;
+  $('#layarSetup').hidden = true;
+  $('#layarApp').hidden = false;
+  $('#keluar').hidden = false;
+  $('#masukSebagai').hidden = false;
+  $('#masukSebagai').innerHTML = 'Masuk sebagai <b>' + esc(DATA.nama || DATA.username || '') + '</b>' +
+    (DATA.peran === 'admin' ? ' · admin' : '');
+  renderSemua();
+  pilihTab(tabAktif);
+}
+
+/* ===================== KIRIM KE SERVER ===================== */
+async function simpanAksi(aksi, data, setelah, sukses) {
+  try {
+    const r = await apiPost(Object.assign({ aksi: aksi, token: TOKEN }, data || {}));
+    if (r && r.konten) DATA = r.konten;
+    if (sukses) toast(sukses, 'ok');
+    if (setelah) setelah(r);
+    return r;
+  } catch (err) {
+    const pesan = (err && err.message) ? err.message : 'Gagal menyimpan.';
+    if (/sesi berakhir|silakan masuk/i.test(pesan)) {
+      keluarLokal();
+      tampilMasuk(pesan, 'err');
+    } else {
+      toast(pesan, 'err');
+    }
+    return null;
+  }
+}
+
+/* ===================== MASUK / KELUAR ===================== */
+$('#formMasuk').addEventListener('submit', async e => {
+  e.preventDefault();
+  const username = $('#username').value.trim().toLowerCase();
+  const sandi = $('#sandi').value;
+  if (!username || !sandi) { pesanMasuk('Username dan sandi wajib diisi.', 'err'); return; }
+
+  const btn = $('#tombolMasuk');
+  btn.disabled = true;
+  $('#bantuanSiapkan').hidden = true;
+  pesanMasuk('Memeriksa…');
+  try {
+    const r = await apiPost({ aksi: 'login', username: username, sandi: sandi }, 30000);
+    simpanToken(r.token);
+    const a = await apiPost({ aksi: 'admin', token: TOKEN }, 15000);
+    DATA = a;
+    $('#sandi').value = '';
+    pesanMasuk('');
+    tampilApp();
+    toast('Selamat datang, ' + (DATA.nama || username) + '.');
+  } catch (err) {
+    simpanToken('');
+    const teks = (err && err.message) ? err.message : 'Gagal masuk. Coba lagi.';
+    pesanMasuk(teks, 'err');
+    $('#bantuanSiapkan').hidden = !/belum disiapkan/i.test(teks);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+$('#keluar').addEventListener('click', async () => {
+  const t = TOKEN;
+  keluarLokal();
+  if (t) {
+    try { await apiPost({ aksi: 'keluar', token: t }, 8000); } catch (e) {}
+  }
+  toast('Sudah keluar.');
+});
+
+/* ===================== TAB ===================== */
+function pilihTab(nama) {
+  tabAktif = nama;
+  $$('.tab').forEach(b => {
+    const on = b.dataset.tab === nama;
+    b.classList.toggle('on', on);
+    b.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  $$('.panel').forEach(p => { p.hidden = p.id !== 'panel-' + nama; });
+  if (nama === 'akun') renderAkun();
+  if (nama === 'pesan') renderPesanPanel();
+}
+
+$$('.tab').forEach(b => b.addEventListener('click', () => pilihTab(b.dataset.tab)));
+
+/* ===================== PERIODE ===================== */
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+function kosongPeriode(nama) {
+  return { nama: nama || '', pembina: [], pengurus: [], anggota: [] };
+}
+
+function ambilPeriode(nama) {
+  const d = (DATA && DATA.periode && DATA.periode[nama]) || {};
+  return {
+    nama: nama,
+    pembina: (d.pembina || []).map(x => ({ nama: x.nama || '', jabatan: x.jabatan || '', foto: x.foto || '' })),
+    pengurus: (d.pengurus || []).map(x => ({ nama: x.nama || '', jabatan: x.jabatan || '', foto: x.foto || '' })),
+    anggota: (d.anggota || []).map(x => ({ nama: x.nama || '', kelas: x.kelas || '', jurusan: x.jurusan || '', foto: x.foto || '' }))
+  };
+}
+
+function kotakFoto(label, placeholder, nilai) {
+  const f = esc(nilai || '');
+  const pratinjau = /^data:image\//.test(String(nilai || '').trim())
+    ? `<img class="pratinjau" src="${f}" alt="Pratinjau foto">` : '';
+  return `<div class="f">
+      <input data-k="foto" aria-label="${esc(label)}" placeholder="${esc(placeholder)}" value="${f}">
+      <div class="foto-aksi">
+        <button type="button" class="btn-mini" data-buka-galeri>Pilih dari galeri</button>
+        <input type="file" accept="image/*" data-foto-pilih hidden aria-label="Pilih foto dari galeri">
+        ${pratinjau}
+      </div>
+    </div>`;
+}
+
+function barisOrang(jenis, x, i) {
+  const n = esc(x.nama || '');
+  if (jenis === 'anggota') {
+    const k = esc(x.kelas || '');
+    return `<div class="baris anggota" data-jenis="anggota" data-i="${i}">
+      <div class="f"><input data-k="nama" aria-label="Nama anggota" placeholder="Nama lengkap" value="${n}"></div>
+      <div class="f"><select data-k="kelas" aria-label="Kelas"><option value="">Kelas</option>${KELAS.map(z => `<option${z === k ? ' selected' : ''}>${z}</option>`).join('')}</select></div>
+      <div class="f"><input data-k="jurusan" aria-label="Jurusan" placeholder="Jurusan" value="${esc(x.jurusan || '')}"></div>
+      ${kotakFoto('Foto anggota', 'img/anggota/nama.jpg', x.foto)}
+      <button type="button" class="ikon-hapus" data-hapus-baris aria-label="Hapus baris">×</button>
+    </div>`;
+  }
+  return `<div class="baris" data-jenis="${jenis}" data-i="${i}">
+    <div class="f"><input data-k="nama" aria-label="Nama" placeholder="Nama lengkap" value="${n}"></div>
+    <div class="f"><input data-k="jabatan" aria-label="Jabatan" placeholder="Jabatan" value="${esc(x.jabatan || '')}"></div>
+    ${kotakFoto('Foto', 'img/pengurus/nama.jpg', x.foto)}
+    <button type="button" class="ikon-hapus" data-hapus-baris aria-label="Hapus baris">×</button>
+  </div>`;
+}
+
+/* Batas aman sel Google Sheets adalah 50.000 karakter. Data URL foto dijaga
+   di bawah itu agar tidak terpotong saat disimpan. */
+const BATAS_FOTO = 44000;
+
+/* Gambar dari galeri dikecilkan dulu (maks. 400px, JPEG) supaya hemat penyimpanan. */
+function kecilkanGambar(file) {
+  return new Promise((selesai, gagal) => {
+    const fr = new FileReader();
+    fr.onerror = () => gagal(new Error('Berkas gambar tidak bisa dibaca.'));
+    fr.onload = () => {
+      const img = new Image();
+      img.onerror = () => gagal(new Error('Format gambar tidak didukung peramban. Coba foto lain.'));
+      img.onload = () => {
+        let hasil = '';
+        for (const sisi of [400, 320, 240]) {
+          const skala = Math.min(1, sisi / Math.max(img.width, img.height));
+          const c = document.createElement('canvas');
+          c.width = Math.max(1, Math.round(img.width * skala));
+          c.height = Math.max(1, Math.round(img.height * skala));
+          /* JPEG tidak punya transparansi — isi latar putih dulu agar
+             bagian bening tidak menjadi hitam. */
+          const ctx = c.getContext('2d');
+          ctx.fillStyle = '#fff';
+          ctx.fillRect(0, 0, c.width, c.height);
+          ctx.drawImage(img, 0, 0, c.width, c.height);
+          for (const mutu of [0.8, 0.7, 0.6, 0.5]) {
+            hasil = c.toDataURL('image/jpeg', mutu);
+            if (hasil.length <= BATAS_FOTO) break;
+          }
+          if (hasil.length <= BATAS_FOTO) break;
+        }
+        if (hasil.length > BATAS_FOTO) gagal(new Error('Foto masih terlalu besar. Coba foto lain.'));
+        else selesai(hasil);
+      };
+      img.src = fr.result;
+    };
+    fr.readAsDataURL(file);
+  });
+}
+
+function pratinjauBaris(baris) {
+  const kotak = baris.querySelector('[data-k="foto"]');
+  const wadah = kotak && kotak.parentElement.querySelector('.foto-aksi');
+  if (!wadah) return;
+  const nilai = String(kotak.value || '').trim();
+  let img = wadah.querySelector('img.pratinjau');
+  if (/^data:image\//.test(nilai)) {
+    if (!img) { img = new Image(); img.className = 'pratinjau'; img.alt = 'Pratinjau foto'; wadah.appendChild(img); }
+    img.src = nilai;
+  } else if (img) {
+    img.remove();
+  }
+}
+
+function gambarSatuJenis(jenis) {
+  if (!editPeriode) return;
+  const wadah = $('#daftar' + cap(jenis));
+  const arr = editPeriode[jenis] || [];
+  const kosong = jenis === 'pembina' ? 'Belum ada pembina.' : jenis === 'pengurus' ? 'Belum ada pengurus.' : 'Belum ada anggota.';
+  wadah.innerHTML = arr.map((x, i) => barisOrang(jenis, x, i)).join('') ||
+    `<p class="kosong">${kosong}</p>`;
+  wadah.dataset.periode = editPeriode.nama || '';
+}
+
+function gambarBarisPeriode() {
+  if (!editPeriode) return;
+  ['pembina', 'pengurus', 'anggota'].forEach(gambarSatuJenis);
+}
+
+function renderPeriodePanel() {
+  if (!DATA) return;
+  const kunci = Object.keys(DATA.periode || {}).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+
+  if (!editPeriode) {
+    const awal = (DATA.periodeAktif && DATA.periode[DATA.periodeAktif]) ? DATA.periodeAktif : (kunci[0] || '');
+    editPeriode = awal ? ambilPeriode(awal) : kosongPeriode('');
+  }
+
+  const opsi = kunci.slice();
+  if (editPeriode.nama && !opsi.includes(editPeriode.nama)) opsi.push(editPeriode.nama);
+  opsi.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+
+  $('#pilihPeriode').innerHTML = opsi.length
+    ? opsi.map(p => `<option value="${esc(p)}"${p === editPeriode.nama ? ' selected' : ''}>${esc(p)}${p === DATA.periodeAktif ? ' — aktif' : ''}</option>`).join('')
+    : '<option value="">Belum ada periode</option>';
+
+  /* Tarik perubahan yang masih di layar (ketikan & foto) ke editPeriode
+     sebelum digambar ulang, supaya tidak hilang saat panel disegarkan. */
+  ['pembina', 'pengurus', 'anggota'].forEach(jenis => {
+    const wadah = $('#daftar' + cap(jenis));
+    if (wadah && wadah.dataset.periode === editPeriode.nama && wadah.querySelector('.baris')) sinkronJenis(jenis);
+  });
+
+  gambarBarisPeriode();
+
+  const aktif = DATA.periodeAktif;
+  $('#statusPeriode').innerHTML = editPeriode.nama
+    ? `Periode <b>${esc(editPeriode.nama)}</b> ${aktif === editPeriode.nama ? '<span class="tag-aktif">Aktif</span>' : '<span class="tag">Arsip</span>'}`
+      + (aktif && aktif !== editPeriode.nama ? ` · periode aktif sekarang: <b>${esc(aktif)}</b>` : '')
+    : 'Belum ada periode. Tulis nama periode baru di atas, lalu klik <b>Buat / muat periode</b>.';
+
+  $('#periodeBaru').value = '';
+  infoImpor();
+}
+
+/* ===================== IMPOR DATA BAWAAN (data.js) ===================== */
+function kunciBawaan() {
+  if (typeof PERIODE !== 'object' || !PERIODE) return [];
+  return Object.keys(PERIODE).filter(k => {
+    const d = PERIODE[k] || {};
+    return (d.pembina && d.pembina.length) || (d.pengurus && d.pengurus.length) || (d.anggota && d.anggota.length);
+  }).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+}
+
+function bersihOrang(arr, jenis) {
+  return (arr || []).filter(x => x && String(x.nama || '').trim()).map(x => {
+    const o = { nama: String(x.nama).trim() };
+    if (jenis === 'anggota') {
+      o.kelas = String(x.kelas || '').trim();
+      o.jurusan = String(x.jurusan || '').trim();
+      o.foto = String(x.foto || '').trim();
+    } else {
+      o.jabatan = String(x.jabatan || '').trim();
+      o.foto = String(x.foto || '').trim();
+    }
+    return o;
+  });
+}
+
+const bawaanAcara = () => (typeof ACARA !== 'undefined' && Array.isArray(ACARA) ? ACARA : [])
+  .map(a => ({ tanggal: String(a.tanggal || '').trim(), judul: String(a.judul || '').trim(), jam: String(a.jam || '').trim(), lokasi: String(a.lokasi || '').trim() }))
+  .filter(a => a.tanggal && a.judul);
+
+const bawaanRenungan = () => (typeof RENUNGAN !== 'undefined' && Array.isArray(RENUNGAN) ? RENUNGAN : [])
+  .map(r => ({ ref: String(r.ref || '').trim(), ayat: String(r.ayat || '').trim(), isi: String(r.isi || '').trim(), doa: String(r.doa || '').trim() }))
+  .filter(r => r.ref && r.ayat);
+
+const bawaanGaleri = () => (typeof GALERI !== 'undefined' && Array.isArray(GALERI) ? GALERI : [])
+  .map(g => ({ src: String(g.src || '').trim(), caption: String(g.caption || '').trim() }))
+  .filter(g => g.src);
+
+function infoImpor() {
+  const el = $('#infoImpor');
+  if (!el) return;
+  const kunci = kunciBawaan();
+  const tombol = $('#imporBawaan');
+  if (!kunci.length) {
+    el.innerHTML = 'Berkas <code>data.js</code> tidak berisi periode. Tidak ada yang bisa diimpor.';
+    if (tombol) tombol.disabled = true;
+    return;
+  }
+  if (tombol) tombol.disabled = false;
+  const orang = kunci.reduce((n, k) => {
+    const d = PERIODE[k] || {};
+    return n + (d.pembina || []).length + (d.pengurus || []).length + (d.anggota || []).length;
+  }, 0);
+  const diServer = Object.keys((DATA && DATA.periode) || {}).length;
+  el.innerHTML = `data.js berisi <b>${kunci.length} periode</b> (${kunci.map(esc).join(', ')}) dengan <b>${orang} orang</b>, `
+    + `<b>${bawaanAcara().length} acara</b>, <b>${bawaanGaleri().length} foto galeri</b>, dan <b>${bawaanRenungan().length} renungan</b>. `
+    + (diServer
+      ? `Server sudah berisi <b>${diServer} periode</b>; impor menimpa periode bernama sama. Acara/renungan/galeri hanya diisi bila tabnya masih kosong.`
+      : 'Server masih kosong.');
+}
+
+$('#imporBawaan').addEventListener('click', async () => {
+  const kunci = kunciBawaan();
+  if (!kunci.length) { toast('data.js tidak berisi periode.', 'err'); return; }
+  const diServer = Object.keys((DATA && DATA.periode) || {}).length;
+  const tanya = diServer
+    ? `Server sudah berisi ${diServer} periode. Impor akan menimpa periode dengan nama yang sama. Lanjutkan?`
+    : `Salin ${kunci.length} periode, ${bawaanAcara().length} acara, ${bawaanGaleri().length} foto, dan ${bawaanRenungan().length} renungan dari data.js ke server sekarang?`;
+  if (!confirm(tanya)) return;
+
+  const periode = {};
+  kunci.forEach(nama => {
+    const d = PERIODE[nama] || {};
+    periode[nama] = {
+      pembina: bersihOrang(d.pembina, 'pembina'),
+      pengurus: bersihOrang(d.pengurus, 'pengurus'),
+      anggota: bersihOrang(d.anggota, 'anggota')
+    };
+  });
+
+  const btn = $('#imporBawaan');
+  btn.disabled = true;
+  const bawaan = (typeof PERIODE_BAWAAN === 'string') ? PERIODE_BAWAAN : '';
+  const r = await simpanAksi('impor_bawaan', {
+    periode: periode,
+    aktif: bawaan,
+    acara: bawaanAcara(),
+    renungan: bawaanRenungan(),
+    galeri: bawaanGaleri()
+  });
+  btn.disabled = false;
+  if (!r) return;
+
+  editPeriode = null;
+  periodeKotor = false;
+  renderPeriodePanel();
+  toast(r.pesan || `${kunci.length} periode berhasil disimpan ke server.`);
+});
+
+function muatPeriode(nama) {
+  if (!DATA || !nama) return;
+  if (periodeKotor && !confirm('Perubahan pada periode ini belum disimpan. Pindah periode dan buang perubahan?')) {
+    $('#pilihPeriode').value = editPeriode ? editPeriode.nama : '';
+    return;
+  }
+  editPeriode = ambilPeriode(nama);
+  periodeKotor = false;
+  renderPeriodePanel();
+}
+
+$('#pilihPeriode').addEventListener('change', e => muatPeriode(e.target.value));
+
+$('#buatPeriode').addEventListener('click', () => {
+  const nama = $('#periodeBaru').value.trim();
+  if (!/^\d{4}\/\d{4}$/.test(nama)) {
+    toast('Nama periode harus TAHUN/TAHUN, contoh 2027/2028.', 'err');
+    $('#periodeBaru').focus();
+    return;
+  }
+  if (periodeKotor && !confirm('Perubahan periode sebelumnya belum disimpan. Lanjutkan?')) return;
+  const ada = !!(DATA.periode && DATA.periode[nama]);
+  editPeriode = ada ? ambilPeriode(nama) : kosongPeriode(nama);
+  periodeKotor = !ada;
+  renderPeriodePanel();
+  toast(ada ? 'Periode ' + nama + ' dimuat.' : 'Isi data periode ' + nama + ', lalu klik Simpan periode.');
+});
+
+$('#panel-periode').addEventListener('input', e => {
+  if (e.target.closest('#daftarPembina, #daftarPengurus, #daftarAnggota')) periodeKotor = true;
+});
+
+/* Tombol "Pilih dari galeri" membuka pemilih gambar bawaan HP. */
+$('#panel-periode').addEventListener('click', e => {
+  const galeri = e.target.closest('[data-buka-galeri]');
+  if (!galeri) return;
+  const pilih = galeri.parentElement.querySelector('[data-foto-pilih]');
+  if (pilih) pilih.click();
+});
+
+/* Gambar yang dipilih dikecilkan lalu dimasukkan ke kolom foto. */
+$('#panel-periode').addEventListener('change', async e => {
+  const pilih = e.target.closest('[data-foto-pilih]');
+  if (!pilih || !pilih.files || !pilih.files[0]) return;
+  const baris = pilih.closest('.baris');
+  const kotak = baris && baris.querySelector('[data-k="foto"]');
+  if (!kotak) return;
+  toast('Memproses foto…');
+  try {
+    kotak.value = await kecilkanGambar(pilih.files[0]);
+    pratinjauBaris(baris);
+    periodeKotor = true;
+    toast('Foto siap. Jangan lupa klik Simpan periode.');
+  } catch (err) {
+    toast(err.message || 'Foto gagal diproses.', 'err');
+  }
+  pilih.value = '';
+});
+
+$('#panel-periode').addEventListener('click', e => {
+  const tambah = e.target.closest('[data-tambah]');
+  if (tambah) {
+    if (!editPeriode) editPeriode = kosongPeriode('');
+    const jenis = tambah.dataset.tambah;
+    sinkronJenis(jenis);
+    editPeriode[jenis].push(jenis === 'anggota'
+      ? { nama: '', kelas: '', jurusan: '', foto: '' }
+      : { nama: '', jabatan: '', foto: '' });
+    periodeKotor = true;
+    gambarSatuJenis(jenis);
+    const wadah = $('#daftar' + cap(jenis));
+    const input = wadah.querySelector('.baris:last-child input[data-k="nama"]');
+    if (input) input.focus();
+    return;
+  }
+  const hapus = e.target.closest('[data-hapus-baris]');
+  if (hapus) {
+    const baris = hapus.closest('.baris');
+    const jenis = baris.dataset.jenis;
+    const i = Number(baris.dataset.i);
+    if (!editPeriode || !editPeriode[jenis]) return;
+    sinkronJenis(jenis);
+    editPeriode[jenis].splice(i, 1);
+    periodeKotor = true;
+    gambarSatuJenis(jenis);
+  }
+});
+
+function sinkronJenis(jenis) {
+  if (!editPeriode) return;
+  const rows = $$('#daftar' + cap(jenis) + ' .baris');
+  if (!rows.length) return;
+  editPeriode[jenis] = bacaBarisMentah(jenis);
+}
+
+function bacaBarisMentah(jenis) {
+  return $$('#daftar' + cap(jenis) + ' .baris').map(b => {
+    const v = k => {
+      const el = b.querySelector('[data-k="' + k + '"]');
+      return el ? String(el.value || '').trim() : '';
+    };
+    const o = { nama: v('nama') };
+    if (jenis === 'anggota') {
+      o.kelas = v('kelas');
+      o.jurusan = v('jurusan');
+      o.foto = v('foto');
+    } else {
+      o.jabatan = v('jabatan');
+      o.foto = v('foto');
+    }
+    return o;
+  });
+}
+
+function bacaBaris(jenis) {
+  return bacaBarisMentah(jenis).filter(o => o.nama);
+}
+
+$('#simpanPeriode').addEventListener('click', async () => {
+  if (!editPeriode) return;
+  const nama = String(editPeriode.nama || '').trim();
+  if (!/^\d{4}\/\d{4}$/.test(nama)) {
+    toast('Nama periode harus TAHUN/TAHUN, contoh 2027/2028.', 'err');
+    return;
+  }
+  const data = {
+    periode: nama,
+    pembina: bacaBaris('pembina'),
+    pengurus: bacaBaris('pengurus'),
+    anggota: bacaBaris('anggota')
+  };
+  const btn = $('#simpanPeriode');
+  btn.disabled = true;
+  const r = await simpanAksi('simpan_periode', data, () => {
+    editPeriode = ambilPeriode(nama);
+    periodeKotor = false;
+    renderPeriodePanel();
+  }, 'Periode ' + nama + ' disimpan.');
+  btn.disabled = false;
+  if (!r) return;
+});
+
+$('#aktifkanPeriode').addEventListener('click', async () => {
+  if (!editPeriode || !editPeriode.nama) return;
+  const nama = editPeriode.nama;
+  if (!DATA.periode || !DATA.periode[nama]) {
+    toast('Simpan periode ini dulu sebelum dijadikan aktif.', 'err');
+    return;
+  }
+  await simpanAksi('set_aktif', { periode: nama }, () => renderPeriodePanel(), 'Periode aktif: ' + nama + '.');
+});
+
+$('#hapusPeriode').addEventListener('click', async () => {
+  if (!editPeriode || !editPeriode.nama) return;
+  const nama = editPeriode.nama;
+  if (!DATA.periode || !DATA.periode[nama]) { toast('Periode ini belum tersimpan.', 'err'); return; }
+  if (!confirm('Hapus periode ' + nama + ' beserta pembina, pengurus, dan anggotanya? Tindakan ini tidak bisa dibatalkan.')) return;
+  await simpanAksi('hapus_periode', { periode: nama }, () => {
+    editPeriode = null;
+    periodeKotor = false;
+    renderPeriodePanel();
+  }, 'Periode ' + nama + ' dihapus.');
+});
+
+/* ===================== ACARA / RENUNGAN / GALERI ===================== */
+const BAGIAN = {
+  acara: {
+    kolom: [
+      { k: 'tanggal', l: 'Tanggal', t: 'date', wajib: true },
+      { k: 'judul', l: 'Nama acara', t: 'text', wajib: true, ph: 'Persekutuan Gabungan Sekota' },
+      { k: 'jam', l: 'Jam', t: 'text', ph: '08.00 WIB' },
+      { k: 'lokasi', l: 'Lokasi', t: 'text', ph: 'Aula sekolah' }
+    ],
+    judul: d => d.judul || '(tanpa nama)',
+    meta: d => [d.tanggal, d.jam, d.lokasi].filter(Boolean).join(' · ')
+  },
+  renungan: {
+    kolom: [
+      { k: 'ref', l: 'Referensi', t: 'text', wajib: true, ph: 'Mazmur 11:7' },
+      { k: 'ayat', l: 'Ayat', t: 'textarea', rows: 3, wajib: true, ph: 'Tulis ayat firman…' },
+      { k: 'isi', l: 'Isi renungan', t: 'textarea', rows: 5, wajib: true, ph: 'Tulis renungan singkat…' },
+      { k: 'doa', l: 'Doa (opsional)', t: 'textarea', rows: 2, ph: 'Tulis pokok doa…' }
+    ],
+    judul: d => d.ref || '(tanpa referensi)',
+    meta: d => d.ayat ? d.ayat.slice(0, 90) + (d.ayat.length > 90 ? '…' : '') : ''
+  },
+  galeri: {
+    kolom: [
+      { k: 'src', l: 'File atau URL foto', t: 'text', wajib: true, ph: 'img/galeri/nama.jpg' },
+      { k: 'caption', l: 'Keterangan', t: 'text', ph: 'Doa Pagi' }
+    ],
+    judul: d => d.caption || d.src || '(tanpa keterangan)',
+    meta: d => d.src || ''
+  }
+};
+
+function renderFormItem(bagian) {
+  const cfg = BAGIAN[bagian];
+  const item = ((DATA && DATA[bagian]) || []).find(x => String(x.id) === String(editId[bagian])) || {};
+  $('#form-' + bagian).innerHTML = cfg.kolom.map(k => {
+    const id = 'f-' + bagian + '-' + k.k;
+    const v = item[k.k] === undefined || item[k.k] === null ? '' : String(item[k.k]);
+    if (k.t === 'textarea') {
+      return `<div class="f"><label for="${id}">${esc(k.l)}</label><textarea id="${id}" rows="${k.rows || 4}" placeholder="${esc(k.ph || '')}">${esc(v)}</textarea></div>`;
+    }
+    return `<div class="f"><label for="${id}">${esc(k.l)}</label><input id="${id}" type="${k.t || 'text'}" value="${esc(v)}" placeholder="${esc(k.ph || '')}"></div>`;
+  }).join('');
+  const tombol = $('#simpan-' + bagian);
+  if (tombol) tombol.textContent = editId[bagian] ? 'Perbarui' : 'Tambah';
+  const batal = $('#batal-' + bagian);
+  if (batal) batal.hidden = !editId[bagian];
+}
+
+function renderDaftarItem(bagian) {
+  const cfg = BAGIAN[bagian];
+  const arr = (DATA && DATA[bagian]) || [];
+  const box = $('#daftar-' + bagian);
+  if (!arr.length) { box.innerHTML = '<p class="kosong">Belum ada data.</p>'; return; }
+  box.innerHTML = arr.map(x => {
+    const meta = cfg.meta(x);
+    return `<div class="item">
+      <div><b>${esc(cfg.judul(x))}</b>${meta ? `<small>${esc(meta)}</small>` : ''}</div>
+      <div class="aksi">
+        <button class="btn-mini" type="button" data-edit="${esc(x.id)}">Ubah</button>
+        <button class="btn-mini hapus" type="button" data-hapus="${esc(x.id)}">Hapus</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderItemPanel(bagian) {
+  renderFormItem(bagian);
+  renderDaftarItem(bagian);
+}
+
+async function simpanItem(bagian) {
+  const cfg = BAGIAN[bagian];
+  const data = {};
+  cfg.kolom.forEach(k => {
+    const el = $('#f-' + bagian + '-' + k.k);
+    data[k.k] = el ? String(el.value || '').trim() : '';
+  });
+  const kurang = cfg.kolom.filter(k => k.wajib && !data[k.k]);
+  if (kurang.length) {
+    toast('Isi dulu: ' + kurang.map(k => k.l.toLowerCase()).join(', ') + '.', 'err');
+    const el = $('#f-' + bagian + '-' + kurang[0].k);
+    if (el) el.focus();
+    return;
+  }
+  const id = editId[bagian] || '';
+  const btn = $('#simpan-' + bagian);
+  if (btn) btn.disabled = true;
+  await simpanAksi('simpan_item', { bagian: bagian, id: id, data: data }, () => {
+    editId[bagian] = '';
+    renderItemPanel(bagian);
+  }, id ? 'Perubahan disimpan.' : 'Data ditambahkan.');
+  if (btn) btn.disabled = false;
+}
+
+Object.keys(BAGIAN).forEach(bagian => {
+  $('#form-' + bagian).addEventListener('submit', e => { e.preventDefault(); simpanItem(bagian); });
+  $('#batal-' + bagian).addEventListener('click', () => {
+    editId[bagian] = '';
+    renderItemPanel(bagian);
+  });
+  $('#daftar-' + bagian).addEventListener('click', async e => {
+    const ubah = e.target.closest('[data-edit]');
+    if (ubah) {
+      editId[bagian] = ubah.dataset.edit;
+      renderItemPanel(bagian);
+      $('#form-' + bagian).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    const hapus = e.target.closest('[data-hapus]');
+    if (hapus) {
+      if (!confirm('Hapus data ini?')) return;
+      const id = hapus.dataset.hapus;
+      await simpanAksi('hapus_item', { bagian: bagian, id: id }, () => {
+        if (editId[bagian] === id) editId[bagian] = '';
+        renderItemPanel(bagian);
+      }, 'Data dihapus.');
+    }
+  });
+});
+
+/* ===================== PESAN ===================== */
+function renderPesanPanel() {
+  if (!DATA) return;
+  const filter = $('#filterPesan').value || 'semua';
+  const semua = DATA.pesan || [];
+  const list = filter === 'semua' ? semua : semua.filter(p => String(p.status || 'menunggu') === filter);
+
+  const n = semua.filter(p => String(p.status || 'menunggu') === 'menunggu').length;
+  const badge = $('#badgePesan');
+  badge.hidden = !n;
+  badge.textContent = n > 99 ? '99+' : String(n);
+
+  const box = $('#daftarPesan');
+  if (!list.length) { box.innerHTML = '<p class="kosong">Tidak ada pesan pada filter ini.</p>'; return; }
+
+  box.innerHTML = list.map(p => {
+    const status = String(p.status || 'menunggu');
+    const label = status === 'tampil' ? 'Tampil' : status === 'sembunyi' ? 'Disembunyikan' : 'Menunggu';
+    return `<article class="pesan ${esc(status)}">
+      <div class="pesan-meta">
+        <span class="tag ${esc(status)}">${label}</span>
+        <span>${esc(p.kategori || 'Umum')}</span>
+        <span>${esc(typeof tanggalPesan === 'function' ? tanggalPesan(p.waktu) : (p.waktu || ''))}</span>
+      </div>
+      <p>${esc(p.pesan || '')}</p>
+      <div class="pesan-aksi">
+        <button class="btn-mini" type="button" data-id="${esc(p.id)}" data-status="tampil"${status === 'tampil' ? ' disabled' : ''}>Tampilkan</button>
+        <button class="btn-mini" type="button" data-id="${esc(p.id)}" data-status="sembunyi"${status === 'sembunyi' ? ' disabled' : ''}>Sembunyikan</button>
+        <button class="btn-mini hapus" type="button" data-id="${esc(p.id)}" data-hapus-pesan>Hapus</button>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+$('#filterPesan').addEventListener('change', renderPesanPanel);
+
+$('#daftarPesan').addEventListener('click', async e => {
+  const hapus = e.target.closest('[data-hapus-pesan]');
+  if (hapus) {
+    if (!confirm('Hapus pesan ini secara permanen?')) return;
+    await simpanAksi('hapus_pesan', { id: hapus.dataset.id }, () => renderPesanPanel(), 'Pesan dihapus.');
+    return;
+  }
+  const status = e.target.closest('[data-status]');
+  if (status) {
+    await simpanAksi('moderasi', { id: status.dataset.id, status: status.dataset.status }, () => renderPesanPanel(),
+      status.dataset.status === 'tampil' ? 'Pesan ditampilkan di beranda.' : 'Pesan disembunyikan.');
+  }
+});
+
+/* ===================== PENGATURAN ===================== */
+const PENGATURAN = [
+  ['tahun', 'Tahun berdiri', 'text', '2013'],
+  ['wa', 'Nomor WhatsApp (format 62…)', 'text', '6281234567890'],
+  ['waTampil', 'Tampilan nomor WhatsApp', 'text', '081234567890'],
+  ['instagram', 'Instagram (tanpa @)', 'text', 'm.i.c_9'],
+  ['email', 'Email', 'email', 'nama@email.com'],
+  ['lokasi', 'Sekretariat', 'text', 'Ruang Persekutuan, SMKN 9 Semarang'],
+  ['ibadahRutin', 'Ibadah rutin (teks lengkap)', 'text', 'Setiap Jumat, pukul 12.00 WIB, di Pos sekolah']
+];
+
+function renderPengaturanPanel() {
+  if (!DATA) return;
+  const p = DATA.pengaturan || {};
+  $('#formPengaturan').innerHTML = PENGATURAN.map(k => {
+    const id = 'set-' + k[0];
+    let v = p[k[0]] === undefined || p[k[0]] === null ? '' : String(p[k[0]]);
+    /* Sheets menyimpan "0878…" sebagai angka; kembalikan nol di depan. */
+    if (k[0] === 'waTampil' && /^8\d{8,12}$/.test(v.trim())) v = '0' + v.trim();
+    return `<div class="f"><label for="${id}">${esc(k[1])}</label><input id="${id}" type="${k[2]}" value="${esc(v)}" placeholder="${esc(k[3])}"></div>`;
+  }).join('');
+}
+
+$('#formPengaturan').addEventListener('submit', async e => {
+  e.preventDefault();
+  const data = {};
+  PENGATURAN.forEach(k => {
+    const el = $('#set-' + k[0]);
+    data[k[0]] = el ? String(el.value || '').trim() : '';
+  });
+  const btn = $('#simpanPengaturan');
+  btn.disabled = true;
+  await simpanAksi('simpan_pengaturan', { data: data }, () => renderPengaturanPanel(), 'Pengaturan disimpan.');
+  btn.disabled = false;
+});
+
+/* ===================== AKUN ===================== */
+function renderAkun() {
+  if (!DATA) return;
+  const admin = DATA.peran === 'admin';
+  $('#kartuDaftarPengguna').hidden = !admin;
+  $('#kartuTambahPengguna').hidden = !admin;
+
+  if (admin) {
+    const list = DATA.pengguna || [];
+    $('#daftarPengguna').innerHTML = list.length ? list.map(u => `
+      <div class="item">
+        <div>
+          <b>${esc(u.nama || u.username)}</b>
+          <small>@${esc(u.username)} · ${u.peran === 'admin' ? 'Admin' : 'Pengurus'} · ${u.aktif ? 'aktif' : 'nonaktif'}</small>
+        </div>
+        <div class="aksi">
+          <button class="btn-mini" type="button" data-edit-pengguna="${esc(u.username)}">Ubah</button>
+          <button class="btn-mini hapus" type="button" data-hapus-pengguna="${esc(u.username)}">Hapus</button>
+        </div>
+      </div>`).join('') : '<p class="kosong">Belum ada akun.</p>';
+  }
+
+  if (!editPengguna) {
+    $('#judulFormPengguna').textContent = 'Tambah akun';
+    $('#penggunaUsername').disabled = false;
+    $('#penggunaUsername').value = '';
+    $('#penggunaNama').value = '';
+    $('#penggunaPeran').value = 'pengurus';
+    $('#penggunaSandi').value = '';
+    $('#penggunaSandi').placeholder = 'Minimal 6 huruf';
+    $('#penggunaAktif').checked = true;
+    $('#batalPengguna').hidden = true;
+  }
+}
+
+function isiFormPengguna(username) {
+  const u = (DATA.pengguna || []).find(x => String(x.username) === String(username));
+  if (!u) return;
+  editPengguna = u.username;
+  $('#judulFormPengguna').textContent = 'Ubah akun: ' + u.username;
+  $('#penggunaUsername').value = u.username;
+  $('#penggunaUsername').disabled = true;
+  $('#penggunaNama').value = u.nama || '';
+  $('#penggunaPeran').value = u.peran === 'admin' ? 'admin' : 'pengurus';
+  $('#penggunaSandi').value = '';
+  $('#penggunaSandi').placeholder = 'Kosongkan bila tidak diganti';
+  $('#penggunaAktif').checked = !!u.aktif;
+  $('#batalPengguna').hidden = false;
+  $('#formPengguna').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+$('#daftarPengguna').addEventListener('click', async e => {
+  const ubah = e.target.closest('[data-edit-pengguna]');
+  if (ubah) { isiFormPengguna(ubah.dataset.editPengguna); return; }
+  const hapus = e.target.closest('[data-hapus-pengguna]');
+  if (hapus) {
+    const username = hapus.dataset.hapusPengguna;
+    if (!confirm('Hapus akun @' + username + '? Pengurus ini tidak bisa masuk lagi.')) return;
+    await simpanAksi('hapus_pengguna', { username: username }, () => {
+      if (editPengguna === username) { editPengguna = ''; renderAkun(); }
+      renderAkun();
+    }, 'Akun @' + username + ' dihapus.');
+  }
+});
+
+$('#batalPengguna').addEventListener('click', () => {
+  editPengguna = '';
+  renderAkun();
+});
+
+$('#formPengguna').addEventListener('submit', async e => {
+  e.preventDefault();
+  const msg = $('#msgPengguna');
+  msg.textContent = '';
+  msg.className = 'msg';
+  const username = $('#penggunaUsername').value.trim().toLowerCase();
+  const nama = $('#penggunaNama').value.trim();
+  const peran = $('#penggunaPeran').value;
+  const sandi = $('#penggunaSandi').value;
+  const aktif = $('#penggunaAktif').checked;
+
+  if (!/^[a-z0-9._-]{3,30}$/.test(username)) {
+    msg.textContent = 'Username 3–30 huruf kecil, angka, titik, garis bawah, atau strip.';
+    msg.className = 'msg err';
+    return;
+  }
+  if (!nama) {
+    msg.textContent = 'Nama lengkap wajib diisi.';
+    msg.className = 'msg err';
+    return;
+  }
+  if (!editPengguna && sandi.length < 6) {
+    msg.textContent = 'Sandi akun baru minimal 6 huruf.';
+    msg.className = 'msg err';
+    return;
+  }
+  if (editPengguna && sandi && sandi.length < 6) {
+    msg.textContent = 'Sandi baru minimal 6 huruf, atau kosongkan.';
+    msg.className = 'msg err';
+    return;
+  }
+
+  const btn = $('#simpanPengguna');
+  btn.disabled = true;
+  const r = await simpanAksi('simpan_pengguna', {
+    username: username, nama: nama, peran: peran, sandi: sandi, aktif: aktif
+  }, () => {
+    editPengguna = '';
+    renderAkun();
+  }, 'Akun @' + username + ' disimpan.');
+  btn.disabled = false;
+  if (!r) {
+    msg.textContent = 'Gagal menyimpan akun. Lihat pesan di bawah.';
+    msg.className = 'msg err';
+  }
+});
+
+$('#formSandi').addEventListener('submit', async e => {
+  e.preventDefault();
+  const msg = $('#msgSandi');
+  msg.textContent = '';
+  msg.className = 'msg';
+  const lama = $('#sandiLama').value;
+  const baru = $('#sandiBaru').value;
+  const ulang = $('#sandiUlang').value;
+
+  if (baru.length < 6) {
+    msg.textContent = 'Sandi baru minimal 6 huruf.';
+    msg.className = 'msg err';
+    return;
+  }
+  if (baru !== ulang) {
+    msg.textContent = 'Ulangi sandi baru dengan benar.';
+    msg.className = 'msg err';
+    return;
+  }
+
+  const btn = $('#tombolSandi');
+  btn.disabled = true;
+  const r = await simpanAksi('ganti_sandi', { lama: lama, baru: baru }, null, 'Sandi diperbarui.');
+  btn.disabled = false;
+  if (r) {
+    $('#formSandi').reset();
+    msg.textContent = 'Sandi berhasil diganti.';
+    msg.className = 'msg ok';
+  } else {
+    msg.textContent = 'Sandi gagal diganti. Periksa sandi lama.';
+    msg.className = 'msg err';
+  }
+});
+
+/* ===================== RENDER SEMUA ===================== */
+function renderSemua() {
+  renderPeriodePanel();
+  Object.keys(BAGIAN).forEach(renderItemPanel);
+  renderPesanPanel();
+  renderPengaturanPanel();
+  renderAkun();
+}
+
+/* ===================== MULAI ===================== */
+async function mulai() {
+  if (typeof apiAktif !== 'function' || typeof apiPost !== 'function') {
+    $('#layarSetup').hidden = false;
+    $('#layarSetup').querySelector('h1').textContent = 'api.js tidak termuat';
+    return;
+  }
+  if (!apiAktif()) { tampilSetup(); return; }
+  if (!TOKEN) { tampilMasuk(); return; }
+
+  $('#layarMasuk').hidden = true;
+  $('#layarSetup').hidden = true;
+  try {
+    const a = await apiPost({ aksi: 'admin', token: TOKEN }, 15000);
+    DATA = a;
+    tampilApp();
+  } catch (err) {
+    simpanToken('');
+    tampilMasuk((err && err.message) ? err.message : 'Sesi berakhir. Silakan masuk lagi.', 'err');
+  }
+}
+
+mulai();
+</script>
+</body>
+</html>

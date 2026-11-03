@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1B6FB8">
+<meta name="description" content="Website resmi Persekutuan SMKN 9 Semarang — persekutuan siswa Kristen dan Katolik yang bertumbuh dalam iman, kasih, dan kejujuran.">
+<title>Persekutuan SMKN 9 Semarang</title>
+<link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Persekutuan 9">
+<!-- Pratinjau saat tautan dibagikan di WhatsApp/Instagram.
+     Setelah situs punya domain, ganti isi og:image & twitter:image menjadi URL lengkap,
+     mis. https://domainmu.com/img/og.jpg (WhatsApp memerlukan URL lengkap). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Persekutuan SMKN 9 Semarang">
+<meta property="og:locale" content="id_ID">
+<meta property="og:title" content="Persekutuan SMKN 9 Semarang">
+<meta property="og:description" content="Rumah rohani siswa Kristen dan Katolik SMKN 9 Semarang. Bertumbuh dalam firman, saling menguatkan, dan menjadi terang di sekolah.">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Foto bersama anggota Persekutuan SMKN 9 Semarang">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Persekutuan SMKN 9 Semarang">
+<meta name="twitter:description" content="Rumah rohani siswa Kristen dan Katolik SMKN 9 Semarang. Bertumbuh dalam firman, saling menguatkan, dan menjadi terang di sekolah.">
+<meta name="twitter:image" content="img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#4DA9EB; --sky-d:#1B6FB8; --navy:#0E3F6E; --sky-l:#EAF5FD; --sky-xl:#F5FAFE;
+  --gold:#D9A92E; --gold-d:#8F6A15; --gold-l:#FBF1D4; /* gold-d digelapkan agar teks memenuhi kontras WCAG */
+  --ink:#1C2B3A; --muted:#5B6B7B; --bg:#FFFFFF; --line:#DCEAF5;
+  --hero-foto:url('img/hero.jpg'); /* EDIT: foto latar beranda (taruh file di folder img/) */
+  --radius:18px; --shadow:0 8px 28px rgba(14,63,110,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+section{padding:84px 20px;scroll-margin-top:64px}
+.wrap{max-width:1080px;margin:0 auto}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic.fill{fill:currentColor;stroke:none}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--navy);color:#fff;padding:12px 20px;border-radius:0 0 12px 0;font-weight:600}
+.skip:focus{left:0}
+
+/* ===== Tipografi umum ===== */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold);border-radius:2px}
+h2{font-size:clamp(1.6rem,4.5vw,2.3rem);line-height:1.25;color:var(--navy);margin:10px 0 12px;font-weight:700}
+.lead{color:var(--muted);max-width:640px}
+.head{margin-bottom:38px}
+.center{text-align:center}.center .lead{margin-inline:auto}.center .eyebrow{justify-content:center}
+
+/* ===== Tombol ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:600;font-size:.95rem;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#E8BC4A,var(--gold));color:#3a2a00;box-shadow:0 6px 18px rgba(217,169,46,.38)}
+.btn-gold:hover{box-shadow:0 10px 24px rgba(217,169,46,.5)}
+.btn-line{background:rgba(255,255,255,.7);border-color:var(--sky-d);color:var(--sky-d)}
+.btn-line:hover{background:#fff}
+.btn-blue{background:var(--sky-d);color:#fff}
+.btn-blue:hover{background:var(--navy)}
+
+/* ===== Navigasi ===== */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{max-width:1080px;margin:0 auto;height:64px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);font-size:.98rem;line-height:1.2}
+.brand strong{display:block;font-weight:700}
+.brand .logo{width:42px;height:42px;display:grid;place-items:center;flex:none}
+.brand .logo img{width:100%;height:100%;object-fit:contain}
+.brand .logo .ph{display:none}
+.brand .logo.nologo{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--sky-d));color:#fff;font-size:18px}
+.brand .logo.nologo .ph{display:block}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:.7rem}
+.menu{display:flex;align-items:center;gap:1px;list-style:none}
+.menu a{padding:8px 4px;border-radius:999px;font-size:.82rem;font-weight:500;color:var(--ink);transition:background .2s,color .2s}
+.menu a:hover,.menu a.active{background:var(--sky-l);color:var(--sky-d)}
+.menu a.cta{background:var(--gold);color:#3a2a00;font-weight:600;margin-left:4px}
+.menu a.cta:hover,.menu a.cta.active{background:#E8BC4A}
+.menu a.masuk{border:1px solid var(--line);color:var(--navy);font-weight:600;padding:7px 8px}
+.menu a.masuk:hover,.menu a.masuk:focus-visible{background:var(--navy);border-color:var(--navy);color:#fff}
+.burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:22px;cursor:pointer;place-items:center}
+@media(max-width:1120px){
+  .burger{display:grid}
+  .menu{position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:12px 20px 18px;border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(14,63,110,.1);display:none;max-height:calc(100vh - 64px);max-height:calc(100dvh - 64px);overflow-y:auto}
+  .menu.open{display:flex}
+  .menu a{padding:12px 14px;display:block}
+  .menu a.masuk{text-align:center;border-radius:12px;margin:6px 0 0}
+  .menu a.cta{text-align:center;margin:6px 0 0}
+}
+
+/* ===== Hero ===== */
+#beranda{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding-top:110px;padding-bottom:70px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 85% -10%,rgba(217,169,46,.22),transparent 60%),
+    linear-gradient(180deg,rgba(8,28,48,.60) 0%,rgba(14,63,110,.45) 55%,rgba(14,63,110,.70) 100%),
+    var(--hero-foto) center/cover no-repeat,
+    var(--navy)}
+.hero-cross{position:absolute;right:-30px;bottom:-40px;width:340px;height:340px;color:#fff;opacity:.08;pointer-events:none}
+.hero{position:relative;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--gold);color:var(--gold-d);padding:6px 16px;border-radius:999px;font-size:.82rem;font-weight:600;box-shadow:0 4px 14px rgba(217,169,46,.2)}
+.hero h1{font-size:clamp(2rem,7.2vw,3.7rem);line-height:1.15;color:#fff;text-shadow:0 3px 18px rgba(8,28,48,.5);margin:18px 0 14px;font-weight:700}
+.hero h1 span{background:linear-gradient(135deg,#F4D57A,#FFF3C4);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
+.hero p.sapa{max-width:560px;margin:0 auto 22px;color:#fff;font-size:1.02rem;text-shadow:0 2px 10px rgba(8,28,48,.55)}
+.ayat{max-width:600px;margin:0 auto 28px;background:rgba(255,255,255,.82);border:1px solid #fff;border-left:4px solid var(--gold);border-radius:var(--radius);padding:16px 20px;text-align:left;box-shadow:var(--shadow)}
+.ayat q{display:block;quotes:none;font-style:italic;color:var(--navy);font-size:.98rem}
+.ayat cite{display:block;margin-top:6px;font-style:normal;font-weight:600;font-size:.85rem;color:var(--gold-d)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+/* Di ponsel, dua tombol beranda tetap sebaris agar tidak memakan tinggi */
+@media(max-width:420px){.actions .btn{padding:12px 16px;font-size:.9rem}}
+/* Layar pendek: rapatkan beranda agar tombol tidak tertutup tombol melayang */
+@media(max-height:720px){
+  #beranda{padding-top:92px;padding-bottom:104px}
+  .hero h1{margin:12px 0 10px}
+  .hero p.sapa{font-size:.95rem;margin-bottom:16px}
+  .ayat{padding:12px 16px;margin-bottom:18px}
+  .ayat q{font-size:.92rem}
+  .pill{font-size:.78rem;padding:5px 14px}
+}
+/* HP kecil + layar pendek: tombol beranda tidak boleh tertutup pemutar lagu/tombol WA */
+@media(max-height:720px) and (max-width:520px){
+  #beranda{padding-top:84px;padding-bottom:96px}
+  .pill{display:none}
+  .hero h1{font-size:1.72rem;margin:0 0 10px}
+  .hero p.sapa{font-size:.9rem;margin-bottom:14px}
+  .ayat{padding:10px 14px;margin-bottom:14px}
+  .ayat q{font-size:.86rem}
+  .ayat cite{font-size:.8rem;margin-top:4px}
+  .actions{gap:8px}
+  .actions .btn{width:auto;padding:10px 10px;font-size:.78rem}
+}
+/* Layar sangat pendek (mis. iPhone SE): rapatkan lagi agar tombol tetap terlihat */
+@media(max-height:700px){
+  #beranda{padding-top:76px;padding-bottom:88px}
+  .hero h1{font-size:1.5rem;margin:0 0 8px}
+  .hero p.sapa{font-size:.84rem;margin-bottom:12px}
+  .ayat{padding:10px 14px;margin-bottom:12px}
+  .ayat q{font-size:.8rem}
+  .actions{gap:8px}
+  .actions .btn{padding:10px 12px;font-size:.8rem}
+}
+/* Ponsel mode mendatar (layar rendah): sembunyikan hiasan, ayat tetap ada di footer */
+@media(max-height:480px){
+  #beranda{padding-top:72px;padding-bottom:84px}
+  .pill{display:none}
+  .hero h1{font-size:1.9rem;margin:0 0 8px}
+  .hero p.sapa{font-size:.88rem;margin-bottom:12px}
+  .ayat{display:none}
+  .actions{gap:8px}
+  .actions .btn{padding:10px 14px;font-size:.84rem}
+  .bot-fab span{display:none}.bot-fab{padding:12px}
+}
+/* Ponsel sangat sempit: dua tombol tetap sebaris */
+@media(max-width:360px){.actions .btn{padding:10px 8px}}
+/* Ponsel sangat sempit: sembunyikan kutipan di beranda (ayat yang sama ada di footer)
+   supaya tombol tidak tertutup tombol asisten */
+@media(max-width:340px){.ayat{display:none}}
+/* Di ponsel, sisakan ruang di bawah agar isi beranda tidak tertutup tombol melayang
+   (musik, WhatsApp, dan asisten). Ditulis terakhir agar menang dari aturan tinggi di atas. */
+@media(max-width:480px){#beranda{padding-bottom:140px}}
+
+/* ===== Tentang ===== */
+#tentang{background:#fff}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.card h3{color:var(--navy);font-size:1.1rem;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.card h3 .ic{color:var(--gold-d);font-size:1.2em}
+.misi{list-style:none;counter-reset:m}
+.misi li{counter-increment:m;position:relative;padding:8px 0 8px 40px;color:#34495e;font-size:.95rem}
+.misi li::before{content:counter(m);position:absolute;left:0;top:9px;width:26px;height:26px;border-radius:50%;background:var(--sky-l);color:var(--sky-d);font-weight:700;font-size:.8rem;display:grid;place-items:center}
+.nilai{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:26px}
+@media(max-width:900px){.nilai{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.nilai{grid-template-columns:repeat(2,1fr);gap:10px}}
+.nilai div{background:var(--sky-xl);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center;transition:transform .25s,background .25s}
+.nilai div:hover{transform:translateY(-4px);background:var(--gold-l)}
+.nilai b{display:block;color:var(--navy);font-size:.98rem}
+.nilai span{font-size:.82rem;color:var(--muted)}
+
+/* ===== Pengurus ===== */
+#pengurus{background:var(--sky-xl)}
+.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+@media(max-width:480px){.team{grid-template-columns:repeat(2,1fr);gap:12px}}
+.member{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 14px;text-align:center;transition:transform .25s,box-shadow .25s}
+.member:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.photo{width:104px;height:104px;margin:0 auto 14px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--sky-l),#cfe8fa);display:grid;place-items:center;color:var(--sky);font-size:46px;border:3px solid #fff;box-shadow:0 0 0 2px var(--gold)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.member h3{font-size:.98rem;color:var(--navy);line-height:1.3}
+.member p{font-size:.8rem;color:var(--gold-d);font-weight:600;margin-top:3px}
+.member.pembina{margin:0}
+.team-pembina{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:6px}
+.team-pembina .member{flex:0 1 260px;max-width:260px;width:100%}
+.team-wrap{display:grid;gap:18px}
+
+/* ===== Pilihan periode (Pengurus) ===== */
+.periode{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 auto 28px}
+.periode button{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s,border-color .2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.periode button:hover{border-color:var(--sky)}
+.periode button[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:#3a2a00}
+.periode .tag{font-size:.64rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:#fff;color:#6B4E0C;border-radius:999px;padding:1px 8px;line-height:1.7}
+.periode button[aria-selected="true"] .tag{background:rgba(255,255,255,.85);color:#3a2a00}
+@media(hover:none){.periode button:active{transform:scale(.95)}}
+
+/* ===== Kegiatan ===== */
+.rutin{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:linear-gradient(135deg,var(--navy),var(--sky-d));color:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);margin-bottom:34px}
+.rutin .big{width:76px;height:76px;border-radius:20px;background:rgba(255,255,255,.14);display:grid;place-items:center;font-size:38px;color:#F4D57A}
+.rutin h3{font-size:1.25rem;margin-bottom:4px}
+.rutin p{color:#d8ebfa;font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);padding:5px 13px;border-radius:999px;font-size:.82rem;font-weight:500}
+@media(max-width:560px){.rutin{grid-template-columns:1fr;text-align:center}.rutin .big{margin:0 auto}.chips{justify-content:center}}
+.sub{font-size:1.1rem;color:var(--navy);margin-bottom:16px;font-weight:600}
+.acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.act{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+.act::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--sky),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.act:hover{transform:translateY(-8px);box-shadow:0 16px 34px rgba(14,63,110,.16);border-color:var(--sky)}
+.act:hover::after{transform:scaleX(1)}
+.act .em{width:50px;height:50px;border-radius:14px;background:var(--gold-l);color:var(--gold-d);display:grid;place-items:center;font-size:24px;margin-bottom:14px}
+.act h4{color:var(--navy);font-size:1.05rem;margin-bottom:6px}
+.act p{color:var(--muted);font-size:.92rem}
+
+/* ===== Jadwal ===== */
+#jadwal{background:var(--sky-xl)}
+.events{display:grid;gap:14px;max-width:760px;margin:0 auto}
+.event{display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;transition:transform .25s,box-shadow .25s}
+.event:hover{transform:translateX(4px);box-shadow:var(--shadow)}
+.date{background:linear-gradient(160deg,var(--sky-d),var(--navy));color:#fff;border-radius:14px;text-align:center;padding:10px 4px;line-height:1.1}
+.date b{display:block;font-size:1.7rem}
+.date span{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em}
+.event h3{color:var(--navy);font-size:1.02rem;margin-bottom:4px}
+.meta{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.84rem;color:var(--muted)}
+.meta span{display:inline-flex;align-items:center;gap:6px}
+.meta .ic{color:var(--gold-d)}
+.empty{text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--sky);border-radius:var(--radius);padding:26px}
+/* Tombol simpan acara ke kalender */
+.ev-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.ev-actions a,.ev-actions button{display:inline-flex;align-items:center;gap:6px;background:var(--sky-l);color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font:inherit;font-size:.78rem;font-weight:600;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .2s,border-color .2s}
+.ev-actions a:hover,.ev-actions button:hover,.ev-actions a:focus-visible,.ev-actions button:focus-visible{background:#dcecf9;border-color:var(--sky)}
+.ev-actions .ic{width:15px;height:15px;color:var(--sky-d)}
+
+/* ===== Renungan ===== */
+#renungan{background:linear-gradient(180deg,#fff,var(--gold-l))}
+.devo{max-width:720px;margin:0 auto;background:#fff;border-radius:24px;padding:34px 28px;box-shadow:0 14px 40px rgba(184,134,27,.16);border:1px solid #F1E2B0;position:relative;text-align:center}
+.devo .tgl{font-size:.82rem;color:var(--muted);font-weight:500}
+.devo blockquote{font-size:clamp(1.05rem,3.4vw,1.3rem);color:var(--navy);font-style:italic;margin:14px 0 6px;line-height:1.6}
+.devo .ref{font-weight:700;color:var(--gold-d)}
+.devo .isi{margin:16px auto 0;color:#3d5266;font-size:.97rem;text-align:left;border-top:1px dashed #E8D79B;padding-top:16px}
+.devo .doa{margin-top:12px;font-size:.9rem;color:var(--muted);font-style:italic;text-align:left}
+.devo-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.devo-msg{display:none;margin:12px auto 0;font-size:.82rem;color:var(--navy);background:#EAF4FD;border:1px solid #CFE6F8;border-radius:12px;padding:9px 14px;text-align:left}
+.devo-msg.tampil{display:block}
+.mini{font-size:.85rem;padding:9px 18px}
+
+/* ===== Galeri ===== */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+@media(max-width:480px){.gallery{grid-template-columns:repeat(2,1fr);gap:8px}}
+.g-item{position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;border:0;cursor:pointer;background:linear-gradient(135deg,var(--sky-l),#bfe0f7);display:grid;place-items:center;color:var(--sky);font-size:40px;padding:0;font-family:inherit}
+.g-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.g-item:hover img,.g-item:focus-visible img{transform:scale(1.08)}
+.g-item .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;background:linear-gradient(transparent,rgba(14,63,110,.8));color:#fff;font-size:.8rem;text-align:left;opacity:0;transition:opacity .25s}
+.g-item:hover .cap,.g-item:focus-visible .cap{opacity:1}
+.g-item.ph .cap{opacity:1;background:none;color:var(--navy);text-align:center;bottom:10px;padding:0 8px}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,28,48,.92);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.open{display:flex}
+.lb figure{max-width:900px;width:100%;text-align:center}
+.lb img{max-height:78vh;margin:0 auto;border-radius:12px;object-fit:contain}
+.lb .phbig{aspect-ratio:4/3;max-height:70vh;margin:0 auto;border-radius:12px;background:linear-gradient(135deg,var(--sky-l),var(--sky));display:grid;place-items:center;color:#fff;font-size:80px;width:min(100%,640px)}
+.lb figcaption{color:#fff;margin-top:12px;font-size:.95rem}
+.lb button{position:absolute;background:rgba(255,255,255,.14);border:0;color:#fff;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer;display:grid;place-items:center}
+/* Dialog bagikan status (dipakai di komputer yang tidak punya menu bagikan) */
+.bagi{position:fixed;inset:0;z-index:110;background:rgba(8,28,48,.92);display:none;align-items:center;justify-content:center;padding:18px}
+.bagi.open{display:flex}
+.bagi-k{position:relative;background:#fff;border-radius:20px;padding:26px 22px 22px;max-width:420px;width:100%;max-height:94vh;overflow:auto;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.bagi-k h3{color:var(--navy);font-size:1.05rem;margin-bottom:8px}
+.bagi-info{font-size:.82rem;color:var(--muted);margin-bottom:14px;text-align:left;line-height:1.5}
+.bagi-k img{display:block;margin:0 auto 14px;max-width:100%;max-height:46vh;border-radius:12px;border:1px solid var(--line)}
+.bagi-aksi{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.bagi-pesan{font-size:.8rem;color:#1E7D46;margin-top:10px;min-height:1.1em}
+.bagi-k .x{position:absolute;top:10px;right:10px;background:#EEF4FA;border:0;width:36px;height:36px;border-radius:50%;color:var(--navy);cursor:pointer;display:grid;place-items:center}
+.bagi-k .x:hover{background:#DCEAF7}
+.lb button:hover{background:rgba(255,255,255,.28)}
+.lb .x{top:16px;right:16px}.lb .pv{left:12px;top:50%}.lb .nx{right:12px;top:50%}
+
+/* ===== Pendaftaran ===== */
+#daftar{background:var(--sky-xl)}
+.join{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+@media(max-width:820px){.join{grid-template-columns:1fr}}
+.perks{list-style:none;margin-top:18px;display:grid;gap:10px}
+.perks li{display:flex;gap:10px;align-items:flex-start;color:#34495e;font-size:.95rem}
+.perks .ic{color:var(--gold-d);margin-top:5px}
+form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:var(--shadow)}
+.f{margin-bottom:14px}
+label{display:block;font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:5px}
+input,select{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:1rem;font-family:inherit;color:var(--ink);background:#fff;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 4px rgba(77,169,235,.18)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:420px){.row2{grid-template-columns:1fr}}
+.note{font-size:.8rem;color:var(--muted);margin-top:10px;text-align:center}
+.cek{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:#34495e;font-weight:500;line-height:1.45;margin:2px 0 14px;cursor:pointer}
+.cek input[type=checkbox]{width:18px;height:18px;flex:none;padding:0;margin-top:2px;accent-color:var(--sky-d);cursor:pointer}
+.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden;opacity:0;pointer-events:none}
+.noscript{background:var(--gold-l);color:#5a4308;border:1px solid #E8D79B;border-radius:14px;padding:16px 20px;margin:16px;text-align:center;font-size:.9rem}
+.msg{margin-top:12px;font-size:.88rem;text-align:center;min-height:1.2em}
+.msg.err{color:#c0392b}.msg.ok{color:#1e8449}
+
+/* ===== Kontak ===== */
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.ct{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;transition:transform .25s,box-shadow .25s;word-break:break-word}
+a.ct:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--sky)}
+.ct .ico{width:46px;height:46px;flex:none;border-radius:14px;background:var(--sky-l);color:var(--sky-d);display:grid;place-items:center;font-size:22px}
+.ct small{display:block;color:var(--muted);font-size:.76rem}
+.ct b{color:var(--navy);font-size:.95rem}
+
+/* ===== Kritik & Saran ===== */
+#suara{background:linear-gradient(180deg,var(--sky-xl),#fff)}
+.suara-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+@media(max-width:820px){.suara-grid{grid-template-columns:1fr}}
+#suaraForm textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:1rem;font-family:inherit;color:var(--ink);background:#fff;resize:vertical;min-height:120px;transition:border-color .2s,box-shadow .2s}
+#suaraForm textarea:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 4px rgba(77,169,235,.18)}
+.suara-hitung{display:block;text-align:right;font-size:.76rem;color:var(--muted);margin-top:4px}
+.suara-judul{color:var(--navy);font-size:1.05rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.suara-judul .ic{color:var(--gold-d)}
+.suara-daftar{display:grid;gap:12px;max-height:540px;overflow:auto;padding-right:4px}
+.suara-item{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:14px 16px;box-shadow:0 4px 14px rgba(14,63,110,.06)}
+.suara-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.74rem;color:var(--muted);margin-bottom:6px}
+.suara-tag{background:var(--sky-l);color:var(--sky-d);border-radius:999px;padding:1px 9px;font-weight:600}
+.suara-teks{color:#34495e;font-size:.93rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.suara-daftar .empty{font-size:.9rem;padding:22px}
+
+/* ===== Footer & WA ===== */
+footer{background:var(--navy);color:#cfe3f4;text-align:center;padding:38px 20px 100px;font-size:.88rem}
+.pasang{margin-top:14px;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 18px;font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:background .2s}
+.pasang:hover{background:rgba(255,255,255,.22)}
+footer .v{max-width:520px;margin:0 auto 14px;font-style:italic;color:#F4D57A}
+.wa{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;background:#0E7A3C;color:#fff;border-radius:999px;padding:13px 18px;font-weight:600;font-size:.9rem;box-shadow:0 8px 22px rgba(14,122,60,.45);transition:transform .2s}
+.wa:hover{transform:translateY(-3px) scale(1.03)}
+.wa .ic{font-size:22px}
+@media(max-width:480px){.wa span{display:none}.wa{padding:12px}}
+
+/* ===== Asisten Virtual ===== */
+.bot-fab{position:fixed;right:16px;bottom:80px;z-index:60;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;font-family:inherit;background:linear-gradient(135deg,var(--sky-d),var(--navy));color:#fff;border-radius:999px;padding:13px 18px;font-weight:600;font-size:.9rem;box-shadow:0 8px 22px rgba(14,63,110,.4);transition:transform .2s}
+.bot-fab:hover{transform:translateY(-3px) scale(1.03)}
+.bot-fab .ic{font-size:22px;color:#F4D57A}
+.bot{position:fixed;right:16px;bottom:16px;z-index:80;width:min(390px,calc(100vw - 32px));height:min(600px,calc(100vh - 32px));height:min(600px,calc(100svh - 32px));display:none;flex-direction:column;background:#fff;border-radius:22px;box-shadow:0 20px 60px rgba(8,28,48,.35);border:1px solid var(--line);overflow:hidden}
+.bot.open{display:flex;animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.bot-h{display:flex;align-items:center;gap:10px;padding:14px 16px;background:linear-gradient(135deg,var(--navy),var(--sky-d));color:#fff}
+.bot-h .av{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:20px;color:#F4D57A;flex:none}
+.bot-h b{display:block;font-size:.95rem;line-height:1.2}
+.bot-h small{font-size:.72rem;color:#cfe6f8}
+.bot-h button{margin-left:auto;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:18px;cursor:pointer;display:grid;place-items:center}
+.bot-h button:hover{background:rgba(255,255,255,.3)}
+.bot-log{flex:1;overflow-y:auto;padding:14px;background:var(--sky-xl);display:flex;flex-direction:column;gap:10px}
+.bm{max-width:88%;padding:10px 13px;border-radius:16px;font-size:.9rem;line-height:1.5;word-wrap:break-word}
+.bm.from-bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start;color:var(--ink)}
+.bm.from-me{background:var(--sky-d);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.bm p{white-space:pre-line}
+.ba{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ba a{display:inline-block;background:var(--gold-l);color:var(--gold-d);border:1px solid #F1E2B0;border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:600}
+.ba a:hover{background:#F8E7B0}
+.ba button{font-family:inherit;cursor:pointer;background:var(--sky-l);color:var(--sky-d);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:600}
+.ba button:hover{background:#d8ecfb}
+.dots{display:flex;gap:4px;padding:4px 2px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--sky);animation:blink 1s infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+.bot-chips{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;border-top:1px solid var(--line);background:#fff}
+.bot-chips button{flex:none;border:1px solid var(--line);background:var(--sky-l);color:var(--sky-d);border-radius:999px;padding:6px 12px;font-size:.78rem;font-weight:600;font-family:inherit;cursor:pointer}
+.bot-chips button:hover{background:#d8ecfb}
+.bot-f{display:flex;gap:8px;padding:10px 12px 12px;background:#fff;border-top:1px solid var(--line)}
+.bot-f input{flex:1;min-width:0;border-radius:999px;padding:11px 16px;font-size:1rem}
+.bot-f button{flex:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--gold);color:#3a2a00;font-size:20px;cursor:pointer;display:grid;place-items:center}
+.bot-f button:hover{background:#E8BC4A}
+.bot-foot{font-size:.68rem;color:var(--muted);text-align:center;padding:0 12px 8px;background:#fff}
+@media(max-width:480px){
+  .bot-fab span{display:none}.bot-fab{padding:12px}
+  .bot{left:8px;right:8px;bottom:8px;width:auto;height:calc(100vh - 16px);height:calc(100svh - 16px)}
+  body.bot-open .wa,body.bot-open .bot-fab,body.bot-open .music{display:none}
+}
+
+/* ===== Pemutar Lagu ===== */
+.music{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;padding:6px 10px 6px 6px;box-shadow:0 8px 24px rgba(14,63,110,.22);max-width:calc(100vw - 96px)}
+.m-play{width:46px;height:46px;flex:none;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;background:linear-gradient(135deg,var(--sky-d),var(--navy));color:#F4D57A;font-size:20px}
+.m-play .ic.pa{display:none}
+.music.playing .m-play .ic.pl{display:none}
+.music.playing .m-play .ic.pa{display:block}
+.music.hint .m-play{animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(77,169,235,.55)}70%{box-shadow:0 0 0 14px rgba(77,169,235,0)}100%{box-shadow:0 0 0 0 rgba(77,169,235,0)}}
+.m-info{min-width:0;max-width:150px;line-height:1.25}
+.m-info b{display:block;font-size:.8rem;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.m-info small{display:block;font-size:.68rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eq{display:none;gap:2px;align-items:flex-end;height:14px;flex:none}
+.music.playing .eq{display:flex}
+.eq i{width:3px;background:var(--gold-d);border-radius:2px;animation:eq 1s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+.m-btn{width:32px;height:32px;flex:none;border-radius:50%;border:0;background:var(--sky-l);color:var(--sky-d);cursor:pointer;display:grid;place-items:center;font-size:16px}
+.m-btn:hover{background:#d8ecfb}
+.m-vol{width:70px;padding:0;border:0;accent-color:var(--sky-d);box-shadow:none}
+@media(max-width:600px){.m-vol{display:none}.m-info{max-width:100px}}
+@media(max-width:520px){.m-info{max-width:70px}}
+@media(max-width:380px){.m-btn{display:none}}
+@media(prefers-reduced-motion:reduce){.music.hint .m-play,.eq i{animation:none}}
+
+/* ===== Animasi saat disentuh (HP/tablet) ===== */
+.btn,.ev-actions a,.ev-actions button,.menu a,.member,.g-item,.burger,.m-play,.m-btn,.lb button,.bagi-k .x,.periode button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.ketuk{position:relative;overflow:hidden}
+.ketuk>.ripple{position:absolute;border-radius:50%;pointer-events:none;background:currentColor;opacity:.22;transform:scale(0);animation:ripple .55s ease-out forwards}
+@keyframes ripple{to{transform:scale(1);opacity:0}}
+@media(hover:none){
+  .btn:active{transform:scale(.96)}
+  .ev-actions a:active,.ev-actions button:active{transform:scale(.95)}
+  .menu a:active{background:var(--sky-l);color:var(--sky-d)}
+  .member:active{scale:.98}
+  .g-item:active{scale:.97}
+  .burger:active,.m-play:active,.m-btn:active,.lb button:active,.bagi-k .x:active{transform:scale(.9)}
+}
+@media(prefers-reduced-motion:reduce){.ketuk>.ripple{display:none}}
+
+/* ===== Animasi scroll ===== */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  *{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#konten">Lewati ke konten utama</a>
+
+<!-- Kumpulan ikon (jangan diubah) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M10 2h4v7h7v4h-7v9h-4v-9H3V9h7z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+</svg>
+
+<!-- ================= NAVIGASI ================= -->
+<header>
+  <nav class="nav" aria-label="Navigasi utama">
+    <a href="#beranda" class="brand">
+      <!-- EDIT LOGO: taruh file logo (logo.png) satu folder dengan index.html. Jika file tidak ada, otomatis tampil ikon salib. -->
+      <span class="logo">
+        <img src="logo.png" alt="Logo Persekutuan SMKN 9 Semarang" onerror="this.parentNode.classList.add('nologo');this.remove()">
+        <svg class="ic fill ph"><use href="#i-cross"/></svg>
+      </span>
+      <span><strong>Persekutuan</strong>SMKN 9 Semarang</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
+    <ul class="menu" id="menu">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="arsip.html">Arsip</a></li>
+      <li><a href="#pengurus">Pengurus</a></li>
+      <li><a href="anggota.html">Anggota</a></li>
+      <li><a href="#kegiatan">Kegiatan</a></li>
+      <li><a href="#jadwal">Jadwal</a></li>
+      <li><a href="#renungan">Renungan</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#suara">Suara</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li><a href="admin.html" class="masuk" aria-label="Masuk halaman pengurus">Masuk</a></li>
+      <li><a href="#daftar" class="cta">Bergabung</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="konten">
+
+<!-- ================= 1. BERANDA ================= -->
+<section id="beranda">
+  <svg class="hero-cross ic fill" aria-hidden="true"><use href="#i-cross"/></svg>
+  <div class="wrap hero">
+    <span class="pill reveal"><svg class="ic fill"><use href="#i-cross"/></svg> Selamat datang di rumah rohani kita</span>
+    <h1 class="reveal">Persekutuan <span>SMKN 9 Semarang</span></h1>
+    <p class="sapa reveal">Tempat kita bertumbuh bersama: belajar firman, saling menguatkan, dan menjadi terang di sekolah. Siapa pun kamu, kamu diterima di sini. 💙</p>
+    <!-- EDIT: ayat/motto -->
+    <div class="ayat reveal">
+      <q>Sebab TUHAN baik dan adil, Ia mengasihi orang yang berbuat baik; orang jujur akan melihat dan mengenal TUHAN.</q>
+      <cite>— Mazmur 11:7</cite>
+    </div>
+    <div class="actions reveal">
+      <a href="#daftar" class="btn btn-gold"><svg class="ic"><use href="#i-heart"/></svg> Bergabung</a>
+      <a href="#kegiatan" class="btn btn-line"><svg class="ic"><use href="#i-cal"/></svg> Lihat Kegiatan</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. TENTANG ================= -->
+<section id="tentang">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Tentang Kami</span>
+      <h2>Sebuah keluarga kecil yang saling menguatkan</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <!-- EDIT: sejarah singkat (ganti [tahun] dan ceritakan awal mula persekutuan) -->
+        <p class="lead" style="max-width:none;margin-bottom:14px">
+          Persekutuan SMKN 9 Semarang berdiri sejak <b data-konfig="tahun">[tahun]</b> sebagai wadah bagi siswa-siswi Kristen dan Katolik untuk berkumpul, beribadah, dan bertumbuh dalam iman di tengah kesibukan sekolah.
+        </p>
+        <p class="lead" style="max-width:none">
+          Dari pertemuan sederhana di sekolah, kami terus belajar mengasihi Tuhan dan sesama lewat ibadah, pelayanan, dan persahabatan. Sampai hari ini, pintu kami selalu terbuka untuk siapa saja yang rindu mengenal Tuhan lebih dalam.
+        </p>
+        <div class="card" style="margin-top:22px">
+          <h3><svg class="ic"><use href="#i-star"/></svg> Visi</h3>
+          <!-- EDIT: visi (ini contoh, silakan ganti) -->
+          <p style="color:#34495e">Membawa siswa-siswi Kristen dan Katolik di SMKN 9 Semarang untuk semakin mengenal dan mendekatkan diri kepada Tuhan melalui keterlibatan aktif dalam pelayanan.</p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <h3><svg class="ic"><use href="#i-book"/></svg> Misi</h3>
+        <!-- EDIT: misi (3–5 poin, ini contoh) -->
+        <ol class="misi">
+          <li>Membangun persekutuan yang solid, saling mengasihi, dan bertumbuh bersama dalam iman kepada Tuhan.</li>
+          <li>Mengajak siswa-siswi Kristen dan Katolik untuk melayani Tuhan dengan sepenuh hati dan mengembangkan talenta melalui pelayanan.</li>
+          <li>Menumbuhkan iman dan kepercayaan siswa-siswi Kristen dan Katolik kepada Tuhan melalui kegiatan rohani yang bermakna dan berkelanjutan.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="nilai reveal">
+      <div><b>Iman</b><span>Bertumbuh dalam firman</span></div>
+      <div><b>Kasih</b><span>Peduli satu sama lain</span></div>
+      <div><b>Kejujuran</b><span>Benar di mata Tuhan</span></div>
+      <div><b>Pelayanan</b><span>Rendah hati melayani</span></div>
+      <div><b>Persaudaraan</b><span>Satu keluarga dalam Kristus</span></div>
+      <div><b>Sukacita</b><span>Bersyukur dalam segala hal</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. PENGURUS ================= -->
+<section id="pengurus">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Struktur Pengurus</span>
+      <h2>Mengenal para pelayan kita</h2>
+      <p class="lead">Teman-teman yang dengan sukacita melayani persekutuan. Jangan ragu menyapa mereka!</p>
+    </div>
+    <div class="periode reveal" role="tablist" aria-label="Pilih periode kepengurusan"></div>
+    <div class="team-wrap" id="team"></div>
+  </div>
+</section>
+
+<!-- ================= 4. KEGIATAN ================= -->
+<section id="kegiatan">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Kegiatan</span>
+      <h2>Bertumbuh lewat kebersamaan</h2>
+      <p class="lead">Ada yang rutin tiap pekan, ada yang jadi momen spesial setiap tahun. Semuanya dirancang supaya seru dan membangun iman.</p>
+    </div>
+
+    <!-- EDIT: ibadah rutin (hari, jam, tempat) -->
+    <div class="rutin reveal">
+      <div class="big"><svg class="ic fill"><use href="#i-cross"/></svg></div>
+      <div>
+        <h3>Ibadah Persekutuan Rutin</h3>
+        <p>Rehat sejenak di tengah hari untuk menyanyi, mendengar firman, dan berdoa bersama.</p>
+        <div class="chips">
+          <span class="chip"><svg class="ic"><use href="#i-cal"/></svg> Setiap Jumat</span>
+          <span class="chip"><svg class="ic"><use href="#i-clock"/></svg> Pukul 12.00 WIB</span>
+          <span class="chip"><svg class="ic"><use href="#i-pin"/></svg> Pos sekolah</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub reveal">Kegiatan Tahunan</h3>
+    <!-- EDIT: kegiatan tahunan (tambah/ubah kartu sesuai kebutuhan) -->
+    <div class="acts">
+      <article class="act reveal">
+        <div class="em"><svg class="ic"><use href="#i-star"/></svg></div>
+        <h4>Perayaan Natal</h4>
+        <p>Merayakan kelahiran Yesus dengan pujian, drama, dan sukacita bersama seluruh keluarga besar sekolah.</p>
+      </article>
+      <article class="act reveal">
+        <div class="em"><svg class="ic fill"><use href="#i-cross"/></svg></div>
+        <h4>Perayaan Paskah</h4>
+        <p>Mengenang kasih dan kemenangan Kristus lewat ibadah yang khidmat dan penuh harapan.</p>
+      </article>
+      <article class="act reveal">
+        <div class="em"><svg class="ic"><use href="#i-users"/></svg></div>
+        <h4>Retret</h4>
+        <p>Dua hari menjauh dari rutinitas untuk mengenal Tuhan, mempererat persahabatan, dan seru-seruan.</p>
+      </article>
+      <article class="act reveal">
+        <div class="em"><svg class="ic"><use href="#i-heart"/></svg></div>
+        <h4>Persekutuan Gabungan Sekota </h4>
+        <p>Membangun kebersamaan dan mempererat tali persaudaraan melalui persekutuan gabungan dengan sekolah lain dalam kasih Kristus.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. JADWAL ================= -->
+<section id="jadwal">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Jadwal &amp; Acara</span>
+      <h2>Acara mendatang</h2>
+      <p class="lead">Catat tanggalnya dan ajak temanmu!</p>
+    </div>
+    <div class="events" id="events"></div>
+  </div>
+</section>
+
+<!-- ================= 6. RENUNGAN ================= -->
+<section id="renungan">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Renungan Harian</span>
+      <h2>Satu ayat, satu langkah hari ini</h2>
+    </div>
+    <div class="devo reveal" aria-live="polite">
+      <div class="tgl" id="dTgl"></div>
+      <blockquote id="dAyat"></blockquote>
+      <div class="ref" id="dRef"></div>
+      <p class="isi" id="dIsi"></p>
+      <p class="doa" id="dDoa"></p>
+      <div class="devo-actions">
+        <button class="btn btn-line mini" id="dPrev"><svg class="ic"><use href="#i-left"/></svg> Sebelumnya</button>
+        <button class="btn btn-blue mini" id="dNext">Berikutnya <svg class="ic"><use href="#i-right"/></svg></button>
+        <a class="btn btn-gold mini" id="dShare" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> Kirim ke Chat</a>
+        <button class="btn btn-line mini" id="dStatus" type="button"><svg class="ic"><use href="#i-share"/></svg> Bagikan ke Status</button>
+      </div>
+      <p class="devo-msg" id="dStatusMsg" role="status"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. GALERI ================= -->
+<section id="galeri">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Galeri</span>
+      <h2>Momen-momen yang kita kenang</h2>
+      <p class="lead">Klik foto untuk memperbesar.</p>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<!-- ================= 8. KRITIK & SARAN ================= -->
+<section id="suara">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Kritik &amp; Saran</span>
+      <h2>Suaramu membangun persekutuan</h2>
+      <p class="lead">Sampaikan kritik, saran, atau pokok doa dengan jujur. Pengirim tetap anonim — nama, kelas, dan alamat tidak ditampilkan.</p>
+    </div>
+    <div class="suara-grid">
+      <form id="suaraForm" class="reveal" novalidate>
+        <div class="hp" aria-hidden="true"><label for="situs">Jangan diisi</label><input id="situs" name="situs" tabindex="-1" autocomplete="off"></div>
+        <div class="f">
+          <label for="suaraKategori">Jenis pesan</label>
+          <select id="suaraKategori">
+            <option value="Umum">Umum</option>
+            <option value="Saran">Saran</option>
+            <option value="Kritik">Kritik</option>
+            <option value="Doa">Pokok doa</option>
+          </select>
+        </div>
+        <div class="f">
+          <label for="suaraIsi">Pesanmu</label>
+          <textarea id="suaraIsi" name="pesan" maxlength="800" rows="5" placeholder="Tulis kritik atau saranmu di sini…" required></textarea>
+          <small class="suara-hitung" id="suaraHitung">0/800</small>
+        </div>
+        <button class="btn btn-gold" type="submit" id="suaraKirim" style="width:100%"><svg class="ic"><use href="#i-send"/></svg> Kirim pesan</button>
+        <p class="msg" id="suaraMsg" role="status"></p>
+        <p class="note">Pesan tampil setelah diperiksa pengurus. Mohon tetap sopan dan membangun.</p>
+      </form>
+      <div class="reveal">
+        <h3 class="suara-judul"><svg class="ic"><use href="#i-hand"/></svg> Pesan yang sudah tampil</h3>
+        <div id="suaraDaftar" class="suara-daftar" aria-live="polite">
+          <p class="empty">Pesan yang disetujui pengurus akan tampil di sini.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="bagi" id="bagi" role="dialog" aria-modal="true" aria-labelledby="bagiJudul">
+  <div class="bagi-k">
+    <button class="x" id="bagiX" type="button" aria-label="Tutup"><svg class="ic"><use href="#i-x"/></svg></button>
+    <h3 id="bagiJudul">Bagikan ke Status</h3>
+    <p class="bagi-info">Di komputer, WhatsApp belum bisa membuka Status secara langsung. <b>Unduh gambar</b> di bawah, lalu unggah dari HP — atau kirim teks renungannya ke chat.</p>
+    <img id="bagiImg" alt="Pratinjau gambar renungan untuk Status WhatsApp">
+    <div class="bagi-aksi">
+      <a class="btn btn-blue mini" id="bagiUnduh" download>Unduh gambar</a>
+      <button class="btn btn-line mini" id="bagiSalin" type="button">Salin teks</button>
+      <a class="btn btn-gold mini" id="bagiWa" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> Kirim ke Chat</a>
+    </div>
+    <p class="bagi-pesan" id="bagiPesan" role="status"></p>
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto galeri">
+  <button class="x" id="lbX" aria-label="Tutup"><svg class="ic"><use href="#i-x"/></svg></button>
+  <button class="pv" id="lbP" aria-label="Sebelumnya"><svg class="ic"><use href="#i-left"/></svg></button>
+  <button class="nx" id="lbN" aria-label="Berikutnya"><svg class="ic"><use href="#i-right"/></svg></button>
+  <figure><div id="lbMedia"></div><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<!-- ================= 9. PENDAFTARAN ================= -->
+<section id="daftar">
+  <div class="wrap join">
+    <div class="reveal">
+      <span class="eyebrow">Pendaftaran Anggota</span>
+      <h2>Yuk, bergabung bersama kami!</h2>
+      <p class="lead">Tidak perlu jadi "sempurna" untuk bergabung. Cukup datang apa adanya, kami senang menyambutmu.</p>
+      <ul class="perks">
+        <li><svg class="ic"><use href="#i-check"/></svg> Ibadah &amp; pendalaman firman yang santai</li>
+        <li><svg class="ic"><use href="#i-check"/></svg> Teman-teman baru yang saling mendoakan</li>
+        <li><svg class="ic"><use href="#i-check"/></svg> Kesempatan melayani dan mengembangkan bakat</li>
+      </ul>
+    </div>
+    <form id="form" class="reveal" novalidate>
+      <div class="hp" aria-hidden="true"><label for="website">Jangan diisi</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="f"><label for="nama">Nama lengkap</label><input id="nama" name="nama" autocomplete="name" maxlength="60" placeholder="Contoh: Maria Putri" required></div>
+      <div class="f"><label for="panggilan">Nama panggilan</label><input id="panggilan" maxlength="30" placeholder="Contoh: Maria" required></div>
+      <div class="row2">
+        <div class="f"><label for="tempat">Tempat lahir</label><input id="tempat" maxlength="40" placeholder="Contoh: Semarang" required></div>
+        <div class="f"><label for="tgl">Tanggal lahir</label><input id="tgl" type="date" required></div>
+      </div>
+      <div class="f"><label for="agama">Agama</label>
+        <select id="agama" required><option value="">Pilih agama</option><option>Kristen Protestan</option><option>Katolik</option><option>Lainnya</option></select></div>
+      <div class="f"><label for="alamat">Alamat</label><input id="alamat" autocomplete="street-address" maxlength="120" placeholder="Contoh: Jl. Melati No. 5, Semarang" required></div>
+      <div class="row2">
+        <div class="f"><label for="kelas">Kelas</label>
+          <select id="kelas" required><option value="">Pilih kelas</option><option>X</option><option>XI</option><option>XII</option></select></div>
+        <div class="f"><label for="jurusan">Jurusan</label>
+          <select id="jurusan" required><option value="">Pilih jurusan</option><option>Manajemen Perkantoran dan Layanan Bisnis 1</option><option>Manajemen Perkantoran dan Layanan Bisnis 2</option><option>Manajemen Perkantoran dan Layanan Bisnis 3</option><option>Pemasaran 1</option><option>Pemasaran 2</option><option>Pemasaran 3</option><option>Akuntansi dan Keuangan Lembaga 1</option><option>Akuntansi dan Keuangan Lembaga 2</option><option>Akuntansi dan Keuangan Lembaga 3</option><option>Pengembangan Perangkat Lunak dan Gim</option></select></div>
+      </div>
+      <div class="f"><label for="wa">Nomor WhatsApp</label><input id="wa" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" placeholder="08xxxxxxxxxx" required></div>
+      <label class="cek" for="setuju">
+        <input id="setuju" type="checkbox" required>
+        <span>Saya setuju data ini dicatat pengurus untuk pendataan anggota, dan saya sudah memberitahu orang tua/wali.</span>
+      </label>
+      <button class="btn btn-gold" type="submit" style="width:100%"><svg class="ic"><use href="#i-wa"/></svg> Kirim Pendaftaran</button>
+      <p class="msg" id="fmsg" role="status"></p>
+      <p class="note">Data hanya dipakai pengurus untuk pendataan anggota (disimpan di Google Sheets dan dikirim lewat WhatsApp). Tidak dibagikan ke pihak lain.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= 10. KONTAK ================= -->
+<section id="kontak">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Kontak</span>
+      <h2>Hubungi kami</h2>
+      <p class="lead">Ada pertanyaan, doa, atau ingin berkunjung? Kami senang mendengar darimu.</p>
+    </div>
+    <div class="contacts">
+      <a class="ct reveal" id="ctIg" target="_blank" rel="noopener"><span class="ico"><svg class="ic"><use href="#i-ig"/></svg></span><span><small>Instagram</small><b id="ctIgT"></b></span></a>
+      <a class="ct reveal" id="ctWa" target="_blank" rel="noopener"><span class="ico"><svg class="ic"><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><b id="ctWaT"></b></span></a>
+      <a class="ct reveal" id="ctMail"><span class="ico"><svg class="ic"><use href="#i-mail"/></svg></span><span><small>Email</small><b id="ctMailT"></b></span></a>
+      <div class="ct reveal"><span class="ico"><svg class="ic"><use href="#i-pin"/></svg></span><span><small>Sekretariat</small><b id="ctLok"></b></span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p class="v">"Orang jujur akan melihat dan mengenal TUHAN." — Mazmur 11:7</p>
+  <p>© <span id="yr"></span> Persekutuan SMKN 9 Semarang · SMKN 9 Semarang</p>
+  <p style="margin-top:4px">Dibuat dengan 💙 untuk kemuliaan Tuhan</p>
+  <button class="pasang" id="pasang" type="button" hidden>📲 Pasang aplikasi di HP</button>
+</footer>
+
+<noscript>
+  <div class="noscript">
+    <b>JavaScript belum aktif.</b> Bagian Pengurus, Jadwal, Renungan, dan Galeri memerlukan JavaScript.
+    Silakan aktifkan JavaScript, atau hubungi pengurus lewat WhatsApp di <b>087840747799</b>.
+  </div>
+</noscript>
+
+<!-- ================= ASISTEN VIRTUAL ================= -->
+<button class="bot-fab" id="botFab" aria-label="Tanya asisten virtual" aria-expanded="false" aria-controls="bot"><svg class="ic"><use href="#i-spark"/></svg><span>Tanya Asisten</span></button>
+<div class="bot" id="bot" role="dialog" aria-label="Asisten Virtual Persekutuan">
+  <div class="bot-h">
+    <span class="av"><svg class="ic"><use href="#i-spark"/></svg></span>
+    <div><b>Asisten Persekutuan</b><small>Asisten virtual · siap membantu</small></div>
+    <button type="button" id="botX" aria-label="Tutup asisten"><svg class="ic"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="bot-log" id="botLog" aria-live="polite"></div>
+  <div class="bot-chips" id="botChips"></div>
+  <form class="bot-f" id="botForm" autocomplete="off">
+    <input id="botInput" type="text" maxlength="300" placeholder="Tulis pertanyaanmu..." aria-label="Pertanyaan untuk asisten">
+    <button type="submit" aria-label="Kirim"><svg class="ic"><use href="#i-send"/></svg></button>
+  </form>
+  <p class="bot-foot">Asisten virtual, bukan pengurus. Untuk hal pribadi, hubungi pengurus.</p>
+</div>
+
+<!-- ================= PEMUTAR LAGU ================= -->
+<audio id="bgm" preload="none"></audio>
+<div class="music hint" id="music" role="group" aria-label="Pemutar lagu">
+  <button class="m-play" id="mPlay" type="button" aria-label="Putar lagu"><svg class="ic fill pl"><use href="#i-play"/></svg><svg class="ic fill pa"><use href="#i-pause"/></svg></button>
+  <div class="m-info"><b id="mTitle">Lagu Persekutuan</b><small id="mSub">Ketuk ▶ untuk memutar</small></div>
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  <button class="m-btn" id="mPrev" type="button" aria-label="Lagu sebelumnya"><svg class="ic"><use href="#i-left"/></svg></button>
+  <button class="m-btn" id="mNext" type="button" aria-label="Lagu berikutnya"><svg class="ic"><use href="#i-right"/></svg></button>
+  <input class="m-vol" id="mVol" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Volume">
+</div>
+
+<a class="wa" id="waFloat" target="_blank" rel="noopener" aria-label="Hubungi pengurus lewat WhatsApp"><svg class="ic"><use href="#i-wa"/></svg><span>Hubungi Pengurus</span></a>
+
+<script src="api.js?v=16"></script>
+<script src="data.js?v=16"></script>
+<script>
+/* Cadangan: kalau data.js belum ter-upload, halaman tetap jalan (data kosong). */
+if (typeof PERIODE === 'undefined') { window.PERIODE_BAWAAN = '2026/2027'; window.PERIODE = {}; }
+if (typeof ACARA === 'undefined') { window.ACARA = []; }
+if (typeof RENUNGAN === 'undefined') { window.RENUNGAN = []; }
+if (typeof GALERI === 'undefined') { window.GALERI = []; }
+</script>
+<script>
+document.documentElement.classList.add('js');
+
+/* Tautan lama yang mengarah ke #anggota dibuka di halaman Anggota yang baru */
+if (location.hash === '#anggota') location.replace('anggota.html');
+
+/* =====================================================================
+   ★ BAGIAN YANG PERLU KAMU EDIT — semua data penting ada di blok ini ★
+   ===================================================================== */
+
+/* --- Kontak & identitas --- */
+const KONFIG = {
+  tahun: "2013",                         // EDIT: tahun berdiri
+  wa: "6287840747799",                      // EDIT: nomor WA pengurus, format 62 tanpa 0/+ (contoh 6281234567890)
+  waTampil: "087840747799",               // EDIT: tampilan nomor di halaman
+  instagram: "m.i.c_9",              // EDIT: username IG tanpa @
+  email: "ministryinchrist9@gmail.com",                // EDIT: email persekutuan
+  lokasi: "Ruang Persekutuan, SMKN 9 Semarang", // EDIT: lokasi/ruang sekretariat
+  ibadahRutin: "Setiap Jumat, pukul 12.00 WIB, di Pos sekolah", // EDIT: dipakai oleh Asisten Virtual
+  aiEndpoint: "",  // OPSIONAL: alamat server perantara AI (Cloudflare Worker). Kosongkan = asisten memakai jawaban otomatis bawaan
+  sheetEndpoint: "https://script.google.com/macros/s/AKfycbyF1-xz10JzBU6eq9eS611EGjuu-SEPeaJo5Y9bVF1E_BYir3sowp1UICZDwfRNkq02/exec",  // alamat Web App Google Apps Script untuk mencatat pendaftar ke Google Sheets. Kosongkan = tidak dicatat
+
+  /* --- Konten dari Google Sheets (OPSIONAL) ---
+     Kosongkan "" untuk memakai data bawaan di file ini.
+     Cara mengisi: buat Google Sheets dengan satu tab per jenis konten, lalu
+     File → Bagikan → Publikasikan ke web → pilih tab → format "Comma-separated values (.csv)" → Salin tautan.
+     Baris pertama (judul kolom):
+       Acara    : tanggal | judul | jam | lokasi
+       Renungan : referensi | ayat | isi | doa
+       Galeri   : file | caption        (file = tautan Google Drive yang di-share "Siapa saja yang memiliki tautan")
+     Tanggal boleh 2026-11-13 atau 13/11/2026. Perubahan di sheet langsung tampil saat halaman dibuka. --- */
+  konten: {
+    acara: "",
+    renungan: "",
+    galeri: ""
+  }
+};
+
+/* --- DATA PER PERIODE ---
+   Data pembina, pengurus, dan anggota sekarang ada di file terpisah: data.js
+   (dipakai bersama oleh index.html dan anggota.html).
+   Edit data.js, bukan file ini. */
+
+/* Data periode yang sedang dilihat (diisi otomatis oleh pakaiPeriode) */
+let periodeAktif = PERIODE_BAWAAN;
+let PEMBINA = [], PENGURUS = [], ANGGOTA = [];
+function pakaiPeriode(p){
+  const d = PERIODE[p] || {};
+  periodeAktif = p;
+  PEMBINA  = d.pembina  || [];
+  PENGURUS = d.pengurus || [];
+  ANGGOTA  = d.anggota  || [];
+}
+
+/* --- Ibadah rutin: dibuat OTOMATIS tiap pekan, tanggal mengikuti kalender. Tidak perlu diedit tiap minggu. ---
+   hari: 0=Minggu, 1=Senin, ... 5=Jumat, 6=Sabtu
+   total: jumlah seluruh acara yang ditampilkan. Acara khusus (ACARA) selalu tampil lebih dulu,
+          sisa tempatnya diisi Jumat terdekat. Jadi Jumat yang "tergantikan" oleh acara khusus.
+   libur: tanggal ibadah yang ditiadakan (format "TAHUN-BULAN-HARI"), mis. saat ujian atau libur sekolah */
+const RUTIN = {                                                                      // EDIT bila perlu
+  hari: 5, judul: "Ibadah Persekutuan Jumat", jam: "12.00 WIB", lokasi: "Pos sekolah",
+  total: 4,
+  libur: []   // contoh: ["2026-12-25", "2027-01-01"]
+};
+
+/* Acara khusus, galeri, dan renungan bawaan ada di data.js. */
+
+/* --- Daftar lagu: taruh file audio di folder yang sama dengan index.html. Kosongkan [] untuk menyembunyikan pemutar. ---
+   Saran: mp3/m4a 64 kbps, maksimal ±4 MB per lagu supaya ringan di kuota. */
+const LAGU = [                                                                       // EDIT
+  { judul: "Lagu Rohani", artis: "", src: "lagu rohani.m4a" }
+];
+
+
+
+/* --- FAQ Asisten: k = kata kunci, a = jawaban, f = saran lanjutan (opsional). Tambah sesuka hati. --- */
+const FAQ = [                                                                        // EDIT
+  { k:['biaya','iuran','bayar','gratis'], a:'Bergabung tidak dipungut biaya. Kalau ada kegiatan yang memerlukan biaya (mis. retret), pengurus akan memberi tahu lebih dulu.', f:['Cara bergabung'] },
+  { k:['seragam','pakaian','baju'], a:'Pakai seragam sekolah seperti biasa saat ibadah Jumat. Kalau hari itu ada kegiatan lain, cukup berpakaian rapi dan sopan.' },
+  { k:['non kristen','beda agama','agama lain'], a:'Ibadah ditujukan bagi siswa Kristen dan Katolik. Teman dari agama lain yang ingin tahu lebih banyak boleh bertanya ke pengurus dengan senang hati.', f:['Kontak pengurus'] },
+  { k:['bawa alkitab','alkitab','bawa apa'], a:'Sebaiknya bawa Alkitab atau buka Alkitab di HP. Kalau lupa, tidak apa-apa, kita baca bersama.' },
+  { k:['lama ibadah','durasi','berapa lama'], a:'Ibadah rutin sekitar 30–45 menit, jadi masih sempat istirahat dan makan.' },
+  { k:['kelas xi','kelas 11','kelas xii','kelas 12','tingkat'], a:'Semua siswa Kristen dan Katolik SMKN 9 Semarang boleh bergabung, dari kelas X sampai XII. Isi formulir pendaftaran atau datang langsung ke ibadah Jumat.', f:['Cara bergabung','Jadwal ibadah'] },
+  { k:['kelas x','kelas 10','siswa baru','murid baru','anak baru'], a:'Siswa baru sangat diterima! Datang saja ke ibadah Jumat atau isi formulir pendaftaran.', f:['Jadwal ibadah','Cara bergabung'] }
+];
+
+/* --- Ayat sesuai topik (dipakai Asisten saat pengguna curhat/minta ayat) --- */
+const TOPIK = [
+  { k:['ujian','nilai','belajar','tugas','pkl','praktik'], r:'Kolose 3:23', t:'Apapun juga yang kamu perbuat, perbuatlah dengan segenap hatimu seperti untuk Tuhan dan bukan untuk manusia.' },
+  { k:['takut','cemas','khawatir','panik'], r:'Yesaya 41:10', t:'Janganlah takut, sebab Aku menyertai engkau, janganlah bimbang, sebab Aku ini Allahmu; Aku akan meneguhkan, bahkan akan menolong engkau.' },
+  { k:['marah','emosi','kesal','benci'], r:'Efesus 4:26', t:'Apabila kamu menjadi marah, janganlah kamu berbuat dosa: janganlah matahari terbenam, sebelum padam amarahmu.' },
+  { k:['teman','sahabat','pertemanan','kesepian','sendirian'], r:'Amsal 17:17', t:'Seorang sahabat menaruh kasih setiap waktu, dan menjadi seorang saudara dalam kesukaran.' },
+  { k:['masa depan','cita cita','karier','kerja','lulus'], r:'Yeremia 29:11', t:'Sebab Aku ini mengetahui rancangan-rancangan apa yang ada pada-Ku mengenai kamu, demikianlah firman TUHAN, yaitu rancangan damai sejahtera dan bukan rancangan kecelakaan, untuk memberikan kepadamu hari depan yang penuh harapan.' },
+  { k:['lelah','capek','letih','stres','stress','tertekan'], r:'Matius 11:28', t:'Marilah kepada-Ku, semua yang letih lesu dan berbeban berat, Aku akan memberi kelegaan kepadamu.' }
+];
+
+/* --- Motivasi remaja: p = pesan (dipakai bergantian), a = langkah kecil, x = catatan penting (opsional), r/t = ayat --- */
+const MOTIVASI = [
+  { id:'pergaulan', em:'🛡️', label:'Pergaulan bebas',
+    k:['pergaulan','salah gaul','ikut ikutan','ajakan teman','tekanan teman','peer pressure','seks','nongkrong malam','dugem','clubbing'],
+    p:["Kamu berharga dan tidak perlu “ikut-ikutan” supaya diterima. Teman yang baik tidak akan menjauh hanya karena kamu berkata “tidak”. Menolak ajakan yang merusak bukan berarti kuno, itu tanda kamu punya pegangan dan menghargai dirimu.",
+       "Pergaulan itu seperti arus: kalau tidak punya pegangan, kita terbawa. Pilih lingkaran yang membuatmu jadi versi terbaik, bukan yang membuatmu menyesal. Satu keputusan malam ini bisa memengaruhi masa depanmu bertahun-tahun."],
+    a:"Siapkan satu kalimat penolakan yang nyaman kamu ucapkan (“Aku pass, ya”), ajak satu teman yang sehat untuk saling menjaga, dan beri tahu orang dewasa yang kamu percaya kalau merasa ditekan.",
+    x:"Kalau kamu pernah dipaksa, dilecehkan, atau merasa tidak aman, itu bukan salahmu. Segera ceritakan ke guru BK, guru pembina, atau orang tua, atau hubungi layanan SAPA 129.",
+    r:"1 Korintus 15:33", t:"Janganlah kamu sesat: pergaulan yang buruk merusakkan kebiasaan yang baik." },
+
+  { id:'pacaran', em:'💙', label:'Pacaran',
+    k:['pacar','pacaran','pasangan','cowok','cewek','gebetan','putus','putus cinta','patah hati','jatuh cinta','baper','jomblo','jodoh','selingkuh'],
+    p:["Jatuh cinta itu wajar di usia remaja, tapi ingat: kamu masih bertumbuh. Hubungan yang sehat membuatmu makin dekat dengan Tuhan, makin rajin belajar, dan makin menghargai dirimu, bukan sebaliknya. Kalau hubungan membuatmu takut, tertekan, atau jauh dari Tuhan dan keluarga, itu tanda untuk mundur sejenak.",
+       "Putus cinta itu sakit dan perasaanmu valid. Tapi nilaimu tidak ditentukan oleh status hubunganmu. Beri dirimu waktu, curhat ke sahabat atau orang dewasa yang dipercaya, dan isi hari dengan hal yang membangun. Orang yang tepat datang pada waktu Tuhan, dan sekarang waktunya kamu menjadi pribadi yang utuh."],
+    a:"Tetapkan batas yang jelas sejak awal, jangan menyerahkan hal yang belum siap kamu serahkan atas nama “bukti cinta”, dan jangan korbankan belajar dan ibadah demi pasangan.",
+    x:"Pasangan yang memaksa, mengancam, atau mengontrol semua hal bukan tanda cinta. Itu tanda bahaya, ceritakan ke orang dewasa yang kamu percaya.",
+    r:"Amsal 4:23", t:"Jagalah hatimu dengan segala kewaspadaan, karena dari situlah terpancar kehidupan." },
+
+  { id:'ortu', em:'🏠', label:'Orang tua',
+    k:['orang tua','ortu','ayah','ibu','mama','papa','bapak','dimarahi ortu','dilarang ortu'],
+    p:["Orang tuamu mungkin tidak sempurna dan kadang sulit mengerti, tapi sering kali omelan mereka adalah cara mereka menjaga. Coba bicara saat suasana tenang: dengarkan dulu, lalu sampaikan perasaanmu dengan sopan. Hormat bukan berarti selalu setuju, tapi tetap menghargai.",
+       "Hari ini, lakukan satu hal kecil: bantu pekerjaan rumah tanpa disuruh, ucapkan terima kasih, atau peluk mereka. Hal kecil sering lebih berarti daripada yang kamu kira. Dan doakan mereka, karena mereka juga sedang berjuang untukmu."],
+    a:"Tulis tiga hal yang kamu syukuri dari orang tuamu, lalu sampaikan satu di antaranya hari ini.",
+    r:"Keluaran 20:12", t:"Hormatilah ayahmu dan ibumu, supaya lanjut umurmu di tanah yang diberikan TUHAN, Allahmu, kepadamu." },
+
+  { id:'keluarga', em:'🤝', label:'Keluarga sulit',
+    k:['broken home','orang tua bercerai','ortu cerai','cerai','keluarga berantakan','keluarga tidak harmonis','ortu bertengkar','yatim','piatu','ditinggal'],
+    p:["Kalau rumah terasa berat, kamu tidak salah dan kamu tidak sendirian. Banyak orang hebat tumbuh dari keluarga yang tidak mudah. Keadaan rumah memang memengaruhimu, tapi tidak menentukan siapa dirimu nanti. Kamu boleh sedih, boleh lelah, dan boleh minta tolong.",
+       "Fokuslah pada hal yang bisa kamu kendalikan: belajarmu, sikapmu, dan hubunganmu dengan Tuhan. Carilah “keluarga” yang sehat di sekitarmu, termasuk teman-teman persekutuan ini."],
+    a:"Ceritakan bebanmu ke satu orang dewasa yang kamu percaya (guru BK, pembina, atau kerabat). Jangan menyimpan semuanya sendiri.",
+    r:"Mazmur 27:10", t:"Sekalipun ayahku dan ibuku meninggalkan aku, namun TUHAN menyambut aku." },
+
+  { id:'guru', em:'🍎', label:'Guru',
+    k:['guru','guru galak','guru killer','wali kelas','guru bk','dihukum','ditegur','teguran'],
+    p:["Guru yang tegas biasanya sedang berusaha membentukmu, bukan membencimu. Teguran memang tidak enak, tapi orang yang mau menerima koreksi akan bertumbuh lebih cepat daripada yang selalu merasa benar. Coba tanya dirimu: apa yang bisa kupelajari dari teguran ini?",
+       "Kalau kamu merasa diperlakukan tidak adil, sampaikan dengan sopan dan pada waktu yang tepat, misalnya lewat wali kelas atau guru BK. Hormat kepada guru akan membuka banyak pintu, dan suatu hari kamu akan berterima kasih pada mereka."],
+    a:"Sapa gurumu hari ini, ucapkan terima kasih, atau tanyakan hal yang belum kamu pahami.",
+    r:"Amsal 12:1", t:"Siapa mencintai didikan, mencintai pengetahuan, tetapi siapa membenci teguran adalah dungu." },
+
+  { id:'pendidikan', em:'📚', label:'Pendidikan',
+    k:['pendidikan','sekolah','belajar','pelajaran','rangking','prestasi','kuliah','semangat belajar','motivasi belajar','tidak naik kelas','putus sekolah','pkl'],
+    p:["Sekolah bukan cuma soal nilai, tapi soal membentuk karakter dan keterampilan untuk hidupmu. Nilai yang belum bagus bukan akhir segalanya: yang penting kamu mau terus belajar dan tidak menyerah. Di SMK kamu bahkan sudah belajar keterampilan nyata yang dibutuhkan dunia kerja.",
+       "Belajar sedikit tapi rutin lebih ampuh daripada begadang sehari sebelum ujian. Kerjakan dengan jujur, lakukan yang terbaik, dan serahkan hasilnya kepada Tuhan."],
+    a:"Pilih satu mata pelajaran tersulit, belajar 25 menit tanpa HP, istirahat 5 menit, lalu ulangi sekali lagi.",
+    r:"Amsal 1:7", t:"Takut akan TUHAN adalah permulaan pengetahuan, tetapi orang bodoh menghina hikmat dan didikan." },
+
+  { id:'malas', em:'⏰', label:'Rasa malas',
+    k:['malas','mager','menunda','prokrastinasi','tidak semangat','kurang semangat','tidak disiplin','disiplin','tidak termotivasi','bosan'],
+    p:["Malas itu normal, tapi jangan dituruti terus. Mulai saja dari langkah paling kecil: 5 menit pertama biasanya yang paling berat, sesudahnya semangat ikut datang. Disiplin hari ini adalah hadiah untuk dirimu di masa depan.",
+       "Kamu tidak harus menunggu mood. Satu tugas selesai hari ini lebih baik daripada sepuluh rencana besar yang tidak dimulai. Tuhan memakai kesetiaan dalam hal-hal kecil."],
+    a:"Jauhkan HP, setel timer 5 menit, dan kerjakan satu tugas kecil sampai timer berbunyi.",
+    r:"Amsal 6:6", t:"Hai pemalas, pergilah kepada semut, perhatikanlah tingkah lakunya dan jadilah bijak." },
+
+  { id:'teman', em:'👫', label:'Pertemanan',
+    k:['pertemanan','sahabat','dijauhi','ditinggal teman','teman palsu','teman toxic','toxic','geng','tidak punya teman','sulit berteman','musuhan','berantem'],
+    p:["Teman yang baik mendekatkanmu pada hal yang benar, bukan menjauhkanmu. Berani menjaga jarak dari pertemanan yang merusak, dan berani menjadi teman yang tulus bagi orang lain.",
+       "Kalau kamu merasa sendirian, mulailah dengan menyapa satu orang hari ini. Persahabatan sering tumbuh dari hal sederhana. Kalau sedang berselisih, jadilah yang lebih dulu meminta maaf. Itu tanda kedewasaan, bukan kekalahan."],
+    a:"Kirim pesan ke satu teman: tanyakan kabarnya atau ucapkan terima kasih.",
+    r:"Amsal 27:17", t:"Besi menajamkan besi, orang menajamkan sesamanya." },
+
+  { id:'gagal', em:'🌱', label:'Kegagalan',
+    k:['gagal','kegagalan','kecewa','menyerah','tidak berguna','tidak lulus','remedial','tidak berhasil'],
+    p:["Gagal bukan berarti kamu gagal sebagai pribadi. Hampir semua orang sukses pernah jatuh berkali-kali; bedanya, mereka bangun lagi. Tangisi sebentar, pelajari kesalahannya, lalu melangkah lagi.",
+       "Tuhan tidak menilai hidupmu dari satu hasil. Kadang kegagalan adalah cara-Nya mengarahkan ke jalan yang lebih baik, atau mengajar kita rendah hati dan tekun."],
+    a:"Tulis satu hal yang bisa kamu pelajari dari kegagalan itu dan satu langkah kecil untuk mencoba lagi.",
+    r:"Amsal 24:16", t:"Sebab tujuh kali orang benar jatuh, namun ia bangun kembali." },
+
+  { id:'pede', em:'✨', label:'Percaya diri',
+    k:['percaya diri','minder','insecure','tidak percaya diri','jelek','gendut','kurus','dibandingkan','membandingkan','iri','iri hati','rendah diri','malu'],
+    p:["Kamu dibuat Tuhan dengan unik dan tidak ada duanya. Media sosial hanya menampilkan sisi terbaik orang lain; jangan membandingkan hidupmu yang apa adanya dengan sorotan mereka. Nilaimu tidak ditentukan oleh penampilan, jumlah followers, atau pendapat orang.",
+       "Fokuslah mengembangkan yang kamu punya: bakat, karakter, dan kebaikan hatimu. Rasa minder berkurang saat kamu berhenti membandingkan dan mulai bersyukur, lalu bertumbuh sedikit demi sedikit."],
+    a:"Tulis tiga hal yang kamu syukuri dari dirimu, lalu baca lagi saat mulai merasa minder.",
+    r:"Mazmur 139:14", t:"Aku bersyukur kepada-Mu oleh karena kejadianku dahsyat dan ajaib." },
+
+  { id:'medsos', em:'📱', label:'Media sosial',
+    k:['media sosial','medsos','gadget','main hp','kecanduan hp','pegang hp','tiktok','game','gaming','main game','scroll','followers','begadang'],
+    p:["Gadget itu alat, bukan tuan. Gunakan untuk belajar, berkarya, dan terhubung dengan orang baik, tapi jangan sampai ia mencuri waktu belajar, tidur, dan doamu. Apa yang kamu konsumsi tiap hari membentuk pikiranmu.",
+       "Coba puasa media sosial beberapa jam, misalnya saat belajar dan sebelum tidur. Pikir dua kali sebelum posting atau komentar: apakah ini benar, baik, dan membangun? Jejak digital bertahan lama."],
+    a:"Aktifkan mode jangan ganggu selama 1 jam belajar dan jauhkan HP dari tempat tidur malam ini.",
+    r:"Filipi 4:8", t:"Semua yang benar, semua yang mulia, semua yang adil, semua yang suci, semua yang manis, semua yang sedap didengar, semua yang disebut kebajikan dan patut dipuji, pikirkanlah semuanya itu." },
+
+  { id:'jujur', em:'🕊️', label:'Kejujuran',
+    k:['jujur','kejujuran','contek','menyontek','nyontek','bohong','berbohong','mencuri','curang','plagiat'],
+    p:["Kejujuran terasa mahal saat godaan menyontek atau berbohong datang, tapi hasilnya paling tenang. Nilai bagus dari hasil curang tidak membuatmu pintar, dan hati nuranimu tetap tahu.",
+       "Ingat motto kita: orang jujur akan melihat dan mengenal TUHAN. Jujur dalam hal kecil melatihmu jujur dalam hal besar, dan itu membangun reputasi yang tidak bisa dibeli."],
+    a:"Pilih satu situasi hari ini di mana kamu akan memilih jujur, walau tidak ada yang melihat.",
+    r:"Mazmur 11:7", t:"Sebab TUHAN baik dan adil, Ia mengasihi orang yang berbuat baik; orang jujur akan melihat dan mengenal TUHAN." },
+
+  { id:'adiksi', em:'🚫', label:'Kecanduan',
+    k:['kecanduan','rokok','merokok','vape','vaping','miras','mabuk','narkoba','narkotika','obat terlarang','judi','judi online','judol'],
+    p:["Rokok, vape, miras, narkoba, dan judi online sering dimulai dari “cuma coba-coba” atau karena ingin diterima. Padahal yang dimulai dengan coba-coba bisa berakhir dengan ketergantungan dan merusak kesehatan, uang, dan masa depan.",
+       "Kamu tidak perlu membuktikan apa pun lewat itu. Berani berkata “tidak” adalah kekuatan sejati. Kalau kamu atau temanmu sudah terjerat, mencari bantuan bukan aib: ceritakan ke guru BK, orang tua, atau tenaga kesehatan. Pemulihan itu mungkin."],
+    a:"Kalau ada ajakan, siapkan jawaban tegas dan segera menjauh. Kalau sudah terlanjur, cari satu orang dewasa yang dipercaya hari ini.",
+    r:"1 Korintus 6:12", t:"Segala sesuatu halal bagiku, tetapi aku tidak membiarkan diriku diperhamba oleh sesuatu apapun." },
+
+  { id:'bully', em:'🧡', label:'Bullying',
+    k:['bullying','bully','dibully','diejek','ejekan','dihina','perundungan','dirundung','cyberbullying','dikucilkan','body shaming'],
+    p:["Kalau kamu sedang dibully: itu bukan salahmu dan kamu tidak pantas diperlakukan begitu. Jangan dipendam sendiri. Ceritakan ke guru BK, wali kelas, guru pembina, atau orang tua, dan simpan bukti (tangkapan layar) kalau terjadi di dunia maya.",
+       "Kalau kamu pernah ikut menyakiti orang lain, berani minta maaf dan berubah. Kata-kata kecil bisa melukai dalam. Jadilah orang yang membela, bukan ikut menertawakan."],
+    a:"Catat apa yang terjadi (kapan, siapa, di mana) dan ceritakan ke satu orang dewasa yang kamu percaya.",
+    x:"Kalau butuh bantuan segera, layanan SAPA 129 dapat dihubungi.",
+    r:"Mazmur 34:19", t:"TUHAN dekat pada orang-orang yang patah hati, dan Ia menyelamatkan orang-orang yang remuk jiwanya." },
+
+  { id:'uang', em:'💰', label:'Keuangan',
+    k:['uang','keuangan','jajan','menabung','tabungan','boros','hemat','pinjol','pinjaman online','belanja online','uang saku','part time'],
+    p:["Belajar mengatur uang sejak remaja itu keren. Bedakan kebutuhan dan keinginan, sisihkan dulu untuk menabung dan memberi sebelum jajan. Kesetiaan dalam hal kecil melatihmu untuk hal besar.",
+       "Hati-hati dengan pinjol dan godaan belanja impulsif: kemudahan di awal bisa jadi beban besar di kemudian hari. Kalau punya keterampilan dari jurusanmu, mulai pikirkan usaha atau kerja kecil yang jujur."],
+    a:"Tentukan target tabungan mingguan sekecil apa pun dan catat pengeluaranmu seminggu ini.",
+    r:"Lukas 16:10", t:"Barangsiapa setia dalam perkara-perkara kecil, ia setia juga dalam perkara-perkara besar." },
+
+  { id:'masadepan', em:'🚀', label:'Masa depan',
+    k:['masa depan','cita cita','karier','karir','lulus','lulusan','lowongan','bingung jurusan','panggilan hidup','kerja setelah lulus'],
+    p:["Tidak apa-apa kalau kamu belum tahu persis mau jadi apa. Mulailah dari yang ada di depanmu: kuasai keterampilan jurusanmu, bangun karakter jujur, dan pelajari hal baru. Tuhan menuntun langkah demi langkah, bukan sekaligus.",
+       "Anak SMK punya keunggulan: siap kerja dan siap berkarya. Ikuti PKL dengan sungguh-sungguh, bangun jejaring yang baik, dan jangan malu bertanya pada kakak kelas atau alumni. Bermimpilah besar, dan mulai dengan langkah kecil hari ini."],
+    a:"Tulis tiga hal yang ingin kamu capai setahun ke depan dan satu langkah kecil untuk tiap hal.",
+    r:"Yeremia 29:11", t:"Sebab Aku ini mengetahui rancangan-rancangan apa yang ada pada-Ku mengenai kamu, demikianlah firman TUHAN, yaitu rancangan damai sejahtera dan bukan rancangan kecelakaan, untuk memberikan kepadamu hari depan yang penuh harapan." },
+
+  { id:'jatidiri', em:'🧭', label:'Jati diri',
+    k:['jati diri','remaja','anak muda','siapa diriku','arti hidup','tujuan hidup','makna hidup'],
+    p:["Masa remaja memang masa mencari jati diri: wajar kalau bingung, berubah-ubah, dan penuh pertanyaan. Kamu tidak harus langsung punya semua jawaban. Yang penting, kamu berakar pada hal yang benar: dikasihi Tuhan, punya nilai, dan punya tujuan.",
+       "Usia muda adalah waktu emas: energi besar, pikiran terbuka, dan waktu panjang untuk bertumbuh. Jangan tunggu dewasa untuk jadi teladan; mulailah sekarang lewat sikap dan pilihanmu sehari-hari."],
+    a:"Tulis tiga nilai hidup yang ingin kamu pegang (mis. jujur, setia, peduli) dan cek tiap malam apakah hari ini sesuai.",
+    r:"1 Timotius 4:12", t:"Jangan seorangpun menganggap engkau rendah karena engkau muda. Jadilah teladan bagi orang-orang percaya dalam perkataanmu, tingkah lakumu, kasihmu, kesetiaanmu dan kesucianmu." },
+
+  { id:'kekerasan', em:'🆘', label:'Kekerasan', hide:true,
+    k:['dilecehkan','pelecehan','diperkosa','kekerasan','dipukul','kdrt','dianiaya','disentuh paksa','dipaksa'],
+    p:["Apa pun yang terjadi padamu, itu bukan salahmu. Kamu berhak merasa aman. Pindah ke tempat yang aman dulu, lalu ceritakan ke orang dewasa yang kamu percaya hari ini: orang tua, guru BK, atau guru pembina.",
+       "Jangan takut dianggap lebay atau disalahkan. Orang yang baik akan membantu, dan menyimpannya sendiri hanya membuat luka makin berat."],
+    a:"Pergi ke tempat yang aman, lalu hubungi satu orang dewasa yang kamu percaya sekarang juga.",
+    x:"Dalam keadaan darurat hubungi 112. Layanan SAPA 129 juga melayani pengaduan kekerasan terhadap anak dan perempuan.",
+    r:"Mazmur 46:2", t:"Allah itu bagi kita tempat perlindungan dan kekuatan, sebagai penolong dalam kesesakan sangat terbukti." }
+];
+
+/* =====================================================================
+   Di bawah ini adalah kode program. Biasanya tidak perlu diubah.
+   ===================================================================== */
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon = (id, cls='') => `<svg class="ic ${cls}"><use href="#i-${id}"/></svg>`;
+
+/* Catat pendaftar ke Google Sheets (lewat Apps Script). Gagal pun tidak mengganggu pendaftaran. */
+function simpanDaftar(d, sumber){
+  if (!KONFIG.sheetEndpoint) return;
+  try {
+    fetch(KONFIG.sheetEndpoint, {
+      method:'POST', mode:'no-cors', keepalive:true,
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({nama:d.nama, panggilan:d.panggilan, tempat:d.tempat, tgl:d.tgl, agama:d.agama, alamat:d.alamat, kelas:d.kelas, jurusan:d.jurusan, wa:d.wa, sumber})
+    }).catch(() => {});
+  } catch (e) {}
+}
+
+/* Gabungan acara: ibadah rutin otomatis (sesuai kalender) + acara khusus dari ACARA */
+function daftarAcara(){
+  const now = new Date(); now.setHours(0,0,0,0);
+  const fmt = d => d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+  /* 1) acara khusus selalu tampil (selama tanggalnya belum lewat) */
+  const out = ACARA.map(a => ({...a, d: parse(a.tanggal)})).filter(a => a.d >= now);
+  /* 2) sisa tempat dari total diisi ibadah rutin terdekat,
+        dengan melewati tanggal yang sudah dipakai acara khusus */
+  const dipakai = new Set(out.map(a => a.tanggal));
+  const slot = Math.max(0, RUTIN.total - out.length);
+  const d = new Date(now);
+  d.setDate(d.getDate() + ((RUTIN.hari - d.getDay() + 7) % 7));   // hari rutin terdekat (hari ini jika cocok)
+  for (let n = 0, guard = 0; n < slot && guard < 80; guard++) {
+    const key = fmt(d);
+    if (!RUTIN.libur.includes(key) && !dipakai.has(key)) {
+      out.push({tanggal:key, judul:RUTIN.judul, jam:RUTIN.jam, lokasi:RUTIN.lokasi, d:new Date(d)});
+      dipakai.add(key); n++;
+    }
+    d.setDate(d.getDate() + 7);
+  }
+  return out.sort((a,b) => a.d - b.d);
+}
+
+/* Kontak & tombol WA */
+/* Google Sheets menyimpan "0878…" sebagai angka, sehingga nol di depan bisa
+   hilang. Kembalikan tampilannya bila yang tersimpan hanya 8xxxxxxxx. */
+function rapikanWaTampil(v){
+  const s = String(v === undefined || v === null ? '' : v).trim();
+  return /^8\d{8,12}$/.test(s) ? '0' + s : s;
+}
+
+/* Nomor untuk tautan wa.me: 08… / 8… → 62… */
+function rapikanWaTautan(v){
+  let s = String(v === undefined || v === null ? '' : v).replace(/[^0-9]/g, '');
+  if (s.indexOf('0') === 0) s = '62' + s.slice(1);
+  else if (s.indexOf('8') === 0) s = '62' + s;
+  return s;
+}
+
+function terapkanKontak(){
+  document.querySelectorAll('[data-konfig="tahun"]').forEach(e => e.textContent = KONFIG.tahun);
+  $('#ctIg').href = `https://instagram.com/${KONFIG.instagram}`;  $('#ctIgT').textContent = '@' + KONFIG.instagram;
+  $('#ctWa').href = `https://wa.me/${rapikanWaTautan(KONFIG.wa)}`;  $('#ctWaT').textContent = rapikanWaTampil(KONFIG.waTampil);
+  $('#ctMail').href = `mailto:${KONFIG.email}`;                   $('#ctMailT').textContent = KONFIG.email;
+  $('#ctLok').textContent = KONFIG.lokasi;
+  $('#waFloat').href = `https://wa.me/${rapikanWaTautan(KONFIG.wa)}?text=${encodeURIComponent('Shalom, saya ingin bertanya tentang Persekutuan SMKN 9 Semarang.')}`;
+}
+terapkanKontak();
+$('#yr').textContent = new Date().getFullYear();
+
+/* Menu mobile */
+const burger = $('#burger'), menu = $('#menu');
+burger.addEventListener('click', () => {
+  const o = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', o);
+});
+menu.addEventListener('click', e => { if (e.target.closest('a')) { menu.classList.remove('open'); burger.setAttribute('aria-expanded', false); } });
+
+/* Pilihan periode: hanya periode yang sudah ada isinya yang ditampilkan.
+   Periode terbaru otomatis dipilih dan diberi label "Aktif", sisanya "Arsip". */
+function daftarPeriode(){
+  return Object.keys(PERIODE)
+    .filter(p => {
+      const d = PERIODE[p] || {};
+      return (d.pembina && d.pembina.length) || (d.pengurus && d.pengurus.length) || (d.anggota && d.anggota.length);
+    })
+    .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+}
+function periodeTampil(){
+  const isi = daftarPeriode();
+  return isi.length ? isi : Object.keys(PERIODE).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+}
+function periodeAwal(){
+  const aktif = typeof periodeAktifTampil === 'function' ? periodeAktifTampil() : '';
+  if (aktif && PERIODE[aktif]) return aktif;
+  const isi = daftarPeriode();
+  if (isi.length) return isi[isi.length - 1];
+  return PERIODE[PERIODE_BAWAAN] ? PERIODE_BAWAAN : Object.keys(PERIODE)[0];
+}
+function renderPeriode(){
+  const tampil = periodeTampil();
+  const aktif = typeof periodeAktifTampil === 'function' ? periodeAktifTampil() : tampil[tampil.length - 1];
+  const adaIsi = daftarPeriode().length > 0;
+  document.querySelectorAll('.periode').forEach(box => {
+    box.innerHTML = tampil.map(p =>
+      `<button type="button" role="tab" data-p="${esc(p)}" aria-selected="${p === periodeAktif}">${esc(p)}` +
+      (adaIsi ? ` <span class="tag">${p === aktif ? 'Aktif' : 'Arsip'}</span>` : '') +
+      `</button>`
+    ).join('');
+  });
+}
+function gantiPeriode(p){
+  if (!PERIODE[p]) return;
+  /* ingat tombol yang tadi ditekan supaya fokus keyboard tidak hilang setelah render ulang */
+  const kotak = document.activeElement && document.activeElement.closest ? document.activeElement.closest('.periode') : null;
+  pakaiPeriode(p);
+  renderPeriode(); renderPengurus();
+  if (kotak) {
+    const b = kotak.querySelector(`[data-p="${p}"]`);
+    if (b) b.focus();
+  }
+  pasangReveal();
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.periode [data-p]');
+  if (b) gantiPeriode(b.dataset.p);
+});
+/* Panah kiri/kanan untuk berpindah periode saat fokus di tombol periode */
+document.addEventListener('keydown', e => {
+  const b = e.target.closest('.periode [data-p]');
+  if (!b || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
+  e.preventDefault();
+  const keys = periodeTampil();
+  const i = keys.indexOf(b.dataset.p);
+  if (i < 0) return;
+  gantiPeriode(keys[(i + (e.key === 'ArrowRight' ? 1 : -1) + keys.length) % keys.length]);
+});
+
+/* Pengurus */
+const memberHTML = (m, extra='') => `
+  <div class="member ${extra} reveal">
+    <div class="photo">${m.foto ? `<img src="${esc(m.foto)}" alt="Foto ${esc(m.nama)}" loading="${extra ? 'eager' : 'lazy'}" decoding="async">` : icon('user')}</div>
+    <h3>${esc(m.nama)}</h3><p>${esc(m.jabatan)}</p>
+  </div>`;
+function renderPengurus(){
+  const t = $('#team');
+  if (!PEMBINA.length && !PENGURUS.length) {
+    t.innerHTML = `<div class="empty">Struktur pengurus periode ${esc(periodeAktif)} belum diisi.</div>`;
+    return;
+  }
+  t.innerHTML =
+    (PEMBINA.length ? `<div class="team-pembina">${PEMBINA.map(m => memberHTML(m, 'pembina')).join('')}</div>` : '') +
+    (PENGURUS.length ? `<div class="team">${PENGURUS.map(m => memberHTML(m)).join('')}</div>` : '');
+}
+
+/* Data anggota dipakai Asisten Virtual untuk menjawab "siapa saja anggota".
+   Daftar lengkapnya sekarang ada di halaman terpisah: anggota.html */
+const KELAS_ANG = ['X', 'XI', 'XII'];
+/* rapikan data kelas: "10" / "kelas x " tetap terbaca sebagai X */
+const kelasAng = a => {
+  const k = String(a.kelas || '').trim().toUpperCase().replace(/^KELAS\s+/, '');
+  return k === '10' ? 'X' : k === '11' ? 'XI' : k === '12' ? 'XII' : k;
+};
+
+/* Tampilkan periode awal (otomatis: periode terbaru yang ada isinya) */
+pakaiPeriode(periodeAwal());
+renderPeriode(); renderPengurus();
+
+/* Animasi ketuk: riak kecil muncul dari titik sentuh (hanya di perangkat sentuh) */
+if (window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const KETUK = '.btn,.ev-actions a,.ev-actions button,.menu a,.member,.g-item,.burger,.m-play,.m-btn,.lb button,.bagi-k .x,.periode button';
+  document.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'touch') return;
+    const el = e.target.closest(KETUK);
+    if (!el || el.disabled) return;
+    const r = el.getBoundingClientRect();
+    const d = Math.max(r.width, r.height) * 1.4;
+    const s = document.createElement('span');
+    s.className = 'ripple';
+    s.style.cssText = 'width:' + d + 'px;height:' + d + 'px;left:' + (e.clientX - r.left - d / 2) + 'px;top:' + (e.clientY - r.top - d / 2) + 'px';
+    el.classList.add('ketuk');
+    el.appendChild(s);
+    let beres = false;
+    const mulai = { x: e.clientX, y: e.clientY };
+    const bersihkan = () => {
+      if (beres) return;
+      beres = true;
+      s.remove();
+      if (!el.querySelector('.ripple')) el.classList.remove('ketuk');
+      document.removeEventListener('pointermove', gerak);
+      document.removeEventListener('pointercancel', gerak);
+    };
+    /* batal bila jari digeser (sedang menggulir), supaya tidak berkedip saat scroll */
+    const gerak = ev => {
+      if (ev.type === 'pointercancel' || Math.hypot(ev.clientX - mulai.x, ev.clientY - mulai.y) > 12) bersihkan();
+    };
+    document.addEventListener('pointermove', gerak, { passive: true });
+    document.addEventListener('pointercancel', gerak);
+    s.addEventListener('animationend', bersihkan);
+    setTimeout(bersihkan, 700);   /* jaring pengaman bila animasi dijeda (mis. tab pindah) */
+  });
+}
+
+/* ===== Simpan acara ke kalender: Google Calendar atau file .ics =====
+   Jam dibaca dari teks "08.00 WIB" (atau "08.00-10.00"). Kalau tidak ada jam akhir,
+   acara dianggap 90 menit. Waktu memakai zona Asia/Jakarta (WIB, UTC+7). */
+function menitJam(teks){
+  const m = [...String(teks || '').matchAll(/(\d{1,2})[.:](\d{2})/g)].map(x => (+x[1]) * 60 + (+x[2]));
+  return m.length ? m : null;
+}
+function waktuAcara(a){
+  const m = menitJam(a.jam) || [12 * 60];
+  const selesai = (m[1] !== undefined && m[1] > m[0]) ? m[1] : Math.min(m[0] + 90, 1439);
+  return { mulai: m[0], selesai };
+}
+const duaAngka = n => String(n).padStart(2, '0');
+function stempelLokal(tgl, menit){
+  const [y, bl, hr] = tgl.split('-');
+  return `${y}${bl}${hr}T${duaAngka(Math.floor(menit / 60))}${duaAngka(menit % 60)}00`;
+}
+function tautanGoogle(a){
+  const w = waktuAcara(a);
+  const p = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: a.judul,
+    dates: stempelLokal(a.tanggal, w.mulai) + '/' + stempelLokal(a.tanggal, w.selesai),
+    ctz: 'Asia/Jakarta',
+    location: a.lokasi || '',
+    details: 'Acara Persekutuan SMKN 9 Semarang'
+  });
+  return 'https://calendar.google.com/calendar/render?' + p.toString();
+}
+function isiICS(a){
+  const w = waktuAcara(a);
+  /* WIB = UTC+7 → kurangi 7 jam, lalu tulis dalam UTC supaya terbaca di semua aplikasi kalender */
+  const utc = (tgl, menit) => {
+    const [y, bl, hr] = tgl.split('-').map(Number);
+    return new Date(Date.UTC(y, bl - 1, hr, 0, menit - 420)).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  };
+  const aman = s => String(s || '').replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
+  const uid = a.tanggal + '-' + String(a.judul).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return [
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Persekutuan SMKN 9 Semarang//ID', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    'UID:' + uid + '@persekutuan-smkn9',
+    'DTSTAMP:' + utc(a.tanggal, 0),
+    'DTSTART:' + utc(a.tanggal, w.mulai),
+    'DTEND:' + utc(a.tanggal, w.selesai),
+    'SUMMARY:' + aman(a.judul),
+    'LOCATION:' + aman(a.lokasi),
+    'DESCRIPTION:' + aman('Acara Persekutuan SMKN 9 Semarang'),
+    'END:VEVENT', 'END:VCALENDAR', ''
+  ].join('\r\n');
+}
+function unduhICS(a){
+  const blob = new Blob([isiICS(a)], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const el = document.createElement('a');
+  el.href = url;
+  el.download = 'persekutuan-' + a.tanggal + '.ics';
+  document.body.appendChild(el); el.click(); el.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+
+/* Acara */
+let acaraTampil = [];
+function renderAcara(){
+  const list = acaraTampil = daftarAcara();
+  const bln = new Intl.DateTimeFormat('id-ID', {month:'short'});
+  const hari = new Intl.DateTimeFormat('id-ID', {weekday:'long'});
+  $('#events').innerHTML = list.length ? list.map((a, n) => `
+    <article class="event reveal">
+      <div class="date"><b>${a.d.getDate()}</b><span>${bln.format(a.d)}</span></div>
+      <div><h3>${esc(a.judul)}</h3>
+        <div class="meta"><span>${icon('cal')}${hari.format(a.d)}</span><span>${icon('clock')}${esc(a.jam)}</span><span>${icon('pin')}${esc(a.lokasi)}</span></div>
+        <div class="ev-actions">
+          <a href="${tautanGoogle(a)}" target="_blank" rel="noopener" aria-label="Tambah ${esc(a.judul)} ke Google Calendar">${icon('cal')}Google Calendar</a>
+          <button type="button" data-ics="${n}" aria-label="Unduh ${esc(a.judul)} sebagai file kalender">${icon('down')}Simpan .ics</button>
+        </div>
+      </div>
+    </article>`).join('')
+    : `<div class="empty">Belum ada acara terjadwal. Pantau terus Instagram kami ya! 🙏</div>`;
+}
+$('#events').addEventListener('click', e => {
+  const b = e.target.closest('[data-ics]');
+  if (!b) return;
+  const a = acaraTampil[+b.dataset.ics];
+  if (a) unduhICS(a);
+});
+
+/* ===== Bagikan renungan ke Status WhatsApp =====
+   Membuat gambar 1080x1920 (ukuran status) di perangkat, lalu membuka menu bagikan
+   bawaan HP. Kalau perangkat tidak mendukung, gambar diunduh + teks disalin. */
+function bungkusTeks(g, teks, maxW){
+  const baris = []; let kini = '';
+  String(teks).split(/\s+/).forEach(kata => {
+    const coba = kini ? kini + ' ' + kata : kata;
+    if (g.measureText(coba).width > maxW && kini) { baris.push(kini); kini = kata; }
+    else kini = coba;
+  });
+  if (kini) baris.push(kini);
+  return baris;
+}
+/* Salin teks: coba Clipboard API, kalau tidak tersedia (mis. situs http biasa) pakai cara lama */
+async function salinTeks(teks){
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(teks);
+      return true;
+    }
+  } catch (e) {}
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = teks;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, teks.length);
+    const ok = document.execCommand('copy');
+    ta.remove();
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* Dialog untuk komputer: pratinjau gambar + unduh / salin teks / kirim ke chat */
+let bagiURL = null;
+function tutupBagi(){
+  const d = $('#bagi');
+  d.classList.remove('open');
+  document.body.style.overflow = '';
+  if (bagiURL) { URL.revokeObjectURL(bagiURL); bagiURL = null; }
+}
+function bukaBagi(blob, r){
+  const d = $('#bagi');
+  if (bagiURL) URL.revokeObjectURL(bagiURL);
+  bagiURL = URL.createObjectURL(blob);
+  $('#bagiImg').src = bagiURL;
+  const unduh = $('#bagiUnduh');
+  unduh.href = bagiURL;
+  unduh.download = 'renungan-' + String(r.ref).toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.jpg';
+  const teks = `“${r.ayat}” — ${r.ref}\n\n${r.isi}\n\n— Persekutuan SMKN 9 Semarang`;
+  $('#bagiWa').href = 'https://wa.me/?text=' + encodeURIComponent(teks);
+  $('#bagiPesan').textContent = '';
+  $('#bagiSalin').onclick = async () => {
+    const ok = await salinTeks(teks);
+    $('#bagiPesan').textContent = ok
+      ? 'Teks renungan tersalin. Tempel di WhatsApp ya.'
+      : 'Tidak bisa menyalin otomatis — blok teks renungan di halaman ini lalu salin.';
+  };
+  d.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  $('#bagiX').focus();
+}
+$('#bagiX').onclick = tutupBagi;
+$('#bagi').addEventListener('click', e => { if (e.target === $('#bagi')) tutupBagi(); });
+document.addEventListener('keydown', e => {
+  const d = $('#bagi');
+  if (!d.classList.contains('open')) return;
+  if (e.key === 'Escape') { tutupBagi(); return; }
+  if (e.key === 'Tab') {
+    const fokus = [$('#bagiX'), $('#bagiUnduh'), $('#bagiSalin'), $('#bagiWa')];
+    const i = fokus.indexOf(document.activeElement);
+    e.preventDefault();
+    const next = e.shiftKey ? (i <= 0 ? fokus.length - 1 : i - 1) : (i === -1 || i === fokus.length - 1 ? 0 : i + 1);
+    fokus[next].focus();
+  }
+});
+
+async function bagikanStatus(r){
+  const msg = $('#dStatusMsg');
+  const kabari = t => { msg.textContent = t; msg.classList.add('tampil'); };
+  const tombol = $('#dStatus');
+  if (tombol.dataset.sibuk) return;           /* cegah klik ganda saat gambar dibuat */
+  const isiAsli = tombol.innerHTML;
+  tombol.dataset.sibuk = '1';
+  tombol.disabled = true;
+  tombol.textContent = 'Menyiapkan gambar…';
+  try {
+    if (document.fonts && document.fonts.ready) {
+      await Promise.race([document.fonts.ready, new Promise(res => setTimeout(res, 400))]);
+    }
+    const W = 1080, H = 1920;
+    const k = document.createElement('canvas'); k.width = W; k.height = H;
+    const g = k.getContext('2d');
+    const grad = g.createLinearGradient(0, 0, W, H);
+    grad.addColorStop(0, '#0E3F6E'); grad.addColorStop(.55, '#155A96'); grad.addColorStop(1, '#1B6FB8');
+    g.fillStyle = grad; g.fillRect(0, 0, W, H);
+    g.strokeStyle = 'rgba(244,213,122,.5)'; g.lineWidth = 4; g.strokeRect(56, 56, W - 112, H - 112);
+    g.textAlign = 'center';
+    /* label atas */
+    g.fillStyle = '#F4D57A';
+    g.font = '600 40px Poppins, system-ui, sans-serif';
+    g.fillText('RENUNGAN HARIAN', W / 2, 240);
+    g.fillStyle = 'rgba(255,255,255,.35)';
+    g.fillRect(W / 2 - 60, 280, 120, 2);
+    /* ayat — perkecil huruf sampai muat */
+    const teks = '“' + r.ayat + '”';
+    const maxW = W - 220, maxH = 880;
+    let ukuran = 96, baris = [];
+    for (; ukuran >= 40; ukuran -= 2) {
+      g.font = `italic 600 ${ukuran}px Poppins, Georgia, serif`;
+      baris = bungkusTeks(g, teks, maxW);
+      if (baris.length * ukuran * 1.42 <= maxH) break;
+    }
+    const tinggi = baris.length * ukuran * 1.42;
+    let y = 340 + (maxH - tinggi) / 2 + ukuran;
+    g.fillStyle = '#fff';
+    baris.forEach(b => { g.fillText(b, W / 2, y); y += ukuran * 1.42; });
+    /* referensi */
+    g.fillStyle = '#F4D57A';
+    g.font = '700 46px Poppins, system-ui, sans-serif';
+    g.fillText(r.ref, W / 2, y + 34);
+    /* doa singkat (kalau ada) */
+    if (r.doa) {
+      g.fillStyle = 'rgba(255,255,255,.82)';
+      g.font = 'italic 400 34px Poppins, system-ui, sans-serif';
+      const doa = bungkusTeks(g, r.doa, maxW);
+      let yd = y + 130;
+      doa.slice(0, 4).forEach(b => { g.fillText(b, W / 2, yd); yd += 48; });
+    }
+    /* kaki */
+    g.strokeStyle = 'rgba(244,213,122,.4)'; g.lineWidth = 2;
+    g.beginPath(); g.moveTo(W / 2 - 80, 1610); g.lineTo(W / 2 + 80, 1610); g.stroke();
+    g.fillStyle = '#fff';
+    g.font = '600 38px Poppins, system-ui, sans-serif';
+    g.fillText('Persekutuan SMKN 9 Semarang', W / 2, 1676);
+    g.fillStyle = 'rgba(255,255,255,.75)';
+    g.font = '400 30px Poppins, system-ui, sans-serif';
+    g.fillText('@' + KONFIG.instagram, W / 2, 1726);
+
+    /* JPEG jauh lebih kecil dari PNG (±250 KB vs ±1,6 MB) — lebih hemat kuota untuk status */
+    const blob = await new Promise(res => k.toBlob(res, 'image/jpeg', 0.92));
+    if (!blob) throw new Error('gambar gagal dibuat');
+    const teksBagikan = `“${r.ayat}” — ${r.ref}\n\n${r.isi}\n\n— Persekutuan SMKN 9 Semarang`;
+    const file = new File([blob], 'renungan-harian.jpg', { type: 'image/jpeg' });
+
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file], text: teksBagikan, title: 'Renungan Harian' });
+        return;
+      } catch (err) {
+        if (err && err.name === 'AbortError') return;   /* pengguna menutup menu bagikan */
+      }
+    }
+    /* Komputer/perangkat tanpa menu bagikan gambar: tampilkan dialog pratinjau */
+    bukaBagi(blob, r);
+  } catch (e) {
+    kabari('Maaf, gambar gagal dibuat. Coba lagi ya.');
+  } finally {
+    delete tombol.dataset.sibuk;
+    tombol.disabled = false;
+    tombol.innerHTML = isiAsli;
+  }
+}
+
+/* Renungan */
+function renderRenungan(){
+  if (!RENUNGAN.length) return;
+  const t = new Date();
+  const doy = Math.floor((t - new Date(t.getFullYear(),0,0)) / 864e5);
+  let i = doy % RENUNGAN.length;
+  const tgl = new Intl.DateTimeFormat('id-ID', {weekday:'long', day:'numeric', month:'long', year:'numeric'}).format(t);
+  function show(){
+    const r = RENUNGAN[i];
+    $('#dTgl').textContent = tgl;
+    $('#dAyat').textContent = '“' + r.ayat + '”';
+    $('#dRef').textContent = r.ref;
+    $('#dIsi').textContent = r.isi;
+    $('#dDoa').textContent = r.doa ? '🙏 ' + r.doa : '';
+    $('#dShare').href = 'https://wa.me/?text=' + encodeURIComponent(`“${r.ayat}” — ${r.ref}\n\n${r.isi}\n\n— Persekutuan SMKN 9 Semarang`);
+    $('#dStatusMsg').classList.remove('tampil');
+    $('#dStatus').onclick = () => bagikanStatus(r);
+  }
+  $('#dPrev').onclick = () => { i = (i - 1 + RENUNGAN.length) % RENUNGAN.length; show(); };
+  $('#dNext').onclick = () => { i = (i + 1) % RENUNGAN.length; show(); };
+  show();
+}
+
+/* Galeri + lightbox */
+let lightboxSiap = false;
+function renderGaleri(){
+  const g = $('#gallery');
+  g.innerHTML = GALERI.map((f, n) => `
+    <button class="g-item ${f.src ? '' : 'ph'} reveal" data-i="${n}" aria-label="Perbesar: ${esc(f.caption)}">
+      ${f.src ? `<img src="${esc(f.src)}" alt="${esc(f.caption)}" loading="lazy" decoding="async">` : icon('img')}
+      <span class="cap">${esc(f.caption)}</span>
+    </button>`).join('');
+  if (lightboxSiap) return;
+  lightboxSiap = true;
+  const lb = $('#lb'), lbX = $('#lbX'), lbP = $('#lbP'), lbN = $('#lbN');
+  let cur = 0, lastFocus = null;
+  function open(n){
+    cur = (n + GALERI.length) % GALERI.length;
+    const f = GALERI[cur];
+    $('#lbMedia').innerHTML = f.src ? `<img src="${esc(f.src)}" alt="${esc(f.caption)}">` : `<div class="phbig">${icon('img')}</div>`;
+    $('#lbCap').textContent = f.caption;
+    if (!lb.classList.contains('open')) lastFocus = document.activeElement;
+    lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    lbX.focus();
+  }
+  function close(){
+    lb.classList.remove('open'); document.body.style.overflow = '';
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+    lastFocus = null;
+  }
+  g.addEventListener('click', e => { const b = e.target.closest('.g-item'); if (b) open(+b.dataset.i); });
+  lbX.onclick = close; lbP.onclick = () => open(cur - 1); lbN.onclick = () => open(cur + 1);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key === 'ArrowLeft') { open(cur - 1); return; }
+    if (e.key === 'ArrowRight') { open(cur + 1); return; }
+    /* Fokus tetap di dalam dialog saat menekan Tab */
+    if (e.key === 'Tab') {
+      const fokus = [lbX, lbP, lbN];
+      const i = fokus.indexOf(document.activeElement);
+      e.preventDefault();
+      const next = e.shiftKey ? (i <= 0 ? fokus.length - 1 : i - 1) : (i === -1 || i === fokus.length - 1 ? 0 : i + 1);
+      fokus[next].focus();
+    }
+  });
+}
+
+/* Formulir pendaftaran → dikirim ke WhatsApp pengurus */
+$('#form').addEventListener('submit', e => {
+  e.preventDefault();
+  const nama = $('#nama').value.trim(), pgl = $('#panggilan').value.trim(), tempat = $('#tempat').value.trim(), tgl = $('#tgl').value,
+        agama = $('#agama').value, alamat = $('#alamat').value.trim(), kelas = $('#kelas').value, jur = $('#jurusan').value.trim(), hp = $('#wa').value.trim(),
+        setuju = $('#setuju').checked;
+  const msg = $('#fmsg');
+  /* Honeypot: hanya terisi oleh bot. Kalau terisi, berhenti diam-diam. */
+  if ($('#website').value) return;
+  const digits = hp.replace(/\D/g, '');
+  const tglD = new Date(tgl + 'T00:00');
+  const tahunLahir = tglD.getFullYear();
+  if (!nama || !pgl || !tempat || !tgl || isNaN(tglD) || tglD > new Date() || tahunLahir < 1950 || !agama || alamat.length < 5 || !kelas || !jur || digits.length < 9 || digits.length > 15) {
+    msg.className = 'msg err';
+    msg.textContent = 'Mohon lengkapi semua data dengan benar ya (nomor WhatsApp 9–15 angka, tanggal lahir tidak boleh di masa depan).';
+    return;
+  }
+  if (!setuju) {
+    msg.className = 'msg err';
+    msg.textContent = 'Mohon centang persetujuan penggunaan data dulu ya.';
+    $('#setuju').focus();
+    return;
+  }
+  const tglFmt = new Intl.DateTimeFormat('id-ID', {day:'numeric', month:'long', year:'numeric'}).format(tglD);
+  const teks = `Shalom, saya ingin bergabung dengan Persekutuan SMKN 9 Semarang.\n\nNama lengkap: ${nama}\nNama panggilan: ${pgl}\nTempat, tgl lahir: ${tempat}, ${tglFmt}\nAgama: ${agama}\nAlamat: ${alamat}\nKelas: ${kelas}\nJurusan: ${jur}\nNo. WhatsApp: ${hp}\n\nSaya setuju data ini dicatat pengurus untuk pendataan anggota.`;
+  simpanDaftar({nama, panggilan:pgl, tempat, tgl:tglFmt, agama, alamat, kelas, jurusan:jur, wa:hp}, 'Formulir Website');
+  window.open(`https://wa.me/${KONFIG.wa}?text=${encodeURIComponent(teks)}`, '_blank', 'noopener');
+  msg.className = 'msg ok';
+  msg.textContent = 'Terima kasih! WhatsApp akan terbuka — tekan "Kirim" di sana untuk menyelesaikan pendaftaran. 🙏';
+  e.target.reset();
+});
+
+/* =====================================================================
+   Asisten Virtual v2. Menjawab dari data di blok EDIT di atas.
+   Jika KONFIG.aiEndpoint diisi, pertanyaan terbuka dikirim ke AI lewat server perantara.
+   ===================================================================== */
+(function(){
+  const fab=$('#botFab'), panel=$('#bot'), log=$('#botLog'), form=$('#botForm'), input=$('#botInput'), chipsBox=$('#botChips');
+  const history=[]; let busy=false, greeted=false, flow=null, last=null;
+
+  const STOP=new Set('yang dan di ke dari untuk apa itu ini aku saya kamu dong deh sih ya kak min tolong mau bisa apakah ada gimana bagaimana kok nih aja'.split(' '));
+  const clean=s=>s.toLowerCase().replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
+  function lev(a,b){const m=[...Array(b.length+1).keys()];for(let i=1;i<=a.length;i++){let p=m[0];m[0]=i;for(let j=1;j<=b.length;j++){const t=m[j];m[j]=Math.min(m[j]+1,m[j-1]+1,p+(a[i-1]===b[j-1]?0:1));p=t;}}return m[b.length];}
+  /* Pencocokan kata: harus sama persis, atau salah ketik ringan pada kata yang cukup panjang.
+     Syarat tambahan (huruf pertama sama & panjang beda maksimal 1) mencegah "cara" dianggap "acara". */
+  const near=(w,k)=>w===k||(k.length>=5&&w.length>=5&&Math.abs(w.length-k.length)<=1&&w[0]===k[0]&&lev(w,k)<=(k.length>7?2:1));
+  const hit=(ws,t,k)=>k.includes(' ')?(' '+t+' ').includes(' '+k+' '):ws.some(w=>near(w,k));
+
+  const hariFmt=new Intl.DateTimeFormat('id-ID',{weekday:'long',day:'numeric',month:'long'});
+  const waLink=t=>`https://wa.me/${KONFIG.wa}?text=${encodeURIComponent(t)}`;
+  const salam=()=>{const h=new Date().getHours();return h<11?'pagi':h<15?'siang':h<18?'sore':'malam';};
+
+  function upcoming(){ return daftarAcara(); }
+  function sisa(d){const n=Math.round((d-new Date(new Date().setHours(0,0,0,0)))/864e5);return n===0?'hari ini':n===1?'besok':n+' hari lagi';}
+  function todayDevo(){const t=new Date();return RENUNGAN[Math.floor((t-new Date(t.getFullYear(),0,0))/864e5)%RENUNGAN.length];}
+  function topicVerse(t,ws){return TOPIK.find(x=>x.k.some(k=>hit(ws,t,k)));}
+  function siteContext(){
+    const ev=upcoming().slice(0,8).map(a=>`${a.tanggal} ${a.judul} ${a.jam} ${a.lokasi}`).join('; ');
+    const pg=[...PEMBINA,...PENGURUS].map(m=>`${m.jabatan}: ${m.nama}`).join('; ');
+    const faq=FAQ.map(f=>f.k[0]+' => '+f.a).join(' | ');
+    const r=todayDevo();
+    return `Persekutuan SMKN 9 Semarang (persekutuan siswa Kristen dan Katolik SMKN 9 Semarang), berdiri ${KONFIG.tahun}. Motto Mazmur 11:7. Nilai: iman, kasih, kejujuran, pelayanan, persaudaraan. Kegiatan tahunan: Natal, Paskah, Retret, Bakti Sosial. Ibadah rutin: ${KONFIG.ibadahRutin}. Kontak: WA ${KONFIG.waTampil}, IG @${KONFIG.instagram}, email ${KONFIG.email}, sekretariat ${KONFIG.lokasi}. Pengurus: ${pg}. Acara mendatang: ${ev||'belum ada'}. FAQ: ${faq}. Renungan hari ini: ${r.ref} "${r.ayat}". Hari ini: ${hariFmt.format(new Date())}.`;
+  }
+
+  const CRISIS=['bunuh diri','mengakhiri hidup','ingin mati','pengen mati','pingin mati','mau mati','menyakiti diri','melukai diri','self harm','tidak ingin hidup','nggak mau hidup','gak mau hidup','lebih baik mati','tidak mau hidup'];
+  const isCrisis=t=>{const c=' '+clean(t)+' ';return CRISIS.some(k=>c.includes(' '+k+' '));};
+  const crisisReply=()=>({text:'Terima kasih sudah jujur bercerita. Kamu berharga dan aku peduli padamu. 💙\n\nAku hanya asisten virtual, jadi tolong segera ceritakan ini ke orang dewasa yang kamu percaya: orang tua, guru BK, atau guru pembina. Kalau kamu merasa tidak aman saat ini, hubungi layanan darurat 112, atau layanan kesehatan jiwa Sejiwa di 119 ekstensi 8.\n\nKamu tidak harus menghadapi ini sendirian.',actions:[{label:'Hubungi pengurus',href:waLink('Shalom, saya sedang butuh ditemani bicara.')}]});
+
+  /* Alur percakapan bertahap */
+  const FLOWS={
+    daftar:{steps:[
+      {q:'Siapa nama lengkapmu?',k:'nama',ok:v=>v.length>=3},
+      {q:'Nama panggilanmu?',k:'panggilan',ok:v=>v.length>=2},
+      {q:'Tempat lahirmu di mana? (contoh: Semarang)',k:'tempat',ok:v=>v.length>=3},
+      {q:'Tanggal lahirmu? (contoh: 14 Mei 2008)',k:'tgl',ok:v=>v.length>=6},
+      {q:'Agamamu? (contoh: Kristen Protestan atau Katolik)',k:'agama',ok:v=>v.length>=3},
+      {q:'Alamat lengkapmu?',k:'alamat',ok:v=>v.length>=5},
+      {q:'Kelas berapa? (X, XI, atau XII)',k:'kelas',fix:v=>v.toUpperCase(),ok:v=>/^(X|XI|XII)$/.test(v)},
+      {q:'Jurusanmu apa? (contoh: Pemasaran 1 atau Pengembangan Perangkat Lunak dan Gim)',k:'jurusan',ok:v=>v.length>=2},
+      {q:'Terakhir, nomor WhatsApp-mu?',k:'wa',ok:v=>{const d=v.replace(/\D/g,'');return d.length>=9&&d.length<=15;}}],
+      done:d=>({text:`Terima kasih, ${d.nama}! 🎉 Data sudah disiapkan. Tekan tombol di bawah, WhatsApp akan terbuka dengan pesan pendaftaranmu. Tinggal tekan "Kirim".`,
+        actions:[{label:'Kirim ke pengurus via WhatsApp',href:waLink(`Shalom, saya ingin bergabung dengan Persekutuan SMKN 9 Semarang.\n\nNama lengkap: ${d.nama}\nNama panggilan: ${d.panggilan}\nTempat, tgl lahir: ${d.tempat}, ${d.tgl}\nAgama: ${d.agama}\nAlamat: ${d.alamat}\nKelas: ${d.kelas}\nJurusan: ${d.jurusan}\nNo. WhatsApp: ${d.wa}\n\nSaya setuju data ini dicatat pengurus untuk pendataan anggota.`)}],follow:['Jadwal ibadah']})},
+    doa:{steps:[{q:'Tulis pokok doamu di sini. Kamu boleh tanpa menyebut nama. Pesan hanya terkirim kalau kamu sendiri menekan tombol WhatsApp di akhir. (Ketik "batal" untuk berhenti.)',k:'isi',ok:v=>v.length>=3}],
+      done:d=>({text:'Terima kasih sudah berbagi. Tuhan mendengar doamu. 🙏 Kalau kamu mau pengurus ikut mendoakan, tekan tombol di bawah.',
+        actions:[{label:'Kirim pokok doa ke pengurus',href:waLink('Shalom, saya ingin minta didoakan:\n'+d.isi)}],follow:['Renungan hari ini']})},
+    pesan:{steps:[
+      {q:'Boleh tahu namamu? (Boleh tulis "anonim" kalau tidak mau menyebut nama.)',k:'nama',ok:v=>v.length>=2},
+      {q:'Pesanmu tentang apa? Ketik salah satu: pertanyaan, saran, kunjungan, atau lainnya.',k:'topik',fix:v=>v.charAt(0).toUpperCase()+v.slice(1).toLowerCase(),ok:v=>v.length>=3},
+      {q:'Tulis pesanmu di sini. (Ketik "batal" untuk berhenti.)',k:'isi',ok:v=>v.length>=5}],
+      done:d=>({text:`Terima kasih, ${d.nama}! 😊 Pesanmu sudah kususun rapi. Pesan baru terkirim kalau kamu menekan tombol WhatsApp di bawah, lalu tekan "Kirim" di WhatsApp.`,
+        actions:[{label:'Kirim pesan ke pengurus via WhatsApp',href:waLink(`Shalom, saya ingin menyampaikan pesan kepada pengurus Persekutuan SMKN 9 Semarang.\n\nNama: ${d.nama}\nTopik: ${d.topik}\n\nPesan:\n${d.isi}`)}],follow:['Jadwal ibadah']})}
+  };
+  const startFlow=n=>{flow={name:n,def:FLOWS[n],i:0,data:{}};return {text:(n==='daftar'?'Siap, kita isi bareng ya! 😊 (Ketik "batal" kapan saja untuk berhenti.)\n\n':'')+flow.def.steps[0].q};};
+
+  /* Motivasi remaja */
+  const motIdx={};
+  function motReply(m){
+    motIdx[m.id] = motIdx[m.id]===undefined ? Math.floor(Math.random()*m.p.length) : (motIdx[m.id]+1)%m.p.length;
+    return {
+      text:`${m.em} ${m.label}\n\n${m.p[motIdx[m.id]]}\n\n✅ Langkah kecil: ${m.a}\n\n“${m.t}”\n${m.r}`+(m.x?`\n\n⚠️ ${m.x}`:''),
+      actions:[{label:'Renungan harian',href:'#renungan'}],
+      follow:['Motivasi lagi: '+m.label.toLowerCase(),'Motivasi topik lain','Tulis pokok doa']
+    };
+  }
+  const MOT_INTENTS=[
+    ...MOTIVASI.map(m=>({keys:[...new Set([...m.k,m.label.toLowerCase()])],reply:()=>motReply(m)})),
+    {keys:['motivasi','semangat','nasihat','nasehat','curhat','inspirasi','kata mutiara','menyemangati','butuh dikuatkan'],
+     reply:()=>({text:'Aku siap menyemangatimu! 💪 Pilih topik di bawah, atau langsung ceritakan dengan kata-katamu sendiri (misalnya: “aku dimarahi ortu” atau “aku minder”).',follow:MOTIVASI.filter(m=>!m.hide).map(m=>m.label)})}
+  ];
+
+  /* Daftar maksud pertanyaan */
+  const INTENTS=[
+    {short:1,keys:['halo','hai','hi','hallo','shalom','selamat pagi','selamat siang','selamat sore','selamat malam','pagi','siang','sore','malam'],
+     reply:()=>({text:`Shalom, selamat ${salam()}! 👋 Mau tanya soal jadwal ibadah, cara bergabung, renungan, motivasi, atau kontak pengurus?`,follow:['Jadwal ibadah','Cara bergabung','Butuh motivasi']})},
+    {keys:['daftar lewat chat','daftar di chat','daftar disini','daftarkan aku','daftarin'],reply:()=>startFlow('daftar')},
+    {keys:['minta didoakan','minta doa','didoakan','doakan aku','pokok doa','tulis pokok doa','titip doa'],reply:()=>startFlow('doa')},
+    {keys:['ibadah','jumat','jam berapa','ibadah rutin','tempat ibadah','pos sekolah','persekutuan rutin'],
+     reply:()=>{const u=upcoming().find(a=>/ibadah/i.test(a.judul));
+       return {text:`Ibadah persekutuan rutin: ${KONFIG.ibadahRutin}.\n`+(u?`Berikutnya: ${hariFmt.format(u.d)} (${sisa(u.d)}).\n`:'')+'\nSemua siswa Kristen dan Katolik SMKN 9 Semarang boleh hadir. Datang apa adanya ya! 🙏',actions:[{label:'Lihat kegiatan',href:'#kegiatan'}],follow:['Acara mendatang','Cara bergabung']};}},
+    {keys:['acara','acara mendatang','agenda','event','jadwal','kegiatan mendatang','acara terdekat','berikutnya','hari lagi'],
+     reply:()=>{const u=upcoming().slice(0,6);
+       if(!u.length) return {text:'Belum ada acara terjadwal saat ini. Pantau terus Instagram kami ya! 🙏',actions:[{label:'Instagram',href:`https://instagram.com/${KONFIG.instagram}`}]};
+       return {text:'Acara terdekat:\n'+u.map(a=>`• ${hariFmt.format(a.d)} (${sisa(a.d)}): ${a.judul}, ${a.jam}, ${a.lokasi}`).join('\n'),actions:[{label:'Lihat jadwal',href:'#jadwal'}],follow:['Cara bergabung']};}},
+    {keys:['anggota','daftar anggota','siapa saja anggota','siapa anggota','anggota kelas','jumlah anggota'],
+     reply:()=>{
+       if(!ANGGOTA.length) return {text:`Data anggota periode ${periodeAktif} belum diisi. Kalau kamu siswa Kristen atau Katolik SMKN 9, kamu tetap bisa ikut bergabung kok.`,actions:[{label:'Cara bergabung',href:'#daftar'}],follow:['Cara bergabung','Jadwal ibadah']};
+       const r=KELAS_ANG.map(k=>({k,n:ANGGOTA.filter(a=>kelasAng(a)===k).length})).filter(x=>x.n).map(x=>`kelas ${x.k}: ${x.n} orang`);
+       return {text:`Periode ${periodeAktif} ada ${ANGGOTA.length} anggota terdaftar (${r.join(', ')}). Nama lengkapnya bisa dilihat di halaman Anggota.`,actions:[{label:'Lihat anggota',href:'anggota.html'}],follow:['Cara bergabung','Jadwal ibadah']};
+     }},
+    {keys:['gabung','bergabung','daftar','pendaftaran','ikut','join','mendaftar','jadi anggota','syarat'],
+     reply:()=>({text:'Gampang kok! Tidak ada syarat "harus sempurna", cukup datang apa adanya. 💙 Kamu bisa isi formulir di halaman ini, atau daftar langsung di chat ini: aku tanya data dirimu (nama, tempat dan tanggal lahir, agama, alamat, kelas, jurusan, dan WA), lalu datanya dikirim ke pengurus lewat WhatsApp. Data itu hanya dipakai pengurus untuk pendataan anggota.',actions:[{label:'Buka formulir',href:'#daftar'}],follow:['Daftar lewat chat','Jadwal ibadah']})},
+    {keys:['pengurus','ketua','pembina','sekretaris','bendahara','wakil','struktur','siapa pengurus','guru pembina'],
+     reply:()=>({text:'Beberapa pengurus kami:\n'+[...PEMBINA,...PENGURUS.slice(0,4)].map(m=>`• ${m.jabatan}: ${m.nama}`).join('\n'),actions:[{label:'Lihat semua pengurus',href:'#pengurus'}],follow:['Kontak pengurus']})},
+    {keys:['kirim pesan','titip pesan','pesan ke pengurus','sampaikan pesan','tanya pengurus','kritik dan saran','kasih saran','kirim pesan ke pengurus'],reply:()=>startFlow('pesan')},
+    {keys:['kontak','hubungi','wa','whatsapp','instagram','ig','email','lokasi','alamat','sekretariat','nomor','telepon','kontak pengurus'],
+     reply:()=>({text:`Kamu bisa menghubungi kami lewat:\n• WhatsApp: ${KONFIG.waTampil}\n• Instagram: @${KONFIG.instagram}\n• Email: ${KONFIG.email}\n• Sekretariat: ${KONFIG.lokasi}`,actions:[{label:'Chat WhatsApp',href:waLink('Shalom, saya ingin bertanya tentang Persekutuan SMKN 9 Semarang.')},{label:'Instagram',href:`https://instagram.com/${KONFIG.instagram}`}]})},
+    {keys:['renungan','ayat','firman','alkitab','ayat hari ini','renungan hari ini','verse','bacaan'],
+     reply:c=>{const tv=topicVerse(c.t,c.ws);
+       if(tv) return {text:`Ayat yang pas untukmu:\n“${tv.t}”\n${tv.r}`,actions:[{label:'Renungan harian',href:'#renungan'}],follow:['Tulis pokok doa']};
+       const r=todayDevo();return {text:`Renungan hari ini\n“${r.ayat}”\n${r.ref}\n\n${r.isi}`,actions:[{label:'Buka renungan',href:'#renungan'}],follow:['Tulis pokok doa']};}},
+    ...MOT_INTENTS,
+    {keys:['sedih','galau','stres','stress','capek','lelah','letih','takut','cemas','khawatir','sendirian','kesepian','putus asa','down','overthinking','bingung','tertekan','marah','kesal','ujian','nilai jelek'],
+     reply:c=>{const v=topicVerse(c.t,c.ws)||TOPIK[1];
+       return {text:`Aku turut prihatin kamu sedang melalui hal itu. Kamu tidak sendirian. 💙\n\n“${v.t}”\n${v.r}\n\nDoa singkat: Tuhan, kuatkan temanku ini, beri damai sejahtera-Mu di hatinya dan tunjukkan jalan keluar. Amin.\n\nKalau mau, ceritakan ke pengurus atau guru pembina. Mereka senang mendengarkan.`,follow:['Tulis pokok doa','Kontak pengurus']};}},
+    {keys:['tentang','visi','misi','sejarah','siapa kalian','apa itu persekutuan','organisasi','nilai','nilai nilai','berdiri'],
+     reply:()=>({text:'Persekutuan SMKN 9 Semarang adalah wadah siswa Kristen dan Katolik untuk beribadah, belajar firman, saling menguatkan, dan melayani bersama. Nilai kami: iman, kasih, kejujuran, pelayanan, dan persaudaraan.',actions:[{label:'Baca selengkapnya',href:'#tentang'}],follow:['Cara bergabung']})},
+    {keys:['natal','paskah','retret','bakti sosial','baksos','kegiatan tahunan','kegiatan'],
+     reply:c=>{
+       const q=c.t;
+       const ev=upcoming().find(a=>{
+         const j=a.judul.toLowerCase();
+         return (q.includes('natal')&&j.includes('natal'))||(q.includes('paskah')&&j.includes('paskah'))||(q.includes('retret')&&(j.includes('retret')||j.includes('retreat')))||((q.includes('baksos')||q.includes('bakti'))&&(j.includes('bakti')||j.includes('baksos')));
+       });
+       const dasar='Kegiatan tahunan kami: Perayaan Natal, Perayaan Paskah, Retret, dan Bakti Sosial, ditambah ibadah rutin tiap pekan.';
+       const info=ev?`\n\n${ev.judul} berikutnya: ${hariFmt.format(ev.d)} (${sisa(ev.d)}), ${ev.jam}, ${ev.lokasi}.`:'\n\nTanggal kegiatan tahunan diumumkan di Instagram dan halaman jadwal.';
+       return {text:dasar+info,actions:[{label:'Lihat kegiatan',href:'#kegiatan'}],follow:['Acara mendatang']};
+     }},
+    {keys:['galeri','foto','dokumentasi'],reply:()=>({text:'Foto-foto kegiatan kami ada di galeri. 📸',actions:[{label:'Buka galeri',href:'#galeri'},{label:'Instagram',href:`https://instagram.com/${KONFIG.instagram}`}]})},
+    {keys:['motto','mazmur 11 7','ayat organisasi','ayat persekutuan'],reply:()=>({text:'Motto kami Mazmur 11:7:\n“Sebab TUHAN baik dan adil, Ia mengasihi orang yang berbuat baik; orang jujur akan melihat dan mengenal TUHAN.”'})},
+    {short:1,keys:['terima kasih','makasih','thanks','thx','tq','trims'],reply:()=>({text:'Sama-sama! Tuhan memberkatimu. 🙏',follow:['Jadwal ibadah','Renungan hari ini']})},
+    {keys:['siapa kamu','kamu siapa','kamu ai','bot','asisten','robot','chatbot'],
+     reply:()=>({text:'Aku asisten virtual website ini. Aku bisa membantu soal jadwal, cara bergabung (bahkan daftar lewat chat), renungan, motivasi remaja, ayat sesuai topik, dan kontak. Aku bukan pengurus, jadi untuk hal pribadi atau mendesak, hubungi pengurus langsung ya.',actions:[{label:'Hubungi pengurus',href:waLink('Shalom, saya ingin bertanya.')}]})},
+    ...FAQ.map(f=>({keys:f.k,reply:()=>({text:f.a,follow:f.f}),faq:1}))
+  ];
+
+  /* Kecocokan persis bernilai 3, salah ketik ringan bernilai 1. Dengan begitu
+     "cara bergabung" tidak lagi kalah oleh kata "acara". */
+  function strength(ws,t,k){
+    if(k.includes(' ')) return (' '+t+' ').includes(' '+k+' ')?3:0;
+    if(ws.includes(k)) return 3;
+    return ws.some(w=>w!==k&&near(w,k))?1:0;
+  }
+  function match(text){
+    const t=clean(text), ws=t.split(' ').filter(w=>w&&!STOP.has(w)); let best=null,score=0;
+    INTENTS.forEach(it=>{
+      if(it.short&&ws.length>3) return;
+      const s=it.keys.reduce((a,k)=>a+strength(ws,t,k),0);
+      if(s>score){score=s;best=it;}
+    });
+    return {it:best,score,t,ws};
+  }
+  const fallback=()=>({text:'Maaf, aku belum paham pertanyaan itu. 🙏 Coba tanya soal jadwal ibadah, acara, cara bergabung, renungan, motivasi, atau kontak. Atau tanya langsung ke pengurus.',actions:[{label:'Tanya pengurus',href:waLink('Shalom, saya ingin bertanya tentang Persekutuan SMKN 9 Semarang.')}],follow:['Jadwal ibadah','Cara bergabung','Butuh motivasi','Kirim pesan']});
+
+  async function remote(){
+    const c=new AbortController(), to=setTimeout(()=>c.abort(),15000);
+    try{
+      const r=await fetch(KONFIG.aiEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},signal:c.signal,
+        body:JSON.stringify({messages:history.slice(-10),context:siteContext()})});
+      if(!r.ok) throw 0; const j=await r.json(); if(!j.reply) throw 0; return String(j.reply);
+    } finally { clearTimeout(to); }
+  }
+
+  async function answer(text){
+    if(isCrisis(text)){ flow=null; return crisisReply(); }
+    if(flow){
+      if(/^(batal|cancel|stop|nggak jadi|gak jadi)$/.test(clean(text))){ flow=null; return {text:'Oke, dibatalkan. Kalau mau lanjut kapan pun, bilang saja ya. 😊',follow:['Jadwal ibadah','Kontak pengurus']}; }
+      const st=flow.def.steps[flow.i], v=st.fix?st.fix(text.trim()):text.trim();
+      if(!st.ok(v)) return {text:'Hmm, sepertinya belum sesuai. '+st.q};
+      flow.data[st.k]=v; flow.i++;
+      if(flow.i<flow.def.steps.length) return {text:flow.def.steps[flow.i].q};
+      if(flow.name==='daftar') simpanDaftar(flow.data,'Chat Asisten');
+      const res=flow.def.done(flow.data); flow=null; return res;
+    }
+    /* tombol "Motivasi topik lain" */
+    if(clean(text)==='motivasi topik lain') return {text:'Pilih topik yang ingin kamu bahas: 💪',follow:MOTIVASI.filter(m=>!m.hide).map(m=>m.label)};
+    const m=match(text);
+    /* pertanyaan lanjutan singkat, mis. "kapan?" atau "di mana?" */
+    if(!m.it && last && m.ws.length<=2 && m.ws.length>0) return last.reply(m);
+    /* data penting dijawab lokal; pertanyaan terbuka diserahkan ke AI bila tersedia */
+    if(KONFIG.aiEndpoint && (!m.it || m.score<2)){
+      try{ return {text:await remote(),follow:['Cara bergabung','Jadwal ibadah']}; }catch(e){}
+    }
+    if(m.it){ last=m.it; return m.it.reply(m); }
+    return fallback();
+  }
+
+  function addMsg(who,text,actions,follow){
+    const d=document.createElement('div'); d.className='bm from-'+who;
+    const p=document.createElement('p'); p.textContent=text; d.appendChild(p);
+    if((actions&&actions.length)||(follow&&follow.length)){
+      const w=document.createElement('div'); w.className='ba';
+      (actions||[]).forEach(a=>{
+        const el=document.createElement('a'); el.textContent=a.label; el.href=a.href;
+        if(/^https?:/.test(a.href)){el.target='_blank';el.rel='noopener';} else el.addEventListener('click',closeBot);
+        w.appendChild(el);
+      });
+      (follow||[]).forEach(l=>{
+        const b=document.createElement('button'); b.type='button'; b.textContent=l;
+        b.addEventListener('click',()=>send(l)); w.appendChild(b);
+      });
+      d.appendChild(w);
+    }
+    log.appendChild(d); log.scrollTop=log.scrollHeight; return d;
+  }
+  function typing(){
+    const d=document.createElement('div'); d.className='bm from-bot';
+    d.innerHTML='<div class="dots"><i></i><i></i><i></i></div>';
+    log.appendChild(d); log.scrollTop=log.scrollHeight; return d;
+  }
+  async function send(text){
+    text=text.trim(); if(!text||busy) return; busy=true;
+    addMsg('me',text); history.push({role:'user',content:text}); input.value='';
+    const t=typing(); let res;
+    try{ const [r]=await Promise.all([answer(text),new Promise(r=>setTimeout(r,450))]); res=r; }
+    catch(e){ res=fallback(); }
+    t.remove(); addMsg('bot',res.text,res.actions,res.follow);
+    history.push({role:'assistant',content:res.text}); busy=false;
+  }
+
+  ['Jadwal ibadah','Acara mendatang','Cara bergabung','Butuh motivasi','Renungan hari ini','Kirim pesan','Minta didoakan'].forEach(l=>{
+    const b=document.createElement('button'); b.type='button'; b.textContent=l; b.addEventListener('click',()=>send(l)); chipsBox.appendChild(b);
+  });
+
+  function openBot(){
+    panel.classList.add('open'); document.body.classList.add('bot-open'); fab.setAttribute('aria-expanded','true');
+    if(!greeted){ greeted=true; const u=upcoming()[0];
+      addMsg('bot',`Shalom, selamat ${salam()}! 👋 Aku asisten virtual Persekutuan SMKN 9 Semarang.`+(u?`\n\nAcara terdekat: ${u.judul}, ${sisa(u.d)}.`:'')+'\n\nAda yang bisa kubantu? Pilih di bawah atau ketik sendiri.'); }
+    setTimeout(()=>input.focus(),50);
+  }
+  function closeBot(){ flow=null; panel.classList.remove('open'); document.body.classList.remove('bot-open'); fab.setAttribute('aria-expanded','false'); }
+  fab.addEventListener('click',openBot);
+  $('#botX').addEventListener('click',closeBot);
+  form.addEventListener('submit',e=>{e.preventDefault();send(input.value);});
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&panel.classList.contains('open')) closeBot(); });
+})();
+
+/* Pemutar lagu */
+(function(){
+  const box=$('#music');
+  if(!LAGU.length){ box.remove(); return; }
+  const au=$('#bgm'), btn=$('#mPlay'), vol=$('#mVol'), sub=$('#mSub');
+  let i=0, want=false, fade;
+  const st={
+    get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+    set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+  };
+  const v0=parseFloat(st.get('bgm_vol')); if(!isNaN(v0)) vol.value=v0;
+  au.loop = LAGU.length===1;
+
+  function load(n){
+    i=(n+LAGU.length)%LAGU.length;
+    au.src=LAGU[i].src;
+    $('#mTitle').textContent=LAGU[i].judul;
+    sub.textContent=LAGU[i].artis || 'Ketuk ▶ untuk memutar';
+    st.set('bgm_i',i);
+  }
+  function fadeTo(v,ms,done){
+    clearInterval(fade);
+    const from=au.volume, steps=Math.max(1,ms/30); let k=0;
+    fade=setInterval(()=>{
+      k++; au.volume=Math.min(1,Math.max(0,from+(v-from)*k/steps));
+      if(k>=steps){ clearInterval(fade); if(done) done(); }
+    },30);
+  }
+  function setUI(on){
+    box.classList.toggle('playing',on);
+    if(on) box.classList.remove('hint');
+    btn.setAttribute('aria-label',on?'Jeda lagu':'Putar lagu');
+  }
+  function play(){
+    want=true; au.volume=0;
+    /* Kalau percobaan sebelumnya gagal (mis. internet putus), muat ulang sumbernya */
+    if(au.error) au.src=LAGU[i].src;
+    const ok=()=>{ setUI(true); st.set('bgm_on','1'); fadeTo(+vol.value,1200); };
+    const p=au.play();
+    if(p&&p.then) p.then(ok).catch(()=>{ want=false; setUI(false); if(!au.error) sub.textContent='Ketuk ▶ untuk memutar'; });
+    else ok();
+  }
+  function pause(){
+    want=false; st.set('bgm_on','0'); setUI(false);
+    sub.textContent=LAGU[i].artis || 'Ketuk ▶ untuk memutar';
+    fadeTo(0,400,()=>{ if(!want) au.pause(); });
+  }
+
+  au.addEventListener('loadstart',()=>{ if(want && !au.error) sub.textContent='Memuat lagu…'; });
+  au.addEventListener('waiting',()=>{ if(want) sub.textContent='Memuat lagu…'; });
+  au.addEventListener('playing',()=>{ sub.textContent=LAGU[i].artis || 'Sedang diputar'; });
+  au.addEventListener('error',()=>{ want=false; setUI(false); sub.textContent='Lagu gagal dimuat — ketuk ▶ untuk coba lagi'; });
+  au.addEventListener('ended',()=>{ load(i+1); play(); });
+  btn.addEventListener('click',()=>want?pause():play());
+  $('#mNext').addEventListener('click',()=>{ load(i+1); if(want) play(); });
+  $('#mPrev').addEventListener('click',()=>{ load(i-1); if(want) play(); });
+  vol.addEventListener('input',()=>{ clearInterval(fade); au.volume=+vol.value; st.set('bgm_vol',vol.value); });
+
+  load(Math.min(parseInt(st.get('bgm_i'))||0,LAGU.length-1));
+
+  /* Kalau pengunjung pernah menyalakan lagu, lanjutkan setelah interaksi pertama (aturan browser) */
+  if(st.get('bgm_on')==='1'){
+    const evs=['click','keydown','touchend'];
+    const go=e=>{
+      if(e.target.closest&&e.target.closest('#music')) return;
+      evs.forEach(t=>document.removeEventListener(t,go));
+      if(!want && st.get('bgm_on')==='1') play();
+    };
+    evs.forEach(t=>document.addEventListener(t,go));
+  }
+})();
+
+/* Animasi muncul saat scroll (dipanggil ulang setelah konten diperbarui) */
+let ioReveal = null;
+function pasangReveal(){
+  const els = document.querySelectorAll('.reveal:not(.in)');
+  if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+  if (ioReveal) ioReveal.disconnect();
+  ioReveal = new IntersectionObserver((ents) => {
+    ents.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); ioReveal.unobserve(en.target); } });
+  }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach((e, i) => { e.style.transitionDelay = (i % 4) * 70 + 'ms'; ioReveal.observe(e); });
+  /* Pengaman: kalau setelah 4 detik belum ada satu pun yang tampil (IntersectionObserver
+     tidak berjalan, mis. tab dibuka di latar belakang), tampilkan semua agar isi tidak tersembunyi. */
+  setTimeout(() => {
+    if (document.querySelectorAll('.reveal.in').length) return;
+    document.querySelectorAll('.reveal').forEach(e => e.classList.add('in'));
+  }, 4000);
+}
+
+/* Menandai menu aktif saat scroll */
+(function(){
+  const links = [...document.querySelectorAll('.menu a')].filter(a => (a.getAttribute('href') || '').startsWith('#'));
+  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const urut = ['beranda','tentang','pengurus','kegiatan','jadwal','renungan','galeri','suara','daftar','kontak'];
+  const secs = urut.map(id => document.getElementById(id)).filter(Boolean);
+  let ticking = false;
+  function tandai(){
+    const y = window.scrollY + 120; let cur = 'beranda';
+    secs.forEach(s => { if (s.offsetTop <= y) cur = s.id; });
+    links.forEach(a => a.classList.remove('active'));
+    const a = map.get(cur); if (a) a.classList.add('active');
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(tandai); }
+  }, { passive: true });
+  tandai();
+})();
+
+/* ===================== KONTEN DARI GOOGLE SHEETS (opsional) =====================
+   Membaca CSV hasil "File → Bagikan → Publikasikan ke web" dari Google Sheets.
+   Kalau URL di KONFIG.konten masih kosong atau gagal diambil, data bawaan di file ini yang dipakai. */
+function parseCSV(teks){
+  const baris = []; let isi = [], kolom = '', kutip = false;
+  teks = teks.replace(/^\uFEFF/, '');
+  for (let i = 0; i < teks.length; i++){
+    const c = teks[i];
+    if (kutip){
+      if (c === '"'){
+        if (teks[i + 1] === '"'){ kolom += '"'; i++; }
+        else kutip = false;
+      } else kolom += c;
+    } else if (c === '"') kutip = true;
+    else if (c === ','){ isi.push(kolom); kolom = ''; }
+    else if (c === '\n'){ isi.push(kolom); baris.push(isi); isi = []; kolom = ''; }
+    else if (c !== '\r') kolom += c;
+  }
+  if (kolom !== '' || isi.length){ isi.push(kolom); baris.push(isi); }
+  return baris;
+}
+
+function csvKeObjek(baris){
+  if (!baris.length) return [];
+  const kepala = baris[0].map(h => h.trim().toLowerCase());
+  return baris.slice(1)
+    .filter(r => r.some(v => (v || '').trim() !== ''))
+    .map(r => {
+      const o = {};
+      kepala.forEach((h, i) => { o[h] = (r[i] || '').trim(); });
+      return o;
+    });
+}
+
+/* Menerima "2026-11-13", "13/11/2026", atau "13-11-2026" */
+function tglISO(s){
+  s = (s || '').trim();
+  let m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (m) return `${m[1]}-${m[2].padStart(2,'0')}-${m[3].padStart(2,'0')}`;
+  m = s.match(/^(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})/);
+  if (m) return `${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`;
+  return '';
+}
+
+/* Foto Google Drive: tautan "share" diubah menjadi tautan gambar langsung */
+function tautanFoto(u){
+  u = (u || '').trim();
+  const m = u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=view&)?id=)([\w-]{20,})/)
+         || u.match(/^([\w-]{25,})$/);
+  if (m) return `https://lh3.googleusercontent.com/d/${m[1]}=w1200`;
+  return u;
+}
+
+async function ambilCSV(url){
+  const c = new AbortController();
+  const to = setTimeout(() => c.abort(), 9000);
+  try {
+    const r = await fetch(url, { signal: c.signal, cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return parseCSV(await r.text());
+  } finally { clearTimeout(to); }
+}
+
+function gantiIsi(arr, baru){ arr.length = 0; arr.push(...baru); }
+
+async function muatKonten(){
+  const K = KONFIG.konten || {};
+  const tugas = [];
+
+  if (K.acara) tugas.push(ambilCSV(K.acara).then(rows => {
+    const data = csvKeObjek(rows).map(o => ({
+      tanggal: tglISO(o.tanggal || o.date),
+      judul: o.judul || o.nama || o.acara || '',
+      jam: o.jam || o.waktu || '',
+      lokasi: o.lokasi || o.tempat || ''
+    })).filter(a => a.tanggal && a.judul);
+    if (data.length) gantiIsi(ACARA, data);
+  }));
+
+  if (K.renungan) tugas.push(ambilCSV(K.renungan).then(rows => {
+    const data = csvKeObjek(rows).map(o => ({
+      ref: o.referensi || o.ref || '',
+      ayat: o.ayat || o.firman || '',
+      isi: o.isi || o.renungan || '',
+      doa: o.doa || ''
+    })).filter(r => r.ayat && r.ref);
+    if (data.length) gantiIsi(RENUNGAN, data);
+  }));
+
+  if (K.galeri) tugas.push(ambilCSV(K.galeri).then(rows => {
+    const data = csvKeObjek(rows).map(o => ({
+      src: tautanFoto(o.file || o.foto || o.link || ''),
+      caption: o.caption || o.keterangan || o.judul || ''
+    })).filter(g => g.src);
+    if (data.length) gantiIsi(GALERI, data);
+  }));
+
+  if (!tugas.length) return;
+  const hasil = await Promise.allSettled(tugas);
+  hasil.forEach(h => { if (h.status === 'rejected') console.warn('Konten Google Sheets gagal dimuat:', h.reason); });
+}
+
+/* ===================== KRITIK & SARAN (anonim) ===================== */
+function renderPesan(list){
+  const box = $('#suaraDaftar');
+  if (!box) return;
+  if (!Array.isArray(list) || !list.length) {
+    box.innerHTML = `<p class="empty">${(typeof apiAktif === 'function' && apiAktif())
+      ? 'Belum ada pesan yang tampil. Jadilah yang pertama menyampaikan suaramu.'
+      : 'Pesan yang disetujui pengurus akan tampil di sini.'}</p>`;
+    return;
+  }
+  box.innerHTML = list.map(p => {
+    const teks = String(p.pesan || '').trim();
+    const tag = String(p.kategori || 'Umum').trim() || 'Umum';
+    const tgl = typeof tanggalPesan === 'function' ? tanggalPesan(p.waktu) : '';
+    return `<article class="suara-item">
+      <div class="suara-meta"><span class="suara-tag">${esc(tag)}</span><span>Anonim</span>${tgl ? `<span aria-hidden="true">·</span><time datetime="${esc(p.waktu || '')}">${esc(tgl)}</time>` : ''}</div>
+      <p class="suara-teks">${esc(teks)}</p>
+    </article>`;
+  }).join('');
+}
+
+const suaraIsi = $('#suaraIsi'), suaraHitung = $('#suaraHitung');
+function hitungSuara(){
+  if (suaraIsi && suaraHitung) suaraHitung.textContent = suaraIsi.value.length + '/800';
+}
+if (suaraIsi) { suaraIsi.addEventListener('input', hitungSuara); hitungSuara(); }
+
+const suaraForm = $('#suaraForm');
+if (suaraForm) {
+  suaraForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const msg = $('#suaraMsg');
+    const isi = suaraIsi.value.trim();
+    const kategori = $('#suaraKategori').value;
+    const situs = $('#situs').value;
+    msg.className = 'msg';
+    msg.textContent = '';
+    if (isi.length < 10) {
+      msg.classList.add('err');
+      msg.textContent = 'Tulis minimal 10 huruf supaya jelas.';
+      suaraIsi.focus();
+      return;
+    }
+    if (typeof apiAktif !== 'function' || !apiAktif()) {
+      msg.classList.add('err');
+      msg.innerHTML = 'Formulir belum tersambung ke server. Sementara itu, sampaikan lewat <a href="#kontak" style="text-decoration:underline">Kontak</a>.';
+      return;
+    }
+    const btn = $('#suaraKirim');
+    btn.disabled = true; btn.style.opacity = '.7';
+    try {
+      const r = await apiPost({ aksi: 'kirim', pesan: isi, kategori, situs });
+      suaraForm.reset(); hitungSuara();
+      msg.classList.add('ok');
+      msg.textContent = r.pesan || 'Terima kasih! Pesanmu akan tampil setelah diperiksa pengurus.';
+    } catch (err) {
+      msg.classList.add('err');
+      msg.textContent = (err && err.message) ? err.message : 'Pesan gagal dikirim. Coba lagi.';
+    } finally {
+      btn.disabled = false; btn.style.opacity = '';
+    }
+  });
+}
+
+/* Ambil konten dari server (bila sudah diatur). Bila gagal, data bawaan tetap dipakai. */
+async function muatKontenServer(){
+  if (typeof ambilKonten !== 'function') return;
+  const k = await ambilKonten();
+  if (!k) return;
+
+  try {
+  /* Kontak & pengaturan */
+  if (k.pengaturan) {
+    let ubah = false;
+    ['tahun','wa','waTampil','instagram','email','lokasi','ibadahRutin'].forEach(key => {
+      let v = k.pengaturan[key];
+      if (key === 'waTampil') v = rapikanWaTampil(v);
+      if (key === 'wa') v = rapikanWaTautan(v);
+      if (v !== undefined && v !== null && String(v).trim() !== '' && String(KONFIG[key]) !== String(v)) {
+        KONFIG[key] = String(v); ubah = true;
+      }
+    });
+    if (ubah) terapkanKontak();
+  }
+
+  /* Periode, pembina, pengurus */
+  if (typeof terapkanPeriode === 'function' && terapkanPeriode(k)) {
+    const aktif = typeof periodeAktifServer === 'function' ? periodeAktifServer() : '';
+    pakaiPeriode(aktif && PERIODE[aktif] ? aktif : periodeAwal());
+    renderPeriode(); renderPengurus(); pasangReveal();
+  }
+
+  /* Acara */
+  const acara = (k.acara || []).map(a => ({
+    tanggal: a.tanggal || '', judul: a.judul || '', jam: a.jam || '', lokasi: a.lokasi || ''
+  })).filter(a => a.tanggal && a.judul);
+  if (typeof terapkanDaftar === 'function' && terapkanDaftar(ACARA, acara)) {
+    renderAcara(); pasangReveal();
+  }
+
+  /* Renungan */
+  const renungan = (k.renungan || []).map(r => ({
+    ref: r.ref || '', ayat: r.ayat || '', isi: r.isi || '', doa: r.doa || ''
+  })).filter(r => r.ref && r.ayat);
+  if (typeof terapkanDaftar === 'function' && terapkanDaftar(RENUNGAN, renungan)) {
+    renderRenungan();
+  }
+
+  /* Galeri */
+  const galeri = (k.galeri || []).map(g => ({
+    src: typeof tautanFoto === 'function' ? tautanFoto(g.src || '') : (g.src || ''),
+    caption: g.caption || ''
+  })).filter(g => g.src);
+  if (typeof terapkanDaftar === 'function' && terapkanDaftar(GALERI, galeri)) {
+    renderGaleri(); pasangReveal();
+  }
+
+  /* Pesan yang sudah disetujui */
+  renderPesan(k.pesan || []);
+  } catch (e) {
+    console.warn('Konten server gagal diterapkan.', e);
+  }
+}
+
+/* Tampilkan konten: data bawaan dulu, lalu diperbarui dari Google Sheets / server bila diatur */
+renderAcara(); renderRenungan(); renderGaleri(); renderPesan([]); pasangReveal();
+muatKonten().then(() => {
+  renderAcara(); renderRenungan(); renderGaleri(); pasangReveal();
+});
+muatKontenServer();
+
+/* ===================== PWA: bisa dipasang & dibuka tanpa internet ===================== */
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
+
+const tombolPasang = $('#pasang');
+let promptPasang = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  promptPasang = e;
+  if (tombolPasang) tombolPasang.hidden = false;
+});
+if (tombolPasang) tombolPasang.addEventListener('click', async () => {
+  if (!promptPasang) return;
+  promptPasang.prompt();
+  try {
+    const pilihan = await promptPasang.userChoice;
+    if (pilihan && pilihan.outcome === 'accepted') tombolPasang.hidden = true;
+  } catch (e) {}
+  promptPasang = null;
+});
+window.addEventListener('appinstalled', () => { if (tombolPasang) tombolPasang.hidden = true; });
+</script>
+</body>
+</html>
